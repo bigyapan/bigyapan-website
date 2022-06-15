@@ -65,13 +65,6 @@
             left: 0;
             right: 0;
             z-index: -20;
-            opacity: .72;
-
-            background: #1F1C2C; /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #928DAB, #1F1C2C); /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #928DAB, #1F1C2C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
         }
 
         .maintenance-inner {
@@ -98,15 +91,15 @@
 </head>
 <body>
 
-<!--<div class="maintenance">-->
-<!--    <div class="maintenance-inner">-->
+<div class="maintenance">
+    <div class="maintenance-inner">
 <!--        <div class="content">-->
 <!--            <h1 class="site-title">--><?php //echo $this->general_settings->application_name; ?><!--</h1>-->
 <!--            <h2 class="title">--><?php //echo $this->general_settings->maintenance_mode_title; ?><!--</h2>-->
 <!--            <p class="description">--><?php //echo $this->general_settings->maintenance_mode_description; ?><!--</p>-->
 <!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+    </div>
+</div>
 
 </body>
 </html>
