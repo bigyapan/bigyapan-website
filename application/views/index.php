@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+
 <div class="section-slider">
     <?php if (!empty($slider_items) && $this->general_settings->slider_status == 1):
         $this->load->view("partials/_main_slider");
@@ -10,20 +11,21 @@
     <div class="container">
         <div class="row">
             <h1 class="index-title"><?php echo html_escape($this->settings->site_title); ?></h1>
-            <?php if (item_count($featured_categories) > 0 && $this->general_settings->featured_categories == 1): ?>
-                <div class="col-12 section section-categories">
-                    <!-- featured categories -->
-                    <?php $this->load->view("partials/_featured_categories"); ?>
-                </div>
-            <?php endif; ?>
             <?php $this->load->view("product/_index_banners", ['banner_location' => 'featured_categories']); ?>
-
             <div class="col-12">
                 <div class="row-custom row-bn">
                     <!--Include banner-->
                     <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "index_1", "class" => ""]); ?>
                 </div>
             </div>
+            <?php if (item_count($featured_categories) > 0 && $this->general_settings->featured_categories == 1): ?>
+                <div class="col-12 section section-categories">
+                    <!-- featured categories -->
+                    <?php $this->load->view("partials/_featured_categories"); ?>
+                </div>
+            <?php endif; ?>
+
+
 
             <?php $this->load->view('product/_special_offers', ['index_categories' => $index_categories]); ?>
             <?php $this->load->view("product/_index_banners", ['banner_location' => 'special_offers']); ?>
