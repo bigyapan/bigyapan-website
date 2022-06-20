@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/slick-theme.css">
     <style>
         /* Slider */
+
         .slide span{
             display:flex;
             justify-content: center;
@@ -151,6 +152,7 @@
         .slide-link {
             text-decoration: none;
             color: black;
+            width:70px !important;
         }
     </style>
     <!--    Featured Categories Slider Scripts   -->
@@ -159,7 +161,7 @@
     <script>
         $(document).ready(function () {
             $('.customer-logos').slick({
-                slidesToShow: 8,
+                slidesToShow: 10,
                 slidesToScroll: 1,
                 autoplay: true,
                 autoplaySpeed: 3000,

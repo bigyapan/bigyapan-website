@@ -207,3 +207,10 @@ if ($this->general_settings->selected_navigation == 1): ?>
         </div>
     </div>
 <?php endif; ?>
+
+<style>
+    /*.navbar{*/
+    /*    display: flex;*/
+    /*    justify-content: center;*/
+    /*}*/
+</style>
