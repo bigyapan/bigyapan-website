@@ -82,10 +82,10 @@ foreach ($this->languages as $language): ?>
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-md-8 nav-top-left">
-                                <div class="logo">
-                                    <a href="<?php echo lang_base_url(); ?>"><img src="<?php echo get_logo($this->general_settings); ?>" alt="logo"></a>
-                                </div>
-                                <div class="row-align-items-center search-bar-container">
+                                <div class="row-align-items-center">
+                                    <div class="logo">
+                                        <a href="<?php echo lang_base_url(); ?>"><img src="<?php echo get_logo($this->general_settings); ?>" alt="logo"></a>
+                                    </div>
                                     <div class="top-search-bar<?= $this->general_settings->multi_vendor_system != 1 ? ' top-search-bar-single-vendor' : ''; ?>">
                                         <?php echo form_open(generate_url('search'), ['id' => 'form_validate_search', 'class' => 'form_search_main', 'method' => 'get']); ?>
                                         <div class="left">
@@ -316,23 +316,3 @@ foreach ($this->languages as $language): ?>
 <?php endif; ?>
 
 <div id="menu-overlay"></div>
-<style>
-    .nav-top .nav-top-right {
-        padding-left: 0!important;
-        -ms-flex: 0 0 20%;
-        flex: 0 0 20%;
-        max-width: 20%;
-    }
-
-    .nav-top .nav-top-left {
-        padding-right: 5px;
-        -ms-flex: 0 0 80%;
-        flex: 0 0 80%;
-        max-width: 80%;
-    }
-
-    .search-bar-container{
-        display:flex;
-        justify-content: center;
-    }
-</style>

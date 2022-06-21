@@ -91,7 +91,6 @@
             position: relative;
             top: 0;
             left: 0;
-            display: block;
         }
 
         .slick-track:before,
