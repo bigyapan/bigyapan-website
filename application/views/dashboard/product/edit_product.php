@@ -206,11 +206,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label"><?php echo trans("description"); ?></label>
-                                    <div class="row">
+                                  <!--  <div class="row">
                                         <div class="col-sm-12 m-b-5">
-                                            <button type="button" id="btn_add_image_editor" class="btn btn-sm btn-info" data-editor-id="editor_<?= $language->id; ?>" data-toggle="modal" data-target="#fileManagerModal"><i class="icon-image"></i>&nbsp;&nbsp;<?php echo trans("add_image"); ?></button>
+                                            <button type="button" id="btn_add_image_editor" class="btn btn-sm btn-info" data-editor-id="editor_<?/*= $language->id; */?>" data-toggle="modal" data-target="#fileManagerModal"><i class="icon-image"></i>&nbsp;&nbsp;<?php /*echo trans("add_image"); */?></button>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <textarea name="description_<?= $language->id; ?>" id="editor_<?= $language->id; ?>" class="tinyMCEsmall text-editor"><?php echo !empty($product_details) ? $product_details->description : ''; ?></textarea>
                                 </div>
                                 <div class="form-group">
