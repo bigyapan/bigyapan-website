@@ -111,6 +111,9 @@ class Auth_model extends CI_Model
                 if ($this->general_settings->vendor_verification_system != 1) {
                     $data['role_id'] = 2;
                 }
+                $data['show_email'] = 1;
+                $data['show_phone'] = 1;
+                $data['show_location'] = 1;
                 if (!empty($data['email'])) {
                     $this->db->insert('users', $data);
                     $user = $this->get_user_by_email($fb_user->email);
@@ -164,6 +167,9 @@ class Auth_model extends CI_Model
                 if ($this->general_settings->vendor_verification_system != 1) {
                     $data['role_id'] = 2;
                 }
+                $data['show_email'] = 1;
+                $data['show_phone'] = 1;
+                $data['show_location'] = 1;
                 if (!empty($data['email'])) {
                     $this->db->insert('users', $data);
                     $user = $this->get_user_by_email($g_user->email);
