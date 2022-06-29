@@ -283,6 +283,9 @@ class Auth_model extends CI_Model
         $data['created_at'] = date('Y-m-d H:i:s');
         $data['token'] = generate_token();
         $data['email_status'] = 1;
+        $data['show_email'] = 1;
+        $data['show_phone'] = 1;
+        $data['show_location'] = 1;
         if ($this->general_settings->email_verification == 1) {
             $data['email_status'] = 0;
         }
