@@ -203,7 +203,7 @@ class Upload_model extends CI_Model
     {
         $new_path = 'uploads/category/category_' . generate_unique_id() . '.jpg';
         $img = Image::make($path)->orientate();
-        $img->fit(420, 420);
+//        $img->fit(420, 420);
         $img->save(FCPATH . $new_path, $this->quality);
         return $new_path;
     }
