@@ -3,32 +3,32 @@
 <?php if (!empty($featured_categories)): ?>
     <!--    <div class="featured-categories">
             <div class="card-columns">
-                <?php /*foreach ($featured_categories as $category): */?>
-                    <div class="card lazyload" data-bg="<?php /*echo get_category_image_url($category); */?>">
-                        <a href="<?php /*echo generate_category_url($category); */?>">
+                <?php /*foreach ($featured_categories as $category): */ ?>
+                    <div class="card lazyload" data-bg="<?php /*echo get_category_image_url($category); */ ?>">
+                        <a href="<?php /*echo generate_category_url($category); */ ?>">
                             <div class="caption text-truncate">
-                                <span><?php /*echo category_name($category); */?></span>
+                                <span><?php /*echo category_name($category); */ ?></span>
                             </div>
                         </a>
                     </div>
-                <?php /*endforeach; */?>
+                <?php /*endforeach; */ ?>
             </div>
         </div>-->
-    <div class="container">
+    <!--<div class="container">
         <section class="customer-logos slider">
-            <?php foreach ($featured_categories as $category): ?>
-                <a class="slide-link" href="<?php echo generate_category_url($category); ?>">
+            <?php /*foreach ($featured_categories as $category): */ ?>
+                <a class="slide-link" href="<?php /*echo generate_category_url($category); */ ?>">
                     <div class="slide lazyload">
-                        <img src="<?php echo get_category_image_url($category); ?>">
-                        <span><?php echo category_name($category); ?></span>
+                        <img src="<?php /*echo get_category_image_url($category); */ ?>">
+                        <span><?php /*echo category_name($category); */ ?></span>
                     </div>
                 </a>
-            <?php endforeach; ?>
+            <?php /*endforeach; */ ?>
         </section>
-    </div>
+    </div>-->
     <!--    Featured Categories Slider Styles   -->
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/slick.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/slick-theme.css">
+    <!-- <link rel="stylesheet" type="text/css" href="<? /*= base_url(); */ ?>assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="<? /*= base_url(); */ ?>assets/css/slick-theme.css">
     <style>
         /* Slider */
 
@@ -153,10 +153,10 @@
             color: black;
             width:70px !important;
         }
-    </style>
+    </style>-->
     <!--    Featured Categories Slider Scripts   -->
-    <script href="<?= base_url(); ?>assets/js/slick.min.js"></script>
-    <script src="<?= base_url(); ?>assets/js/jquery-3.5.1.min.js"></script>
+    <!-- <script href="<? /*= base_url(); */ ?>assets/js/slick.min.js"></script>
+    <script src="<? /*= base_url(); */ ?>assets/js/jquery-3.5.1.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.customer-logos').slick({
@@ -167,8 +167,8 @@
                 arrows: true,
                 dots: false,
                 pauseOnHover: true,
-                prevArrow: "<img class='a-left control-c prev slick-prev' src='<?= base_url(); ?>assets/img/icons/left-arrow.png'>",
-                nextArrow: "<img class='a-right control-c next slick-next' src='<?= base_url(); ?>assets/img/icons/right-arrow.png'>",
+                prevArrow: "<img class='a-left control-c prev slick-prev' src='<? /*= base_url(); */ ?>assets/img/icons/left-arrow.png'>",
+                nextArrow: "<img class='a-right control-c next slick-next' src='<? /*= base_url(); */ ?>assets/img/icons/right-arrow.png'>",
                 // variableWidth: true,
                 responsive: [{
                     breakpoint: 768,
@@ -183,7 +183,84 @@
                 }]
             });
         });
-    </script>
+    </script>-->
+    <div class="main-carousel"
+         data-flickity='{"cellAlign":"left","groupCells": 2,"draggable": ">1","contain": true,"pageDots": false }'>
+        <?php foreach ($featured_categories as $category): ?>
 
+            <a class="carousel-cell" href="<?php echo generate_category_url($category); ?>">
+                <img src="<?php echo get_category_image_url($category); ?>">
+                <span><?php echo category_name($category); ?></span>
+            </a>
+        <?php endforeach; ?>
+    </div>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .carousel {
+            background: #EEE;
+        }
+
+        .carousel-cell {
+            width: 15%;
+            height: 125px;
+            border-radius: 5px;
+            display: inline-flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-right: 10px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .carousel-cell>img {
+            flex: 1 0 100%;
+        }
+        .carousel-cell>span {
+            flex: 1 0 100%;
+        }
+
+        .carousel-cell img {
+            display: block;
+            max-height: 100%;
+            max-width: 100%;
+        }
+        /* position outside */
+        .flickity-button {
+            background: #e5e3e3 !important;
+        }
+        .flickity-button:hover {
+            background: #F90 !important;
+        }
+        .flickity-prev-next-button {
+            width: 30px !important;
+            height: 30px !important;
+            border-radius: 30px !important;
+        }
+        .flickity-prev-next-button.previous {
+            left: -40px !important;
+        }
+        .flickity-prev-next-button.next {
+            right: -40px !important;
+        }
+
+        @media screen and ( max-width: 768px ) {
+            /* half-width cells for larger devices */
+            .carousel-cell {
+                width: 25%;
+            }
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/flickity.min.css">
+    <script src="<?= base_url(); ?>assets/js/flickity.pkgd.min.js"></script>
 
 <?php endif; ?>

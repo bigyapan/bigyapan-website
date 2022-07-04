@@ -390,7 +390,6 @@ $(document).ready(function () {
  * AUTH FUNCTIONS
  *------------------------------------------------------------------------------------------
  */
-
 //login
 $(document).ready(function () {
     $("#form_login").submit(function (event) {
