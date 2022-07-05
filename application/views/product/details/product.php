@@ -40,11 +40,6 @@
                                     <li class="nav-item">
                                         <a class="nav-link active" id="tab_description" data-toggle="tab" href="#tab_description_content" role="tab" aria-controls="tab_description" aria-selected="true"><?php echo trans("description"); ?></a>
                                     </li>
-                                    <?php if (!empty($custom_fields)): ?>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="tab_additional_information" data-toggle="tab" href="#tab_additional_information_content" role="tab" aria-controls="tab_additional_information" aria-selected="false"><?php echo trans("additional_information"); ?></a>
-                                        </li>
-                                    <?php endif; ?>
                                     <?php if ($shipping_status == 1 || $product_location_status == 1): ?>
                                         <li class="nav-item">
                                             <?php if ($shipping_status == 1 && $product_location_status != 1): ?>
@@ -85,6 +80,23 @@
                                                 <div class="description">
                                                     <?= !empty($product_details->description) ? $product_details->description : ''; ?>
                                                 </div>
+                                                <?php if (!empty($custom_fields)): ?>
+                                                    <table class="table table-striped table-product-additional-information">
+                                                                    <tbody>
+                                                                    <?php foreach ($custom_fields as $custom_field):
+                                                                        $field_value = get_custom_field_product_values($custom_field, $product->id, $this->selected_lang->id);
+                                                                        if (!empty($field_value)):?>
+                                                                            <tr>
+                                                                                <td class="td-left"><?= parse_serialized_name_array($custom_field->name_array, $this->selected_lang->id); ?></td>
+                                                                                <td class="td-right"><?= html_escape($field_value); ?></td>
+                                                                            </tr>
+                                                                        <?php endif;
+                                                                    endforeach; ?>
+                                                                    </tbody>
+                                                                </table>
+
+                                                <?php endif; ?>
+
                                                 <div class="row-custom text-right m-b-10">
                                                     <?php if ($this->auth_check):
                                                         if ($product->user_id != $this->auth_user->id):?>
@@ -101,32 +113,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <?php if (!empty($custom_fields)): ?>
-                                        <div class="tab-pane fade" id="tab_additional_information_content" role="tabpanel">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <a class="card-link collapsed" data-toggle="collapse" href="#collapse_additional_information_content">
-                                                        <?php echo trans("additional_information"); ?><i class="icon-arrow-down"></i><i class="icon-arrow-up"></i>
-                                                    </a>
-                                                </div>
-                                                <div id="collapse_additional_information_content" class="collapse-description-content collapse" data-parent="#accordion">
-                                                    <table class="table table-striped table-product-additional-information">
-                                                        <tbody>
-                                                        <?php foreach ($custom_fields as $custom_field):
-                                                            $field_value = get_custom_field_product_values($custom_field, $product->id, $this->selected_lang->id);
-                                                            if (!empty($field_value)):?>
-                                                                <tr>
-                                                                    <td class="td-left"><?= parse_serialized_name_array($custom_field->name_array, $this->selected_lang->id); ?></td>
-                                                                    <td class="td-right"><?= html_escape($field_value); ?></td>
-                                                                </tr>
-                                                            <?php endif;
-                                                        endforeach; ?>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?php endif; ?>
                                     <?php if ($shipping_status == 1 || $product_location_status == 1): ?>
                                         <div class="tab-pane fade" id="tab_shipping_content" role="tabpanel">
                                             <div class="card">
