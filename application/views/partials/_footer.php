@@ -126,9 +126,13 @@
 </footer>
 <?php if (!isset($_COOKIE["modesy_cookies_warning"]) && $this->settings->cookies_warning): ?>
     <div class="cookies-warning">
-        <div class="text"><?php echo $this->settings->cookies_warning_text; ?></div>
-        <a href="javascript:void(0)" onclick="hide_cookies_warning();" class="icon-cl"> <i class="icon-close"></i></a>
+        <div class="text" style="margin:10px 0 0 0"><?php echo $this->settings->cookies_warning_text; ?></div>
+        <a href="javascript:void(0)" onclick="hide_cookies_warning();" class="icon-cl" style="margin:0 10px 0 0"> <i class="icon-close"></i></a>
+    <div style="display:flex;justify-content: right;margin:-30px 20px 10px 0;">
+        <button class="btn btn-md btn-custom btn-sell-now m-r-0" href="javascript:void(0)" onclick="hide_cookies_warning();">Accept Cookies</button>
     </div>
+    </div>
+
 <?php endif; ?>
 <a href="javascript:void(0)" class="scrollup"><i class="icon-arrow-up"></i></a>
 <script src="<?= base_url(); ?>assets/js/jquery-3.5.1.min.js"></script>
