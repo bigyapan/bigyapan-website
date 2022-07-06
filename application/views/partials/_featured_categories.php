@@ -15,11 +15,11 @@
             </div>
         </div>-->
     <div class="main-carousel"
-         data-flickity='{"cellAlign":"left","groupCells": 2,"draggable": ">1","contain": true,"pageDots": false }'>
+         data-flickity='{"cellAlign":"left","groupCells": 1,"draggable": ">1","contain": true,"pageDots": false }'>
         <?php foreach ($featured_categories as $category): ?>
             <a class="carousel-cell" href="<?php echo generate_category_url($category); ?>">
                 <img src="<?php echo get_category_image_url($category); ?>">
-                <span style="margin:-225px 0 0 30px;color:#ffffff;"><?php echo category_name($category); ?></span>
+                <span><?php echo category_name($category); ?></span>
             </a>
         <?php endforeach; ?>
     </div>
@@ -39,7 +39,7 @@
 
         .carousel-cell {
             width: 20%;
-            height: 125px;
+            height: 130px;
             border-radius: 5px;
             display: inline-flex;
             flex-direction: row;
@@ -50,10 +50,11 @@
             text-align: left;
         }
 
-        .carousel-cell>img {
+        .carousel-cell > img {
             flex: 1 0 100%;
         }
-        .carousel-cell>span {
+
+        .carousel-cell > span {
             flex: 1 0 100%;
         }
 
@@ -62,21 +63,32 @@
             max-height: 100%;
             max-width: 100%;
         }
+
+        .carousel-cell span {
+            margin: -225px 0 0 30px;
+            font-weight: bold;
+            color: #000;
+        }
+
         /* position outside */
         .flickity-button {
             background: #e5e3e3 !important;
         }
+
         .flickity-button:hover {
             background: #F90 !important;
         }
+
         .flickity-prev-next-button {
             width: 30px !important;
             height: 30px !important;
             border-radius: 30px !important;
         }
+
         .flickity-prev-next-button.previous {
             left: -40px !important;
         }
+
         .flickity-prev-next-button.next {
             right: -40px !important;
         }
