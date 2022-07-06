@@ -19,7 +19,7 @@
         <?php foreach ($featured_categories as $category): ?>
             <a class="carousel-cell" href="<?php echo generate_category_url($category); ?>">
                 <img src="<?php echo get_category_image_url($category); ?>">
-                <span><?php echo category_name($category); ?></span>
+                <span style="margin:-225px 0 0 30px;color:#ffffff;"><?php echo category_name($category); ?></span>
             </a>
         <?php endforeach; ?>
     </div>
@@ -38,7 +38,7 @@
         }
 
         .carousel-cell {
-            width: 15%;
+            width: 20%;
             height: 125px;
             border-radius: 5px;
             display: inline-flex;
@@ -47,7 +47,7 @@
             margin-right: 10px;
             align-items: center;
             justify-content: center;
-            text-align: center;
+            text-align: left;
         }
 
         .carousel-cell>img {
@@ -84,7 +84,7 @@
         @media screen and ( max-width: 768px ) {
             /* half-width cells for larger devices */
             .carousel-cell {
-                width: 25%;
+                width: 50%;
             }
         }
 
