@@ -85,7 +85,13 @@
             border-radius: 30px !important;
         }
 
+        .flickity-prev-next-button.previous {
+            left: -40px !important;
+        }
 
+        .flickity-prev-next-button.next {
+            right: -40px !important;
+        }
 
         @media screen and ( max-width: 768px ) {
             /* half-width cells for larger devices */
