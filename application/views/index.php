@@ -19,7 +19,7 @@
                 </div>
             </div>
             <?php if (item_count($featured_categories) > 0 && $this->general_settings->featured_categories == 1): ?>
-                <div class="col-12 section section-categories">
+                <div class="col-12 section section-categories" style="margin-bottom:0;">
                     <!-- featured categories -->
                     <?php $this->load->view("partials/_featured_categories"); ?>
                 </div>
@@ -79,6 +79,8 @@
         </div>
     </div>
 </div>
+
+
 <!-- Wrapper End-->
 
 

@@ -1,5 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div id="wrapper">
+    <div class="col-12">
+        <!--Include banner-->
+        <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "products", "class" => "m-b-15"]); ?>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -226,10 +230,7 @@
                     </div>
                 </div>
 
-                <div class="col-12">
-                    <!--Include banner-->
-                    <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "products", "class" => "m-t-15"]); ?>
-                </div>
+
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@
          data-flickity='{"cellAlign":"left","groupCells": 1,"draggable": ">1","contain": true,"pageDots": false }'>
         <?php foreach ($featured_categories as $category): ?>
             <a class="carousel-cell" href="<?php echo generate_category_url($category); ?>">
-                <img src="<?php echo get_category_image_url($category); ?>">
+                <img class="carousel-image" src="<?php echo get_category_image_url($category); ?>">
                 <span><?php echo category_name($category); ?></span>
             </a>
         <?php endforeach; ?>
@@ -38,14 +38,15 @@
         }
 
         .carousel-cell {
-            width: 20%;
-            height: 130px;
+            width: 16%;
+            height:100px;
+            padding-bottom:0;
             border-radius: 5px;
             display: inline-flex;
             flex-direction: row;
             flex-wrap: wrap;
             margin-right: 10px;
-            align-items: center;
+            align-items: start;
             justify-content: center;
             text-align: left;
         }
@@ -65,9 +66,11 @@
         }
 
         .carousel-cell span {
-            margin: -225px 0 0 30px;
+            margin: -95px 0 0 0;
             font-weight: bold;
-            color: #000;
+            font-size:12px;
+            color: #212121;
+            padding: 0 10px 0 10px;
         }
 
         /* position outside */
@@ -96,7 +99,9 @@
         @media screen and ( max-width: 768px ) {
             /* half-width cells for larger devices */
             .carousel-cell {
+                height:110px;
                 width: 50%;
+                padding-bottom:0;
             }
 
             .flickity-prev-next-button.previous {
@@ -107,9 +112,17 @@
                 visibility: hidden;
 
             }
+
+            .carousel-cell span {
+                margin: -105px 0 0 0;
+                font-weight: bold;
+                color: #212121;
+                padding: 0 10px 0 10px;
+            }
         }
 
     </style>
+
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/flickity.min.css">
     <script src="<?= base_url(); ?>assets/js/flickity.pkgd.min.js"></script>
 

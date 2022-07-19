@@ -34,7 +34,7 @@
                         <?php endif; ?>
                         <?php if ($ad_codes->ad_space == "products_sidebar" || $ad_codes->ad_space == "blog_post_details_sidebar" || $ad_codes->ad_space == "profile_sidebar"): ?>
                             <p>
-                                <label class="label label-primary">160x600 <?php echo trans('banner'); ?></label>&nbsp;&nbsp;
+                                <label class="label label-primary">225x600 <?php echo trans('banner'); ?></label>&nbsp;&nbsp;
                                 <small>(This ad will be shown on screens larger than 768px)</small>
                             </p>
                         <?php else: ?>
@@ -104,7 +104,7 @@
                         <?php endif; ?>
 
                         <p>
-                            <label class="label label-primary">728x90 <?php echo trans('banner'); ?></label>&nbsp;&nbsp;
+                            <label class="label label-primary">1240x90 <?php echo trans('banner'); ?></label>&nbsp;&nbsp;
                             <small>(This ad will be shown on screens larger than 1200px)</small>
                         </p>
                         <div class="row row-ad-space">

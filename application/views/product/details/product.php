@@ -4,6 +4,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <div class="row-custom row-bn">
+                        <!--Include banner-->
+                        <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "product", "class" => "m-b-30"]); ?>
+                    </div>
+                </div>
+                <div class="col-12">
                     <nav class="nav-breadcrumb" aria-label="breadcrumb">
                         <ol class="breadcrumb breadcrumb-products">
                             <li class="breadcrumb-item"><a
@@ -21,6 +27,7 @@
                 </div>
 
                 <div class="col-12">
+
                     <div class="product-details-container <?php echo ((!empty($video) || !empty($audio)) && item_count($product_images) < 2) ? "product-details-container-digital" : ""; ?>">
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-6">
@@ -370,13 +377,6 @@
 
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="row-custom row-bn">
-                        <!--Include banner-->
-                        <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "product", "class" => "m-b-30"]); ?>
                     </div>
                 </div>
                 <?php if (!empty($user_products) && $this->general_settings->multi_vendor_system == 1): ?>
