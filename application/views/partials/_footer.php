@@ -207,7 +207,6 @@ endif; ?>
             $('#modal_newsletter').modal('show');
         });</script>
 <?php endif; ?>
-<?= $this->general_settings->google_analytics; ?>
 <?= $this->general_settings->custom_javascript_codes; ?>
 </body>
 </html>
