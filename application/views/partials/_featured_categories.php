@@ -116,7 +116,7 @@
             }
 
             .carousel-cell span {
-                margin: -55px 0 0 0 !important ;
+                margin: -60px 0 0 0 !important ;
                 font-weight: bold;
                 font-size: 8px !important ;
                 color: #212121;
