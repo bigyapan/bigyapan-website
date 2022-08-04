@@ -101,8 +101,8 @@
         @media screen and ( max-width: 768px ) {
             /* half-width cells for larger devices */
             .carousel-cell {
-                height:65px !important;
-                width: 33% !important;
+                height:110px;
+                width: 50%;
                 padding-bottom:0;
             }
 
@@ -116,9 +116,8 @@
             }
 
             .carousel-cell span {
-                margin: -60px 0 0 0 !important ;
+                margin: -105px 0 0 0;
                 font-weight: bold;
-                font-size: 8px !important ;
                 color: #212121;
                 padding: 0 10px 0 10px;
             }
