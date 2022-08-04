@@ -18,13 +18,6 @@
                     <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "index_1", "class" => ""]); ?>
                 </div>
             </div>
-            <?php if (item_count($featured_categories) > 0 && $this->general_settings->featured_categories == 1): ?>
-                <div class="col-12 section section-categories" style="margin-bottom:0;">
-                    <!-- featured categories -->
-                    <?php $this->load->view("partials/_featured_categories"); ?>
-                </div>
-            <?php endif; ?>
-
 
 
             <?php $this->load->view('product/_special_offers', ['index_categories' => $index_categories]); ?>
@@ -34,6 +27,12 @@
                 <div class="col-12 section section-promoted">
                     <!-- promoted products -->
                     <?php $this->load->view("product/_featured_products"); ?>
+                </div>
+            <?php endif; ?>
+            <?php if (item_count($featured_categories) > 0 && $this->general_settings->featured_categories == 1): ?>
+                <div class="col-12 section section-categories" style="margin-bottom:0;">
+                    <!-- featured categories -->
+                    <?php $this->load->view("partials/_featured_categories"); ?>
                 </div>
             <?php endif; ?>
             <?php $this->load->view("product/_index_banners", ['banner_location' => 'featured_products']); ?>
