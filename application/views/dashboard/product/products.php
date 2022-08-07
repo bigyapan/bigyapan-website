@@ -26,9 +26,9 @@
                             <th><?php echo trans('sku'); ?></th>
                             <th><?php echo trans('product_type'); ?></th>
                             <th><?php echo trans('category'); ?></th>
-                            <?php if (!empty($promote_status)): ?>
-                                <th><?php echo trans('purchased_plan'); ?></th>
-                            <?php endif; ?>
+                            <?php /*if (!empty($promote_status)): */?><!--
+                                <th><?php /*echo trans('purchased_plan'); */?></th>
+                            --><?php /*endif; */?>
                             <th><?= $this->general_settings->classified_ads_system == 1 ? trans("stock") . "/" . trans("status") : trans("stock"); ?></th>
                             <th><?php echo trans('page_views'); ?></th>
                             <th><?php echo trans('date'); ?></th>
@@ -61,17 +61,17 @@
                                             echo html_escape($category->name);
                                         } ?>
                                     </td>
-                                    <?php if (!empty($promote_status)): ?>
+                                   <!-- <?php /*if (!empty($promote_status)): */?>
                                         <td>
-                                            <?php if ($item->is_draft != 1):
+                                            <?php /*if ($item->is_draft != 1):
                                                 if ($item->is_promoted == 1 && $item->promote_plan != "none"):
                                                     echo $item->promote_plan;
-                                                else: ?>
-                                                    <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modalPricing" onclick="$('.pricing_product_id').val(<?= $item->id; ?>);"><i class="fa fa-plus"></i>&nbsp;<?= trans("promote"); ?></button>
-                                                <?php endif;
-                                            endif; ?>
+                                                else: */?>
+                                                    <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modalPricing" onclick="$('.pricing_product_id').val(<?/*= $item->id; */?>);"><i class="fa fa-plus"></i>&nbsp;<?/*= trans("promote"); */?></button>
+                                                <?php /*endif;
+                                            endif; */?>
                                         </td>
-                                    <?php endif; ?>
+                                    --><?php /*endif; */?>
                                     <td class="white-space-nowrap"><?= get_product_stock_status($item); ?></td>
                                     <td><?php echo $item->pageviews; ?></td>
                                     <td><?php echo formatted_date($item->created_at); ?></td>
