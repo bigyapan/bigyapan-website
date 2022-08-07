@@ -12,7 +12,7 @@
                                 </div>
                             </div>
                             <div class="row-custom">
-                                <div class="footer-about">
+                                <div class="footer-about" style="text-align:justify">
                                     <?= $this->settings->about_footer; ?>
                                 </div>
                             </div>
