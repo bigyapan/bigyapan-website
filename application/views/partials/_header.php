@@ -191,10 +191,6 @@
                         <div class="menu-icon">
                             <a href="javascript:void(0)" class="btn-open-mobile-nav"><i class="icon-menu"></i></a>
                         </div>
-                        <div class="mobile-logo">
-                            <a href="<?php echo lang_base_url(); ?>"><img
-                                        src="<?php echo get_logo($this->general_settings); ?>" alt="logo" class="logo"></a>
-                        </div>
                         <div class="mobile-search">
                             <?php if ($this->auth_check): ?>
                                 <a href="<?php echo base_url(); ?>logout" class="login-icon">
@@ -204,8 +200,12 @@
                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#loginModal"
                                    class="login-icon nav-link close-menu-click"><i class="icon-user"></i></a>
                             <?php endif; ?>
-
                         </div>
+                        <div class="mobile-logo">
+                            <a href="<?php echo lang_base_url(); ?>"><img
+                                        src="<?php echo get_logo($this->general_settings); ?>" alt="logo" class="logo"></a>
+                        </div>
+
 
                         <div class="mobile-search">
                             <a class="search-icon"><i class="icon-search"></i></a>
