@@ -17,47 +17,6 @@
                 <div class="col-sm-12 nav-mobile-links">
                     <div id="navbar_mobile_back_button"></div>
                     <ul id="navbar_mobile_categories" class="navbar-nav">
-                        <?php if (!empty($this->parent_categories)):
-                            foreach ($this->parent_categories as $category):
-                                if ($category->has_subcategory > 0): ?>
-                                    <li class="nav-item">
-                                        <a href="javascript:void(0)" class="nav-link" data-id="<?= $category->id; ?>" data-parent-id="<?= $category->parent_id; ?>"><?php echo category_name($category); ?><i class="icon-arrow-right"></i></a>
-                                    </li>
-                                <?php else: ?>
-                                    <li class="nav-item">
-                                        <a href="<?php echo generate_category_url($category); ?>" class="nav-link"><?php echo category_name($category); ?></a>
-                                    </li>
-                                <?php endif; ?>
-                            <?php endforeach;
-                        endif; ?>
-                    </ul>
-                    <ul id="navbar_mobile_links" class="navbar-nav">
-                        <?php if ($this->auth_check): ?>
-                            <li class="nav-item">
-                                <a href="<?php echo generate_url("wishlist") . "/" . $this->auth_user->slug; ?>" class="nav-link">
-                                    <?php echo trans("wishlist"); ?>
-                                </a>
-                            </li>
-                        <?php else: ?>
-                            <li class="nav-item">
-                                <a href="<?php echo generate_url("wishlist"); ?>" class="nav-link">
-                                    <?php echo trans("wishlist"); ?>
-                                </a>
-                            </li>
-                        <?php endif; ?>
-
-                        <?php if (!empty($this->menu_links)):
-                            foreach ($this->menu_links as $menu_link):
-                                if ($menu_link->page_default_name == 'blog' || $menu_link->page_default_name == 'contact' || $menu_link->location == 'top_menu'):
-                                    $item_link = generate_menu_item_url($menu_link);
-                                    if (!empty($menu_link->page_default_name)):
-                                        $item_link = generate_url($menu_link->page_default_name);
-                                    endif; ?>
-                                    <li class="nav-item"><a href="<?= $item_link; ?>" class="nav-link"><?= html_escape($menu_link->title); ?></a></li>
-                                <?php endif;
-                            endforeach;
-                        endif; ?>
-
                         <?php if ($this->auth_check): ?>
                             <li class="dropdown profile-dropdown nav-item">
                                 <a href="#" class="dropdown-toggle image-profile-drop nav-link" data-toggle="dropdown" aria-expanded="false">
@@ -149,6 +108,46 @@
                             <li class="nav-item"><a href="javascript:void(0)" data-toggle="modal" data-target="#loginModal" class="nav-link close-menu-click"><?php echo trans("login"); ?></a></li>
                             <li class="nav-item"><a href="<?php echo generate_url("register"); ?>" class="nav-link"><?php echo trans("register"); ?></a></li>
                         <?php endif; ?>
+                        <?php if (!empty($this->parent_categories)):
+                            foreach ($this->parent_categories as $category):
+                                if ($category->has_subcategory > 0): ?>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0)" class="nav-link" data-id="<?= $category->id; ?>" data-parent-id="<?= $category->parent_id; ?>"><?php echo category_name($category); ?><i class="icon-arrow-right"></i></a>
+                                    </li>
+                                <?php else: ?>
+                                    <li class="nav-item">
+                                        <a href="<?php echo generate_category_url($category); ?>" class="nav-link"><?php echo category_name($category); ?></a>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach;
+                        endif; ?>
+                    </ul>
+                    <ul id="navbar_mobile_links" class="navbar-nav">
+                        <?php if ($this->auth_check): ?>
+                            <li class="nav-item">
+                                <a href="<?php echo generate_url("wishlist") . "/" . $this->auth_user->slug; ?>" class="nav-link">
+                                    <?php echo trans("wishlist"); ?>
+                                </a>
+                            </li>
+                        <?php else: ?>
+                            <li class="nav-item">
+                                <a href="<?php echo generate_url("wishlist"); ?>" class="nav-link">
+                                    <?php echo trans("wishlist"); ?>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+
+                        <?php if (!empty($this->menu_links)):
+                            foreach ($this->menu_links as $menu_link):
+                                if ($menu_link->page_default_name == 'blog' || $menu_link->page_default_name == 'contact' || $menu_link->location == 'top_menu'):
+                                    $item_link = generate_menu_item_url($menu_link);
+                                    if (!empty($menu_link->page_default_name)):
+                                        $item_link = generate_url($menu_link->page_default_name);
+                                    endif; ?>
+                                    <li class="nav-item"><a href="<?= $item_link; ?>" class="nav-link"><?= html_escape($menu_link->title); ?></a></li>
+                                <?php endif;
+                            endforeach;
+                        endif; ?>
 
                         <?php if ($this->general_settings->location_search_header == 1 && item_count($this->countries) > 0): ?>
                             <li class="nav-item nav-item-messages">
