@@ -9079,7 +9079,7 @@ img {
     display: none;
     width: 100%;
     min-width: 250px;
-    min-height: 250px;
+    min-height: 100px;
     position: relative;
     text-align: center;
     float: left;
@@ -9099,7 +9099,7 @@ img {
     display: none;
     width: 100%;
     min-width: 250px;
-    min-height: 250px;
+    min-height: 100px;
     position: relative;
     float: left;
     text-align: center

@@ -66,7 +66,7 @@
                         </div>
 
                         <p>
-                            <label class="label label-primary">250x250 <?php echo trans('banner'); ?></label>&nbsp;&nbsp;
+                            <label class="label label-primary">380x100 <?php echo trans('banner'); ?></label>&nbsp;&nbsp;
                             <small>(This ad will be shown on screens smaller than 768px)</small>
                         </p>
                         <div class="row row-ad-space">
@@ -155,7 +155,7 @@
                             </div>
                         </div>
 
-                        <p><label class="label label-primary">250x250 <?php echo trans('banner'); ?></label>&nbsp;&nbsp;
+                        <p><label class="label label-primary">380x100 <?php echo trans('banner'); ?></label>&nbsp;&nbsp;
                             <small>(This ad will be shown on screens smaller than 576px)</small>
                         </p>
                         <div class="row row-ad-space">
