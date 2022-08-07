@@ -8885,7 +8885,7 @@ img {
     display: none;
     position: fixed;
     bottom: 20px;
-    right: 15px;
+    left: 15px;
     color: #fff !important;
     z-index: 999999;
 }
