@@ -1844,6 +1844,16 @@ img {
     cursor: pointer;
 }
 
+.nav-mobile-header-container .mobile-search .login-icon {
+    position: relative;
+    display: inline-block;
+    font-size: 21px !important;
+    line-height: 24px;
+    padding: 12px;
+    color: #222 !important;
+    cursor: pointer;
+}
+
 .nav-mobile-header-container .mobile-search .search-icon .icon-close {
     font-size: 24px !important;
 }
