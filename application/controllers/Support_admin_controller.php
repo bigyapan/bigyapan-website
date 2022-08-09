@@ -271,9 +271,14 @@ class Support_admin_controller extends Admin_Core_Controller
      */
     public function send_message_post()
     {
+        $user_id = 0;
+        if ($this->auth_check) {
+            $user_id = user()->id;
+        }
+
         $is_support_reply = true;
         $ticket_id = $this->input->post('ticket_id');
-        if ($this->support_model->add_subticket($ticket_id, $is_support_reply)) {
+        if ($this->support_model->add_subticket($ticket_id,$user_id, $is_support_reply)) {
             $this->session->set_flashdata('success', trans("msg_message_sent"));
         } else {
             $this->session->set_flashdata('error', trans("msg_error"));
