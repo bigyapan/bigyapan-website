@@ -23,6 +23,7 @@ Table of Content
 /* ============ 1. General layout CSS styles ============ */
 html {
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-x: hidden;
 }
 
 body {
@@ -31,7 +32,7 @@ body {
     font-style: normal;
     color: #222 !important;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    oveflow-x: hidden !important;
+    overflow-x: hidden !important;
 }
 
 a {
