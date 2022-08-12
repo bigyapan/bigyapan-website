@@ -18,9 +18,10 @@
             <div class="row">
                 <div class="col-sm-12 nav-mobile-links">
                     <div id="navbar_mobile_back_button"></div>
-                    <ul id="navbar_mobile_categories" class="navbar-nav">
+                    <ul class="navbar-nav" style="padding-bottom:0;" >
                         <?php if ($this->auth_check): ?>
-                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;" class="dropdown profile-dropdown nav-item">
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;"
+                                class="dropdown profile-dropdown nav-item">
                                 <a href="#" class="dropdown-toggle image-profile-drop nav-link" data-toggle="dropdown"
                                    aria-expanded="false">
                                     <?php if ($unread_message_count > 0): ?>
@@ -125,25 +126,26 @@
                             </li>
 
                         <?php endif; ?>
-                        <div style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px;margin-bottom:6px;">
-                            <?php if (!empty($this->parent_categories)):
-                                foreach ($this->parent_categories as $category):
-                                    if ($category->has_subcategory > 0): ?>
-                                        <li class="nav-item">
-                                            <a href="javascript:void(0)" class="nav-link"
-                                               data-id="<?= $category->id; ?>"
-                                               data-parent-id="<?= $category->parent_id; ?>"><?php echo category_name($category); ?>
-                                                <i class="icon-arrow-right"></i></a>
-                                        </li>
-                                    <?php else: ?>
-                                        <li class="nav-item">
-                                            <a href="<?php echo generate_category_url($category); ?>"
-                                               class="nav-link"><?php echo category_name($category); ?></a>
-                                        </li>
-                                    <?php endif; ?>
-                                <?php endforeach;
-                            endif; ?>
-                        </div>
+                    </ul>
+                    <ul style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;"  id="navbar_mobile_categories" class="navbar-nav">
+
+                        <?php if (!empty($this->parent_categories)):
+                            foreach ($this->parent_categories as $category):
+                                if ($category->has_subcategory > 0): ?>
+                                    <li class="nav-item">
+                                        <a href="javascript:void(0)" class="nav-link"
+                                           data-id="<?= $category->id; ?>"
+                                           data-parent-id="<?= $category->parent_id; ?>"><?php echo category_name($category); ?>
+                                            <i class="icon-arrow-right"></i></a>
+                                    </li>
+                                <?php else: ?>
+                                    <li class="nav-item">
+                                        <a href="<?php echo generate_category_url($category); ?>"
+                                           class="nav-link"><?php echo category_name($category); ?></a>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach;
+                        endif; ?>
                     </ul>
                     <ul id="navbar_mobile_links" class="navbar-nav">
                         <?php if ($this->auth_check): ?>
