@@ -18,7 +18,7 @@
          data-flickity='{"cellAlign":"left","groupCells": 1,"draggable": ">1","contain": true,"pageDots": false }'>
         <?php foreach ($featured_categories as $category): ?>
             <?php if ($category->featured_order == 2): ?>
-                <a class="carousel-cell" href="<?php echo generate_category_url($category); ?>">
+                <a class="carousel-cell-2" href="<?php echo generate_category_url($category); ?>">
                     <img class="carousel-image" src="<?php echo get_category_image_url($category); ?>">
                     <span><?php echo category_name($category); ?></span>
                 </a>
@@ -39,9 +39,9 @@
             background: #EEE;
         }
 
-        .carousel-cell {
-            width: 16%;
-            height:100px;
+        .carousel-cell-2 {
+            width: 25%;
+            height:135px;
             padding-bottom:0;
             border-radius: 5px;
             display: inline-flex;
@@ -50,25 +50,25 @@
             margin-right: 10px;
             align-items: start;
             justify-content: center;
-            text-align: left;
+            text-align: center;
         }
 
-        .carousel-cell > img {
+        .carousel-cell-2 > img {
             flex: 1 0 100%;
         }
 
-        .carousel-cell > span {
+        .carousel-cell-2 > span {
             flex: 1 0 100%;
         }
 
-        .carousel-cell img {
+        .carousel-cell-2 img {
             display: block;
             max-height: 100%;
             max-width: 100%;
         }
 
-        .carousel-cell span {
-            margin: -95px 0 0 0;
+        .carousel-cell-2 span {
+            margin: -100px 0 0 0;
             font-weight: bold;
             font-size:12px;
             color: #212121;
@@ -100,7 +100,7 @@
 
         @media screen and ( max-width: 768px ) {
             /* half-width cells for larger devices */
-            .carousel-cell {
+            .carousel-cell-2 {
                 height:110px;
                 width: 50%;
                 padding-bottom:0;
@@ -115,7 +115,7 @@
 
             }
 
-            .carousel-cell span {
+            .carousel-cell-2 span {
                 margin: -105px 0 0 0;
                 font-weight: bold;
                 color: #212121;

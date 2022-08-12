@@ -10,6 +10,12 @@
 <div id="wrapper" class="index-wrapper">
     <div class="container">
         <div class="row">
+            <?php if (item_count($featured_categories) > 0 && $this->general_settings->featured_categories == 1): ?>
+                <div class="col-12 section section-categories" style="margin-bottom:20px;">
+                    <!-- featured categories -->
+                    <?php $this->load->view("partials/_featured_categories"); ?>
+                </div>
+            <?php endif; ?>
             <h1 class="index-title"><?php echo html_escape($this->settings->site_title); ?></h1>
             <?php $this->load->view("product/_index_banners", ['banner_location' => 'featured_categories']); ?>
             <div class="col-12">
@@ -29,12 +35,7 @@
                     <?php $this->load->view("product/_featured_products"); ?>
                 </div>
             <?php endif; ?>
-            <?php if (item_count($featured_categories) > 0 && $this->general_settings->featured_categories == 1): ?>
-                <div class="col-12 section section-categories" style="margin-bottom:20px;">
-                    <!-- featured categories -->
-                    <?php $this->load->view("partials/_featured_categories"); ?>
-                </div>
-            <?php endif; ?>
+
             <?php $this->load->view("product/_index_banners", ['banner_location' => 'featured_products']); ?>
 
             <?php if ($this->general_settings->index_latest_products == 1 && !empty($latest_products)): ?>

@@ -22,7 +22,7 @@ if ($this->general_settings->selected_navigation == 1): ?>
                                        data-has-sb="<?= !empty($category->has_subcategory) ? '1' : '0'; ?>"><?php echo category_name($category); ?>
                                     </a>
                                 </li>
-                                <li style="display:flex;align-items:center;padding:0 4px 0 4px" class="nav-item-arrow dropdown" data-category-id="<?php echo $category->id; ?>">
+                                <li style="display:flex;align-items:center;padding:0 4px 0 4px" class="nav-item nav-item-arrow dropdown" data-category-id="<?php echo $category->id; ?>">
                                     <?php if (!empty($category->has_subcategory)): ?>
                                         <i class="icon-arrow-down menu-arrow"
                                            data-category-id="<?php echo $category->id; ?>"

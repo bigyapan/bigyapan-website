@@ -6,9 +6,11 @@
                 <div class="col-sm-12 mobile-nav-buttons">
                     <?php if (is_multi_vendor_active()):
                         if ($this->auth_check): ?>
-                            <a href="<?= generate_dash_url("add_product"); ?>" class="btn btn-md btn-custom btn-block"><?= trans("sell_now"); ?></a>
+                            <a href="<?= generate_dash_url("add_product"); ?>"
+                               class="btn btn-md btn-custom btn-block"><?= trans("sell_now"); ?></a>
                         <?php else: ?>
-                            <a href="javascript:void(0)" class="btn btn-md btn-custom btn-block close-menu-click" data-toggle="modal" data-target="#loginModal"><?php echo trans("sell_now"); ?></a>
+                            <a href="javascript:void(0)" class="btn btn-md btn-custom btn-block close-menu-click"
+                               data-toggle="modal" data-target="#loginModal"><?php echo trans("sell_now"); ?></a>
                         <?php endif;
                     endif; ?>
                 </div>
@@ -19,11 +21,13 @@
                     <ul id="navbar_mobile_categories" class="navbar-nav">
                         <?php if ($this->auth_check): ?>
                             <li class="dropdown profile-dropdown nav-item">
-                                <a href="#" class="dropdown-toggle image-profile-drop nav-link" data-toggle="dropdown" aria-expanded="false">
+                                <a href="#" class="dropdown-toggle image-profile-drop nav-link" data-toggle="dropdown"
+                                   aria-expanded="false">
                                     <?php if ($unread_message_count > 0): ?>
                                         <span class="message-notification message-notification-mobile"><?= $unread_message_count; ?></span>
                                     <?php endif; ?>
-                                    <img src="<?php echo get_user_avatar($this->auth_user); ?>" alt="<?php echo html_escape($this->auth_user->username); ?>">
+                                    <img src="<?php echo get_user_avatar($this->auth_user); ?>"
+                                         alt="<?php echo html_escape($this->auth_user->username); ?>">
                                     <?php echo get_shop_name($this->auth_user); ?> <span class="icon-arrow-down"></span>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -74,7 +78,8 @@
                                         <?php endif; ?>
                                         <li>
                                             <a href="<?php echo generate_url("refund_requests"); ?>">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="mds-svg-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                     fill="currentColor" viewBox="0 0 16 16" class="mds-svg-icon">
                                                     <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z"/>
                                                 </svg>
                                                 <?php echo trans("refund"); ?>
@@ -105,18 +110,30 @@
                                 </ul>
                             </li>
                         <?php else: ?>
-                            <li class="nav-item"><a href="javascript:void(0)" data-toggle="modal" data-target="#loginModal" class="nav-link close-menu-click"><?php echo trans("login"); ?></a></li>
-                            <li class="nav-item"><a href="<?php echo generate_url("register"); ?>" class="nav-link"><?php echo trans("register"); ?></a></li>
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px;" class="nav-item"><a style="font-weight: bold;color: #212121;text-transform: uppercase;"
+                                                                                                                                                 href="<?php echo generate_url("register"); ?>"
+                                                                                                                                                 class="nav-link"><i
+                                            class="icon-user-plus"></i><?php echo trans("register"); ?></a></li>
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-top:6px;" class="nav-item"><a style="font-weight: bold;color: #212121;text-transform: uppercase;"
+                                                    href="javascript:void(0)" data-toggle="modal"
+                                                    data-target="#loginModal"
+                                                    class="nav-link close-menu-click"><i
+                                            class="icon-user"></i><?php echo trans("login"); ?></a>
+                            </li>
+
                         <?php endif; ?>
                         <?php if (!empty($this->parent_categories)):
                             foreach ($this->parent_categories as $category):
                                 if ($category->has_subcategory > 0): ?>
                                     <li class="nav-item">
-                                        <a href="javascript:void(0)" class="nav-link" data-id="<?= $category->id; ?>" data-parent-id="<?= $category->parent_id; ?>"><?php echo category_name($category); ?><i class="icon-arrow-right"></i></a>
+                                        <a href="javascript:void(0)" class="nav-link" data-id="<?= $category->id; ?>"
+                                           data-parent-id="<?= $category->parent_id; ?>"><?php echo category_name($category); ?>
+                                            <i class="icon-arrow-right"></i></a>
                                     </li>
                                 <?php else: ?>
                                     <li class="nav-item">
-                                        <a href="<?php echo generate_category_url($category); ?>" class="nav-link"><?php echo category_name($category); ?></a>
+                                        <a href="<?php echo generate_category_url($category); ?>"
+                                           class="nav-link"><?php echo category_name($category); ?></a>
                                     </li>
                                 <?php endif; ?>
                             <?php endforeach;
@@ -125,7 +142,8 @@
                     <ul id="navbar_mobile_links" class="navbar-nav">
                         <?php if ($this->auth_check): ?>
                             <li class="nav-item">
-                                <a href="<?php echo generate_url("wishlist") . "/" . $this->auth_user->slug; ?>" class="nav-link">
+                                <a href="<?php echo generate_url("wishlist") . "/" . $this->auth_user->slug; ?>"
+                                   class="nav-link">
                                     <?php echo trans("wishlist"); ?>
                                 </a>
                             </li>
@@ -144,14 +162,17 @@
                                     if (!empty($menu_link->page_default_name)):
                                         $item_link = generate_url($menu_link->page_default_name);
                                     endif; ?>
-                                    <li class="nav-item"><a href="<?= $item_link; ?>" class="nav-link"><?= html_escape($menu_link->title); ?></a></li>
+                                    <li class="nav-item"><a href="<?= $item_link; ?>"
+                                                            class="nav-link"><?= html_escape($menu_link->title); ?></a>
+                                    </li>
                                 <?php endif;
                             endforeach;
                         endif; ?>
 
                         <?php if ($this->general_settings->location_search_header == 1 && item_count($this->countries) > 0): ?>
                             <li class="nav-item nav-item-messages">
-                                <a href="javascript:void(0)" data-toggle="modal" data-target="#locationModal" class="nav-link btn-modal-location close-menu-click">
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#locationModal"
+                                   class="nav-link btn-modal-location close-menu-click">
                                     <i class="icon-map-marker float-left"></i>&nbsp;<?= !empty($this->default_location_input) ? $this->default_location_input : trans("location"); ?>
                                 </a>
                             </li>
@@ -160,14 +181,18 @@
                         <?php if (!empty($this->currencies)): ?>
                             <li class="nav-item dropdown language-dropdown currency-dropdown currency-dropdown-mobile">
                                 <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                                    <?= $this->selected_currency->code; ?>&nbsp;(<?= $this->selected_currency->symbol; ?>)<i class="icon-arrow-down"></i>
+                                    <?= $this->selected_currency->code; ?>
+                                    &nbsp;(<?= $this->selected_currency->symbol; ?>)<i class="icon-arrow-down"></i>
                                 </a>
                                 <?php echo form_open('set-selected-currency-post'); ?>
                                 <ul class="dropdown-menu">
                                     <?php foreach ($this->currencies as $currency):
                                         if ($currency->status == 1):?>
                                             <li>
-                                                <button type="submit" name="currency" value="<?= $currency->code; ?>"><?= $currency->code; ?>&nbsp;(<?= $currency->symbol; ?>)</button>
+                                                <button type="submit" name="currency"
+                                                        value="<?= $currency->code; ?>"><?= $currency->code; ?>
+                                                    &nbsp;(<?= $currency->symbol; ?>)
+                                                </button>
                                             </li>
                                         <?php endif;
                                     endforeach; ?>
@@ -184,7 +209,8 @@
                                 <ul class="mobile-language-options">
                                     <?php foreach ($this->languages as $language): ?>
                                         <li>
-                                            <a href="<?= convert_url_by_language($language); ?>" class="dropdown-item <?php echo ($language->id == $this->selected_lang->id) ? 'selected' : ''; ?>">
+                                            <a href="<?= convert_url_by_language($language); ?>"
+                                               class="dropdown-item <?php echo ($language->id == $this->selected_lang->id) ? 'selected' : ''; ?>">
                                                 <?= html_escape($language->name); ?>
                                             </a>
                                         </li>
