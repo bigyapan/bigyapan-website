@@ -20,7 +20,7 @@
                     <div id="navbar_mobile_back_button"></div>
                     <ul id="navbar_mobile_categories" class="navbar-nav">
                         <?php if ($this->auth_check): ?>
-                            <li class="dropdown profile-dropdown nav-item">
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;" class="dropdown profile-dropdown nav-item">
                                 <a href="#" class="dropdown-toggle image-profile-drop nav-link" data-toggle="dropdown"
                                    aria-expanded="false">
                                     <?php if ($unread_message_count > 0): ?>
@@ -110,46 +110,56 @@
                                 </ul>
                             </li>
                         <?php else: ?>
-                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px;" class="nav-item"><a style="font-weight: bold;color: #212121;text-transform: uppercase;"
-                                                                                                                                                 href="<?php echo generate_url("register"); ?>"
-                                                                                                                                                 class="nav-link"><i
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;"
+                                class="nav-item"><a style="font-weight: bold;color: #212121;text-transform: uppercase;"
+                                                    href="<?php echo generate_url("register"); ?>"
+                                                    class="nav-link"><i
                                             class="icon-user-plus"></i><?php echo trans("register"); ?></a></li>
-                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-top:6px;" class="nav-item"><a style="font-weight: bold;color: #212121;text-transform: uppercase;"
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;"
+                                class="nav-item"><a style="font-weight: bold;color: #212121;text-transform: uppercase;"
                                                     href="javascript:void(0)" data-toggle="modal"
                                                     data-target="#loginModal"
                                                     class="nav-link close-menu-click"><i
-                                            class="fa fa-sign-in" style="font-size:24px;"></i><?php echo trans("login"); ?></a>
+                                            class="fa fa-sign-in"
+                                            style="font-size:24px;"></i><?php echo trans("login"); ?></a>
                             </li>
 
                         <?php endif; ?>
-                        <?php if (!empty($this->parent_categories)):
-                            foreach ($this->parent_categories as $category):
-                                if ($category->has_subcategory > 0): ?>
-                                    <li class="nav-item">
-                                        <a href="javascript:void(0)" class="nav-link" data-id="<?= $category->id; ?>"
-                                           data-parent-id="<?= $category->parent_id; ?>"><?php echo category_name($category); ?>
-                                            <i class="icon-arrow-right"></i></a>
-                                    </li>
-                                <?php else: ?>
-                                    <li class="nav-item">
-                                        <a href="<?php echo generate_category_url($category); ?>"
-                                           class="nav-link"><?php echo category_name($category); ?></a>
-                                    </li>
-                                <?php endif; ?>
-                            <?php endforeach;
-                        endif; ?>
+                        <div style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px;margin-bottom:6px;">
+                            <?php if (!empty($this->parent_categories)):
+                                foreach ($this->parent_categories as $category):
+                                    if ($category->has_subcategory > 0): ?>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0)" class="nav-link"
+                                               data-id="<?= $category->id; ?>"
+                                               data-parent-id="<?= $category->parent_id; ?>"><?php echo category_name($category); ?>
+                                                <i class="icon-arrow-right"></i></a>
+                                        </li>
+                                    <?php else: ?>
+                                        <li class="nav-item">
+                                            <a href="<?php echo generate_category_url($category); ?>"
+                                               class="nav-link"><?php echo category_name($category); ?></a>
+                                        </li>
+                                    <?php endif; ?>
+                                <?php endforeach;
+                            endif; ?>
+                        </div>
                     </ul>
                     <ul id="navbar_mobile_links" class="navbar-nav">
                         <?php if ($this->auth_check): ?>
-                            <li class="nav-item">
-                                <a href="<?php echo generate_url("wishlist") . "/" . $this->auth_user->slug; ?>"
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px;margin-bottom:6px;"
+                                class="nav-item">
+                                <a style="font-weight: bold;color: #212121;"
+                                   href="<?php echo generate_url("wishlist") . "/" . $this->auth_user->slug; ?>"
                                    class="nav-link">
                                     <?php echo trans("wishlist"); ?>
                                 </a>
                             </li>
                         <?php else: ?>
-                            <li class="nav-item">
-                                <a href="<?php echo generate_url("wishlist"); ?>" class="nav-link">
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px;margin-bottom:6px;"
+                                class="nav-item">
+                                <a style="font-weight: bold;color: #212121;"
+                                   href="<?php echo generate_url("wishlist"); ?>" class="nav-link">
                                     <?php echo trans("wishlist"); ?>
                                 </a>
                             </li>
@@ -162,7 +172,9 @@
                                     if (!empty($menu_link->page_default_name)):
                                         $item_link = generate_url($menu_link->page_default_name);
                                     endif; ?>
-                                    <li class="nav-item"><a href="<?= $item_link; ?>"
+                                    <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px;margin-bottom:6px;"
+                                        class="nav-item"><a style="font-weight: bold;color: #212121;"
+                                                            href="<?= $item_link; ?>"
                                                             class="nav-link"><?= html_escape($menu_link->title); ?></a>
                                     </li>
                                 <?php endif;
@@ -170,8 +182,10 @@
                         endif; ?>
 
                         <?php if ($this->general_settings->location_search_header == 1 && item_count($this->countries) > 0): ?>
-                            <li class="nav-item nav-item-messages">
-                                <a href="javascript:void(0)" data-toggle="modal" data-target="#locationModal"
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px;margin-bottom:6px;"
+                                class="nav-item nav-item-messages">
+                                <a style="font-weight: bold;color: #212121;" href="javascript:void(0)"
+                                   data-toggle="modal" data-target="#locationModal"
                                    class="nav-link btn-modal-location close-menu-click">
                                     <i class="icon-map-marker float-left"></i>&nbsp;<?= !empty($this->default_location_input) ? $this->default_location_input : trans("location"); ?>
                                 </a>
@@ -179,8 +193,10 @@
                         <?php endif; ?>
 
                         <?php if (!empty($this->currencies)): ?>
-                            <li class="nav-item dropdown language-dropdown currency-dropdown currency-dropdown-mobile">
-                                <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px;margin-bottom:6px;"
+                                class="nav-item dropdown language-dropdown currency-dropdown currency-dropdown-mobile">
+                                <a style="font-weight: bold;color: #212121;" href="javascript:void(0)"
+                                   class="nav-link dropdown-toggle" data-toggle="dropdown">
                                     <?= $this->selected_currency->code; ?>
                                     &nbsp;(<?= $this->selected_currency->symbol; ?>)<i class="icon-arrow-down"></i>
                                 </a>
@@ -202,8 +218,9 @@
                         <?php endif; ?>
 
                         <?php if ($this->general_settings->multilingual_system == 1 && count($this->languages) > 1): ?>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px;margin-bottom:6px;"
+                                class="nav-item">
+                                <a style="font-weight: bold;color: #212121;" href="#" class="nav-link">
                                     <?php echo trans("language"); ?>
                                 </a>
                                 <ul class="mobile-language-options">
