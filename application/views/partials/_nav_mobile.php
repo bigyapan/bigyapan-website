@@ -118,7 +118,7 @@
                                                     href="javascript:void(0)" data-toggle="modal"
                                                     data-target="#loginModal"
                                                     class="nav-link close-menu-click"><i
-                                            class="icon-user"></i><?php echo trans("login"); ?></a>
+                                            class="fa fa-sign-in" style="font-size:24px;"></i><?php echo trans("login"); ?></a>
                             </li>
 
                         <?php endif; ?>

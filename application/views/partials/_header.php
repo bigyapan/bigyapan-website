@@ -10,6 +10,7 @@
     <meta name="keywords" content="<?= xss_clean($keywords); ?>"/>
     <meta name="author" content="<?= xss_clean($this->general_settings->application_name); ?>"/>
     <link rel="shortcut icon" type="image/png" href="<?= get_favicon($this->general_settings); ?>"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/vendor/font-awesome/css/font-awesome.min.css">
     <meta property="og:locale" content="en-US"/>
     <meta property="og:site_name" content="<?= xss_clean($this->general_settings->application_name); ?>"/>
     <?php if (isset($show_og_tags)): ?>
@@ -189,16 +190,17 @@
                 <div class="row">
                     <div class="nav-mobile-header-container">
                         <div class="menu-icon">
-                            <a href="javascript:void(0)" class="btn-open-mobile-nav"><i class="icon-menu"></i></a>
+                            <a href="javascript:void(0)" class="btn-open-mobile-nav"><i class="fa fa-bars" style="font-size:24px;"></i></a>
                         </div>
                         <div class="mobile-search">
                             <?php if ($this->auth_check): ?>
                                 <a href="<?php echo base_url(); ?>logout" class="login-icon">
-                                    <i class="icon-logout"></i>
+                                    <i style="font-size:24px;" class="fa fa-sign-out"></i>
                                 </a>
                             <?php else: ?>
                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#loginModal"
-                                   class="login-icon nav-link close-menu-click"><i class="icon-user"></i></a>
+                                   class="login-icon nav-link close-menu-click"><i class="fa fa-sign-in"
+                                                                                   style="font-size:24px;"></i></a>
                             <?php endif; ?>
                         </div>
                         <div class="mobile-logo">
@@ -208,7 +210,7 @@
 
 
                         <div class="mobile-search">
-                            <a class="search-icon"><i class="icon-search"></i></a>
+                            <a class="search-icon"><i class="fa fa-search" style="font-size:24px;"></i></a>
                         </div>
                         <div class="mobile-cart<?= !$this->is_sale_active ? ' hidden' : ''; ?>">
                             <a href="<?php echo generate_url("cart"); ?>"><i class="icon-cart"></i>
