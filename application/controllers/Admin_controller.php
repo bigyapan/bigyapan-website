@@ -459,6 +459,8 @@ class Admin_controller extends Admin_Core_Controller
             "blog_post_details_sidebar" => trans("blog_post_details_sidebar_ad_space"),
             "profile" => trans("profile_ad_space"),
             "profile_sidebar" => trans("profile_sidebar_ad_space"),
+            "home_banner_ad_1" =>"Home Page Banner Ad 1",
+            "home_banner_ad_2" =>"Home Page Banner Ad 2",
         );
 
         $this->load->view('admin/includes/_header', $data);

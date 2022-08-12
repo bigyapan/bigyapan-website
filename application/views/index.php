@@ -24,7 +24,18 @@
                     <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "index_1", "class" => ""]); ?>
                 </div>
             </div>
-
+            <div class="col-12">
+                <div class="row-custom row-bn">
+                    <!--Include banner-->
+                    <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "home_banner_ad_1", "class" => "m-b-10"]); ?>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row-custom row-bn">
+                    <!--Include banner-->
+                    <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "home_banner_ad_2", "class" => "m-b-10"]); ?>
+                </div>
+            </div>
 
             <?php $this->load->view('product/_special_offers', ['index_categories' => $index_categories]); ?>
             <?php $this->load->view("product/_index_banners", ['banner_location' => 'special_offers']); ?>
