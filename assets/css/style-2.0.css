@@ -1364,10 +1364,14 @@ img {
     padding-right: 0;
 }
 
+
+.nav-main .navbar ul .nav-item-arrow:hover {
+    color:orange;
+}
 .nav-main .navbar ul .nav-item .nav-link {
     color: #222;
     font-weight: 500;
-    padding: 12px 10px;
+    padding: 12px 0px 12px 10px;
     margin-right: 8px;
     font-size: 14px;
     position: relative;
@@ -1465,6 +1469,9 @@ img {
 }
 
 .mega-menu .nav-item {
+    position: inherit;
+}
+.mega-menu .nav-item-arrow {
     position: inherit;
 }
 
@@ -1771,7 +1778,7 @@ img {
 .mobile-nav-container {
     display: none;
     width: 100%;
-    position: relative;
+    position: fixed;
     min-height: 60px;
     z-index: 10010;
 }

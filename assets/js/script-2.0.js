@@ -320,7 +320,7 @@ $(function () {
 });
 
 /*mega menu*/
-$(".mega-menu .nav-item").hover(function () {
+$(".mega-menu .nav-item-arrow").hover(function () {
     var menu_id = $(this).attr('data-category-id');
     $("#mega_menu_content_" + menu_id).show();
     $(".large-menu-item").removeClass('active');
