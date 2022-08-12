@@ -35,6 +35,12 @@
                     <?php $this->load->view("product/_featured_products"); ?>
                 </div>
             <?php endif; ?>
+            <?php if (item_count($featured_categories) > 0 && $this->general_settings->featured_categories == 1): ?>
+                <div class="col-12 section section-categories" style="margin-bottom:20px;">
+                    <!-- featured categories -->
+                    <?php $this->load->view("partials/_featured_categories_2"); ?>
+                </div>
+            <?php endif; ?>
 
             <?php $this->load->view("product/_index_banners", ['banner_location' => 'featured_products']); ?>
 
@@ -52,12 +58,6 @@
                             </div>
                         <?php endforeach; ?>
                     </div>
-                </div>
-            <?php endif; ?>
-            <?php if (item_count($featured_categories) > 0 && $this->general_settings->featured_categories == 1): ?>
-                <div class="col-12 section section-categories" style="margin-bottom:20px;">
-                    <!-- featured categories -->
-                    <?php $this->load->view("partials/_featured_categories_2"); ?>
                 </div>
             <?php endif; ?>
             <?php $this->load->view("product/_index_banners", ['banner_location' => 'new_arrivals']); ?>
