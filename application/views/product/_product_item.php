@@ -137,7 +137,7 @@
         </ul>
     </div>
     <div class="product-content">
-        <ul style="list-style: none;" class=" breadcrumb-test breadcrumb-product product-category text-truncate">
+        <ul style="list-style: none;" class=" breadcrumb-test breadcrumb-product product-category">
             <?php
             $parent_categories = $this->category_model->get_parent_categories_tree($this->category_model->get_category_back_end($product->category_id));
             if (!empty($parent_categories)):?>
