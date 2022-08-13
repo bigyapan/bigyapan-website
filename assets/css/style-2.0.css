@@ -1901,6 +1901,7 @@ img {
 }
 
 .nav-mobile {
+    overscroll-behavior: contain;
     width: 0;
     height: 100%;
     position: fixed;
@@ -1918,6 +1919,7 @@ img {
 }
 
 .nav-mobile .nav-mobile-sc {
+    overscroll-behavior: contain;
     display: block;
     position: relative;
     width: 100%;
@@ -1971,6 +1973,7 @@ img {
 }
 
 .nav-mobile .nav-mobile-footer {
+    overscroll-behavior: contain;
     display: block;
     position: absolute;
     width: 100%;
