@@ -1772,7 +1772,7 @@ img {
     background-color: rgba(0, 0, 0, .6);
     top: 0;
     left: 0;
-    z-index: 9999991;
+    z-index: 99;
     animation-name: fadeIn;
 }
 
