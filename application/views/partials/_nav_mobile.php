@@ -127,7 +127,7 @@
 
                         <?php endif; ?>
                     </ul>
-                    <ul style="background-color: #f9faff;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;" id="navbar_mobile_categories" class="navbar-nav">
+                    <ul style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;" id="navbar_mobile_categories" class="navbar-nav">
 
                         <?php if (!empty($this->parent_categories)):
                             foreach ($this->parent_categories as $category):
