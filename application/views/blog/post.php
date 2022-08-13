@@ -5,8 +5,11 @@
         <div class="row">
 
             <div class="col-12">
+                <div class="row-custom row-bn">
+                    <!--Include banner-->
+                    <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "blog_post_details", "class" => "m-b-10"]); ?>
+                </div>
                 <div class="blog-content">
-
                     <nav class="nav-breadcrumb" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="<?php echo lang_base_url(); ?>"><?php echo trans("home"); ?></a></li>
@@ -54,10 +57,6 @@
                                     </div>
                                 </div>
 
-                                <div class="row-custom row-bn">
-                                    <!--Include banner-->
-                                    <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "blog_post_details", "class" => "m-b-10"]); ?>
-                                </div>
 
                                 <div class="row-custom">
                                     <div class="post-share">

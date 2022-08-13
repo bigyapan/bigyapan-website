@@ -5,6 +5,12 @@
         <div class="row">
 
             <div class="col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <!--Include banner-->
+                        <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "blog_1", "class" => "m-b-30"]); ?>
+                    </div>
+                </div>
                 <div class="blog-content">
                     <nav class="nav-breadcrumb" aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -17,6 +23,7 @@
                             <?php endif; ?>
                         </ol>
                     </nav>
+
 
                     <h1 class="page-title"><?php echo trans("blog"); ?></h1>
 
@@ -37,12 +44,6 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-12">
-                            <!--Include banner-->
-                            <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "blog_1", "class" => "m-b-30"]); ?>
-                        </div>
-                    </div>
 
                     <div class="row">
                         <!--print blog posts-->
