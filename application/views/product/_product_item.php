@@ -137,12 +137,12 @@
         </ul>
     </div>
     <div class="product-content">
-        <ul style="list-style: none;" class=" breadcrumb-test breadcrumb-product product-category">
+        <ul style="list-style: none;" class=" breadcrumb-test breadcrumb-product product-category text-truncate">
             <?php
             $parent_categories = $this->category_model->get_parent_categories_tree($this->category_model->get_category_back_end($product->category_id));
             if (!empty($parent_categories)):?>
                 <li><i class="fa fa-tags"></i></li>
-                <li class="breadcrumb-product-item active text-truncate"><?php echo category_name($parent_categories[0]); ?></li>
+                <li class="breadcrumb-product-item active"><?php echo category_name($parent_categories[0]); ?></li>
             <?php endif; ?>
         </ul>
         <style>
