@@ -1763,6 +1763,7 @@ img {
 
 /*mobile menu*/
 .overlay-bg {
+    z-index:9999991;
     touch-action:none;
     position: fixed;
     width: 100%;
