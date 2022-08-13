@@ -87,8 +87,7 @@
     </div>
 </div>-->
 
-
-<div class="product-card product-item">
+<div onclick="location.href='<?php echo generate_product_url($product); ?>';" style="cursor: pointer;" class="product-card product-item">
     <div class="product-media row-custom">
         <div class="product-img img-product-container">
             <?php if (!empty($is_slider)): ?>
@@ -141,39 +140,19 @@
             <?php
             $parent_categories = $this->category_model->get_parent_categories_tree($this->category_model->get_category_back_end($product->category_id));
             if (!empty($parent_categories)):?>
-                <li><i class="fa fa-tags"></i></li>
-                <li class="breadcrumb-product-item active"><?php echo category_name($parent_categories[0]); ?></li>
+                <div class="row m-l-5">
+                    <h6 class="breadcrumb-product-item m-t-15 text-truncate">
+                        <i
+                                class="fa fa-tag breadcrumb-product-item" style="margin-right:5px;"></i>
+
+                        <?php echo category_name($parent_categories[0]); ?></h6>
+                </div>
+
             <?php endif; ?>
         </ul>
-        <style>
-            /* Style the list */
-            ul.breadcrumb-test {
-                list-style: none;
-            }
 
-            /* Display list items side by side */
-            ul.breadcrumb-test li {
-                display: inline;
-                font-size: 18px;
-            }
 
-            /* Add a color to all links inside the list */
-            ul.breadcrumb-test li a {
-                color: #0275d8;
-                text-decoration: none;
-            }
-
-            /* Add a color on mouse-over */
-            ul.breadcrumb-test li a:hover {
-                color: #01447e;
-                text-decoration: underline;
-            }
-        </style>
-
-        <!--<h5 class="product-title">
-            <a href="<?php /*echo generate_product_url($product); */ ?>"><? /*= get_product_title($product); */ ?></a>
-        </h5>-->
-        <h5 style="font-size: 16px;
+        <h5  style="font-size: 16px;
     font-weight: bold;" class="product-title text-truncate">
             <a href="<?php echo generate_product_url($product); ?>"><?= get_product_title($product); ?></a>
         </h5>
@@ -183,7 +162,7 @@
             </a></span>
         </div>
         <div class="product-info">
-            <h5 class="product-price">
+            <h5 class="product-price text-truncate">
                 <?php $this->load->view('product/_price_product_item', ['product' => $product]); ?>
             </h5>
             <div>
@@ -222,3 +201,4 @@
         </div>
     </div>
 </div>
+
