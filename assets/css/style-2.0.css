@@ -1785,6 +1785,7 @@ img {
 }
 
 .nav-mobile-header {
+    touch-action:none;
     width: 100%;
     position: fixed;
     top: 0;
