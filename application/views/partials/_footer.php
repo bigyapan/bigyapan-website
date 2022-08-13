@@ -135,10 +135,10 @@
 
 <?php endif; ?>
 <!-- Messenger Chat Plugin Code -->
-<div id="fb-root" style="z-index:999999;"></div>
+<div id="fb-root"></div>
 
 <!-- Your Chat Plugin code -->
-<div id="fb-customer-chat" style="z-index:999999;" class="fb-customerchat">
+<div id="fb-customer-chat" class="fb-customerchat">
 </div>
 
 <script>

@@ -1763,7 +1763,6 @@ img {
 
 /*mobile menu*/
 .overlay-bg {
-    z-index:9999991;
     touch-action:none;
     position: fixed;
     width: 100%;
@@ -1773,7 +1772,7 @@ img {
     background-color: rgba(0, 0, 0, .6);
     top: 0;
     left: 0;
-    z-index: 99;
+    z-index: 9999991;
     animation-name: fadeIn;
 }
 
