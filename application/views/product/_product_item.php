@@ -86,8 +86,7 @@
     </div>
 </div>
 */ ?>
-<div  class="product-card product-item">
-    <a href="<?php echo generate_product_url($product); ?>">
+<div onclick="window.location='<?php echo generate_product_url($product); ?>'"  class="product-card product-item">
         <div class="product-media row-custom <?php echo (!empty($product->image_second)) ? ' product-multiple-image' : ''; ?>">
             <div class="product-img img-product-container">
                 <?php if (!empty($is_slider)): ?>
@@ -160,7 +159,7 @@
                     <?php $this->load->view('product/_price_product_item', ['product' => $product]); ?>
                 </h5>
                 <div>
-                    <a href="javascript:void(0)" style="display:inline-flex" class="item-option btn-add-remove-wishlist"
+                    <a  href="javascript:void(0)" style="display:inline-flex" class="item-option btn-add-remove-wishlist"
                        data-toggle="tooltip"
                        data-placement="bottom" data-product-id="<?php echo $product->id; ?>" data-type="list"
                        title="<?php echo trans("wishlist"); ?>">
@@ -170,7 +169,6 @@
                             <i class="icon-heart-o"></i>
                         <?php endif; ?>
                         <span style="margin-left:2px;"><?php echo $product->wishlist_count; ?></span>
-
                     </a>
                     <?php if (($product->listing_type == "sell_on_site" || $product->listing_type == "bidding") && $product->is_free_product != 1):
                         if (!empty($product->has_variation) || $product->listing_type == "bidding"):?>
@@ -194,6 +192,7 @@
                 </div>
             </div>
         </div>
-    </a>
-
 </div>
+
+<script>
+</script>
