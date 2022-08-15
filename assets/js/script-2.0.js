@@ -1739,7 +1739,6 @@ $(".btn-add-remove-wishlist").click(function (e) {
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
         type: "POST", url: mds_config.base_url + "add-remove-wishlist-post", data: data, success: function (response) {
-            console.log("response")
         }
     });
 });
