@@ -158,6 +158,7 @@
                 <h5 class="product-price text-truncate">
                     <?php $this->load->view('product/_price_product_item', ['product' => $product]); ?>
                 </h5>
+
                 <div>
                     <a href="javascript:void(0)" style="display:inline-flex" class="item-option btn-add-remove-wishlist"
                        data-toggle="tooltip"
