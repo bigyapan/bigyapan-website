@@ -1712,7 +1712,40 @@ $(document).on('change', '#zip_code_input', function () {
     update_product_map();
 });
 
-$(document).on('click', '.btn-add-remove-wishlist', function () {
+$('.btn-add-remove-wishlist').click(function (e) {
+    e.stopPropagation();
+    var product_id = $(this).attr("data-product-id");
+    var data_type = $(this).attr("data-type");
+    if (data_type == "list") {
+        if ($(this).find("i").hasClass("icon-heart-o")) {
+            $(this).find("i").removeClass("icon-heart-o");
+            $(this).find("i").addClass("icon-heart");
+        } else {
+            $(this).find("i").removeClass("icon-heart");
+            $(this).find("i").addClass("icon-heart-o");
+        }
+    }
+    if (data_type == "details") {
+        if ($(this).find("i").hasClass("icon-heart-o")) {
+            $('.btn-add-remove-wishlist').html('<i class="icon-heart"></i><span>' + mds_config.txt_remove_from_wishlist + '</span>');
+        } else {
+            $('.btn-add-remove-wishlist').html('<i class="icon-heart-o"></i><span>' + mds_config.txt_add_to_wishlist + '</span>');
+        }
+    }
+    var data = {
+        "product_id": product_id, "sys_lang_id": mds_config.sys_lang_id
+    };
+    data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
+    $.ajax({
+        type: "POST", url: mds_config.base_url + "add-remove-wishlist-post", data: data, success: function (response) {
+        }
+    });
+
+});
+
+
+$(document).on('click', '.btn-add-remove-wishlist', function (e) {
+    e.stopPropagation();
     var product_id = $(this).attr("data-product-id");
     var data_type = $(this).attr("data-type");
     if (data_type == "list") {
