@@ -1711,7 +1711,8 @@ $(document).on('change', '#address_input', function () {
 $(document).on('change', '#zip_code_input', function () {
     update_product_map();
 });
-document.getElementById("wishlist-button").addEventListener("click", function(event) {
+
+$(document).on('click', '.btn-add-remove-wishlist', function (event) {
     var product_id = $(this).attr("data-product-id");
     var data_type = $(this).attr("data-type");
     if (data_type == "list") {
@@ -1738,8 +1739,6 @@ document.getElementById("wishlist-button").addEventListener("click", function(ev
         type: "POST", url: mds_config.base_url + "add-remove-wishlist-post", data: data, success: function (response) {
         }
     });
-    event.stopPropagation();
-
 });
 
 $(document).on('click', '.btn-item-add-to-cart', function () {
