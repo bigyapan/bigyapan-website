@@ -325,15 +325,6 @@ $(".large-menu-item").hover(function () {
 }, function () {
 });
 
-$(".product-img").hover.touch(function () {
-    var menu_id = $(this).attr('data-subcategory-id');
-    $(".large-menu-item").removeClass('active');
-    $(this).addClass('active');
-    $(".large-menu-content").removeClass('active');
-    $("#large_menu_content_" + menu_id).addClass('active');
-}, function () {
-});
-
 
 //scrollup
 $(window).scroll(function () {
