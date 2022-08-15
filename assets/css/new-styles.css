@@ -1134,6 +1134,7 @@ textarea.form-control {
 }
 
 .product-card {
+    cursor:pointer;
     border-radius: 8px;
     margin-bottom: 30px;
     background: var(--chalk);
