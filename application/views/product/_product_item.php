@@ -162,7 +162,7 @@
                     <?php $this->load->view('product/_price_product_item', ['product' => $product]); ?>
                 </h5>
                 <div >
-                    <div id="wishlist-button" style="display:inline-flex" class="item-option btn-add-remove-wishlist"
+                    <div style="display:inline-flex" class="item-option btn-add-remove-wishlist"
                          data-toggle="tooltip"
                          data-placement="bottom" data-product-id="<?php echo $product->id; ?>" data-type="list"
                          title="<?php echo trans("wishlist"); ?>">
