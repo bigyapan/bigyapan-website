@@ -208,7 +208,7 @@
     });
 
     $(document).ready(function() {
-        $('#wishlist-button').on('touchstart touchend', function(e) {
+        $('#wishlist-button').on('touchstart', function(e) {
             $(this).toggleClass('product-action');
         });
     });
