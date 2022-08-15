@@ -1743,7 +1743,7 @@ $(".btn-add-remove-wishlist").click(function (e) {
     });
 });
 
-$(document).on('click', '.btn-add-remove-wishlist', function (event) {
+/*$(document).on('click', '.btn-add-remove-wishlist', function (event) {
     var product_id = $(this).attr("data-product-id");
     var data_type = $(this).attr("data-type");
     if (data_type == "list") {
@@ -1770,7 +1770,7 @@ $(document).on('click', '.btn-add-remove-wishlist', function (event) {
         type: "POST", url: mds_config.base_url + "add-remove-wishlist-post", data: data, success: function (response) {
         }
     });
-});
+});*/
 
 $(document).on('click', '.btn-item-add-to-cart', function () {
     var product_id = $(this).attr("data-product-id");
