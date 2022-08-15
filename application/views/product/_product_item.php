@@ -86,10 +86,12 @@
     </div>
 </div>
 */ ?>
-<div class="product-card product-item" >
-    <div onclick="location.href='<?php echo generate_product_url($product); ?>';" style="cursor:pointer" class="product-media row-custom <?php echo (!empty($product->image_second)) ? ' product-multiple-image' : ''; ?>">
+<div id="product-card" style="cursor:pointer" class="product-card product-item" >
+    <div class="product-media row-custom <?php echo (!empty($product->image_second)) ? ' product-multiple-image' : ''; ?>">
         <div class="product-img img-product-container">
+            <a href="<?php echo generate_product_url($product); ?>" class="fill-div">
             </a><?php if (!empty($is_slider)): ?>
+                <a href="<?php echo generate_product_url($product); ?>">
                     <img src="<?php echo base_url() . IMG_BG_PRODUCT_SMALL; ?>"
                          data-lazy="<?php echo get_product_item_image($product); ?>"
                          alt="<?php echo get_product_title($product); ?>" class="img-fluid img-product">
@@ -98,7 +100,9 @@
                              data-lazy="<?php echo get_product_item_image($product, true); ?>"
                              alt="<?php echo get_product_title($product); ?>" class="img-fluid img-product img-second">
                     <?php endif; ?>
+                </a>
             <?php else: ?>
+                <a href="<?php echo generate_product_url($product); ?>">
                     <img src="<?php echo base_url() . IMG_BG_PRODUCT_SMALL; ?>"
                          data-src="<?php echo get_product_item_image($product); ?>"
                          alt="<?php echo get_product_title($product); ?>" class="lazyload img-fluid img-product">
@@ -108,6 +112,7 @@
                              alt="<?php echo get_product_title($product); ?>"
                              class="lazyload img-fluid img-product img-second">
                     <?php endif; ?>
+                </a>
             <?php endif; ?>
         </div>
         <?php if ($product->is_promoted && $this->general_settings->promoted_products == 1): ?>
@@ -131,7 +136,7 @@
         </ul>
     </div>
     <div class="product-content">
-        <ul onclick="location.href='<?php echo generate_product_url($product); ?>';"  style="cursor:pointer;list-style: none;" class=" breadcrumb-test breadcrumb-product product-category">
+        <ul style="list-style: none;" class=" breadcrumb-test breadcrumb-product product-category">
             <?php
             $parent_categories = $this->category_model->get_parent_categories_tree($this->category_model->get_category_back_end($product->category_id));
             if (!empty($parent_categories)):?>
@@ -147,32 +152,32 @@
         </ul>
 
 
-        <h5 onclick="location.href='<?php echo generate_product_url($product); ?>';" style="cursor:pointer;font-size: 16px;
+        <h5 style="font-size: 16px;
     font-weight: bold;" class="product-title text-truncate">
             <a href="<?php echo generate_product_url($product); ?>"><?= get_product_title($product); ?></a>
         </h5>
-        <div onclick="location.href='<?php echo generate_product_url($product); ?>';"  style="cursor:pointer;" class="product-meta">
+        <div class="product-meta">
             <span><i class="fa fa-shopping-bag"></i><a href="<?php echo generate_profile_url($product->user_slug); ?>">
                 <?php echo get_shop_name_product($product); ?>
             </a></span>
         </div>
         <div class="product-info">
-            <h5 onclick="location.href='<?php echo generate_product_url($product); ?>';"  style="cursor:pointer;" class="product-price text-truncate">
+            <h5 class="product-price text-truncate">
                 <?php $this->load->view('product/_price_product_item', ['product' => $product]); ?>
             </h5>
-            <div>
-                <a style="display:inline-flex" href="javascript:void(0)" class="item-option btn-add-remove-wishlist"
-                   data-toggle="tooltip"
-                   data-placement="bottom" data-product-id="<?php echo $product->id; ?>" data-type="list"
-                   title="<?php echo trans("wishlist"); ?>">
-                    <?php if (is_product_in_wishlist($product) == 1): ?>
-                        <i class="icon-heart"></i>
-                    <?php else: ?>
-                        <i class="icon-heart-o"></i>
-                    <?php endif; ?>
-                    <span style="margin-left:2px;"><?php echo $product->wishlist_count; ?></span>
+            <div >
+                    <div id="wishlist-button" style="display:inline-flex" class="item-option btn-add-remove-wishlist"
+                       data-toggle="tooltip"
+                       data-placement="bottom" data-product-id="<?php echo $product->id; ?>" data-type="list"
+                       title="<?php echo trans("wishlist"); ?>">
+                        <?php if (is_product_in_wishlist($product) == 1): ?>
+                            <i class="icon-heart"></i>
+                        <?php else: ?>
+                            <i class="icon-heart-o"></i>
+                        <?php endif; ?>
+                        <span style="margin-left:2px;"><?php echo $product->wishlist_count; ?></span>
 
-                </a>
+                    </div>
                 <?php if (($product->listing_type == "sell_on_site" || $product->listing_type == "bidding") && $product->is_free_product != 1):
                     if (!empty($product->has_variation) || $product->listing_type == "bidding"):?>
                         <a href="<?= generate_product_url($product); ?>" class="item-option" data-toggle="tooltip"
@@ -197,4 +202,18 @@
     </div>
 </div>
 
+<script>
+    document.getElementById("product-card").addEventListener("click", function(event) {
+        window.location.href = '<?php echo generate_product_url($product); ?>';
+    });
+
+    $(document).ready(function() {
+        $('.hover').on('touchstart touchend', function(e) {
+            e.preventDefault();
+            $(this).toggleClass('product-action');
+        });
+    });
+
+
+</script>
 
