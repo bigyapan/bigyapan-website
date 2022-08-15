@@ -86,11 +86,10 @@
     </div>
 </div>
 */ ?>
-<div class="product-card product-item">
-    <div class="product-media row-custom <?php echo (!empty($product->image_second)) ? ' product-multiple-image' : ''; ?>">
-        <div class="product-img img-product-container">
-            <?php if (!empty($is_slider)): ?>
-                <a href="<?php echo generate_product_url($product); ?>">
+<div class="product-card product-item" >
+    <div style="cursor:pointer" class="product-media row-custom <?php echo (!empty($product->image_second)) ? ' product-multiple-image' : ''; ?>">
+        <div onclick="location.href='<?php echo generate_product_url($product); ?>';" class="product-img img-product-container">
+            </a><?php if (!empty($is_slider)): ?>
                     <img src="<?php echo base_url() . IMG_BG_PRODUCT_SMALL; ?>"
                          data-lazy="<?php echo get_product_item_image($product); ?>"
                          alt="<?php echo get_product_title($product); ?>" class="img-fluid img-product">
@@ -99,9 +98,7 @@
                              data-lazy="<?php echo get_product_item_image($product, true); ?>"
                              alt="<?php echo get_product_title($product); ?>" class="img-fluid img-product img-second">
                     <?php endif; ?>
-                </a>
             <?php else: ?>
-                <a href="<?php echo generate_product_url($product); ?>">
                     <img src="<?php echo base_url() . IMG_BG_PRODUCT_SMALL; ?>"
                          data-src="<?php echo get_product_item_image($product); ?>"
                          alt="<?php echo get_product_title($product); ?>" class="lazyload img-fluid img-product">
@@ -111,7 +108,6 @@
                              alt="<?php echo get_product_title($product); ?>"
                              class="lazyload img-fluid img-product img-second">
                     <?php endif; ?>
-                </a>
             <?php endif; ?>
         </div>
         <?php if ($product->is_promoted && $this->general_settings->promoted_products == 1): ?>
@@ -135,7 +131,7 @@
         </ul>
     </div>
     <div class="product-content">
-        <ul style="list-style: none;" class=" breadcrumb-test breadcrumb-product product-category">
+        <ul onclick="location.href='<?php echo generate_product_url($product); ?>';"  style="cursor:pointer;list-style: none;" class=" breadcrumb-test breadcrumb-product product-category">
             <?php
             $parent_categories = $this->category_model->get_parent_categories_tree($this->category_model->get_category_back_end($product->category_id));
             if (!empty($parent_categories)):?>
@@ -151,17 +147,17 @@
         </ul>
 
 
-        <h5  style="font-size: 16px;
+        <h5 onclick="location.href='<?php echo generate_product_url($product); ?>';" style="cursor:pointer;font-size: 16px;
     font-weight: bold;" class="product-title text-truncate">
             <a href="<?php echo generate_product_url($product); ?>"><?= get_product_title($product); ?></a>
         </h5>
-        <div class="product-meta">
+        <div onclick="location.href='<?php echo generate_product_url($product); ?>';"  style="cursor:pointer;" class="product-meta">
             <span><i class="fa fa-shopping-bag"></i><a href="<?php echo generate_profile_url($product->user_slug); ?>">
                 <?php echo get_shop_name_product($product); ?>
             </a></span>
         </div>
         <div class="product-info">
-            <h5 class="product-price text-truncate">
+            <h5 onclick="location.href='<?php echo generate_product_url($product); ?>';"  style="cursor:pointer;" class="product-price text-truncate">
                 <?php $this->load->view('product/_price_product_item', ['product' => $product]); ?>
             </h5>
             <div>
@@ -200,4 +196,5 @@
         </div>
     </div>
 </div>
+
 
