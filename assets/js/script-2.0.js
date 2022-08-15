@@ -71,8 +71,7 @@ $(document).ready(function () {
             var $animationDelay = $this.data('delay');
             var $animationType = 'animated ' + $this.data('animation');
             $this.css({
-                'animation-delay': $animationDelay,
-                '-webkit-animation-delay': $animationDelay
+                'animation-delay': $animationDelay, '-webkit-animation-delay': $animationDelay
             });
             $this.addClass($animationType).one(animationEndEvents, function () {
                 $this.removeClass($animationType);
@@ -94,29 +93,19 @@ $(document).ready(function () {
             nextArrow: $('#slider_special_offers_nav .next'),
             slidesToShow: 5,
             slidesToScroll: 5,
-            responsive: [
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                    }
-                },
-                {
-                    breakpoint: 576,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
+            responsive: [{
+                breakpoint: 992, settings: {
+                    slidesToShow: 4, slidesToScroll: 4
                 }
-            ]
+            }, {
+                breakpoint: 768, settings: {
+                    slidesToShow: 3, slidesToScroll: 3
+                }
+            }, {
+                breakpoint: 576, settings: {
+                    slidesToShow: 2, slidesToScroll: 2
+                }
+            }]
         });
     }
 
@@ -181,22 +170,15 @@ $(document).ready(function () {
         nextArrow: $('#blog-slider-nav .next'),
         slidesToShow: 3,
         slidesToScroll: 3,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
+        responsive: [{
+            breakpoint: 768, settings: {
+                slidesToShow: 2, slidesToScroll: 2
             }
-        ]
+        }, {
+            breakpoint: 480, settings: {
+                slidesToShow: 1, slidesToScroll: 1
+            }
+        }]
     });
 
     //rate product
@@ -228,11 +210,7 @@ $(document).ready(function () {
 
 //mobile menu
 var obj_mobile_nav = {
-    id: "",
-    name: "",
-    parent_id: "",
-    parent_name: "",
-    back_button: 1
+    id: "", name: "", parent_id: "", parent_name: "", back_button: 1
 };
 $(document).on('click', '#navbar_mobile_categories li a', function () {
     obj_mobile_nav.id = $(this).attr('data-id');
@@ -426,10 +404,7 @@ function send_activation_email(id, token) {
     $('#result-login').empty();
     $('.spinner-activation-login').show();
     var data = {
-        'id': id,
-        'token': token,
-        'type': 'login',
-        "sys_lang_id": mds_config.sys_lang_id
+        'id': id, 'token': token, 'type': 'login', "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $('#submit_review').prop("disabled", true);
@@ -454,10 +429,7 @@ function send_activation_email_register(id, token) {
     $('#result-register').empty();
     $('.spinner-activation-register').show();
     var data = {
-        'id': id,
-        'token': token,
-        'type': 'register',
-        'sys_lang_id': mds_config.sys_lang_id
+        'id': id, 'token': token, 'type': 'register', 'sys_lang_id': mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $('#submit_review').prop("disabled", true);
@@ -484,9 +456,7 @@ function send_activation_email_register(id, token) {
  */
 function select_product_variation_option(variation_id, variation_type, selected_option_id) {
     var data = {
-        'variation_id': variation_id,
-        'selected_option_id': selected_option_id,
-        'sys_lang_id': mds_config.sys_lang_id
+        'variation_id': variation_id, 'selected_option_id': selected_option_id, 'sys_lang_id': mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
@@ -553,16 +523,11 @@ function select_product_variation_option(variation_id, variation_type, selected_
 
 function get_sub_variation_options(variation_id, selected_option_id) {
     var data = {
-        "variation_id": variation_id,
-        "selected_option_id": selected_option_id,
-        "sys_lang_id": mds_config.sys_lang_id
+        "variation_id": variation_id, "selected_option_id": selected_option_id, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
-        url: mds_config.base_url + "get-sub-variation-options",
-        type: "POST",
-        data: data,
-        success: function (response) {
+        url: mds_config.base_url + "get-sub-variation-options", type: "POST", data: data, success: function (response) {
             var obj = JSON.parse(response);
             if (obj.status == 1) {
                 if (selected_option_id == "") {
@@ -586,9 +551,7 @@ $(document).on('click', '.product-add-to-cart-container .number-spinner button',
 });
 
 function update_number_spinner(btn) {
-    var btn = btn,
-        oldValue = btn.closest('.number-spinner').find('input').val().trim(),
-        newVal = 0;
+    var btn = btn, oldValue = btn.closest('.number-spinner').find('input').val().trim(), newVal = 0;
     if (btn.attr('data-dir') == 'up') {
         newVal = parseInt(oldValue) + 1;
     } else {
@@ -709,9 +672,7 @@ function delete_review(review_id, product_id, user_id, message) {
             };
             data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
             $.ajax({
-                method: "POST",
-                url: mds_config.base_url + "home_controller/delete_review",
-                data: data
+                method: "POST", url: mds_config.base_url + "home_controller/delete_review", data: data
             })
                 .done(function (response) {
                     document.getElementById("review-result").innerHTML = response;
@@ -871,9 +832,7 @@ $(document).on('click', '.btn-submit-subcomment', function () {
 function load_more_comment(product_id) {
     var limit = parseInt($("#product_comment_limit").val());
     var data = {
-        "product_id": product_id,
-        "limit": limit,
-        "sys_lang_id": mds_config.sys_lang_id
+        "product_id": product_id, "limit": limit, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $("#load_comment_spinner").show();
@@ -923,10 +882,7 @@ function delete_comment(comment_id, product_id, message) {
         if (willDelete) {
             var limit = parseInt($("#product_comment_limit").val());
             var data = {
-                "id": comment_id,
-                "product_id": product_id,
-                "limit": limit,
-                "sys_lang_id": mds_config.sys_lang_id
+                "id": comment_id, "product_id": product_id, "limit": limit, "sys_lang_id": mds_config.sys_lang_id
             };
             data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
             $.ajax({
@@ -949,9 +905,7 @@ function show_comment_box(comment_id) {
     $('.visible-sub-comment').empty();
     var limit = parseInt($("#product_comment_limit").val());
     var data = {
-        "comment_id": comment_id,
-        "limit": limit,
-        "sys_lang_id": mds_config.sys_lang_id
+        "comment_id": comment_id, "limit": limit, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
@@ -1050,9 +1004,7 @@ $(document).ready(function () {
 function load_more_blog_comment(post_id) {
     var limit = parseInt($("#blog_comment_limit").val());
     var data = {
-        "post_id": post_id,
-        "limit": limit,
-        "sys_lang_id": mds_config.sys_lang_id
+        "post_id": post_id, "limit": limit, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $("#load_comment_spinner").show();
@@ -1083,10 +1035,7 @@ function delete_blog_comment(comment_id, post_id, message) {
         if (willDelete) {
             var limit = parseInt($("#blog_comment_limit").val());
             var data = {
-                "comment_id": comment_id,
-                "post_id": post_id,
-                "limit": limit,
-                "sys_lang_id": mds_config.sys_lang_id
+                "comment_id": comment_id, "post_id": post_id, "limit": limit, "sys_lang_id": mds_config.sys_lang_id
             };
             data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
             $.ajax({
@@ -1121,14 +1070,11 @@ function delete_conversation(conversation_id, message) {
     }).then(function (willDelete) {
         if (willDelete) {
             var data = {
-                "conversation_id": conversation_id,
-                "sys_lang_id": mds_config.sys_lang_id
+                "conversation_id": conversation_id, "sys_lang_id": mds_config.sys_lang_id
             };
             data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
             $.ajax({
-                method: "POST",
-                url: mds_config.base_url + "message_controller/delete_conversation",
-                data: data
+                method: "POST", url: mds_config.base_url + "message_controller/delete_conversation", data: data
             })
                 .done(function (response) {
                     location.reload();
@@ -1148,8 +1094,7 @@ function delete_conversation(conversation_id, message) {
 //remove from cart
 function remove_from_cart(cart_item_id) {
     var data = {
-        "cart_item_id": cart_item_id,
-        "sys_lang_id": mds_config.sys_lang_id
+        "cart_item_id": cart_item_id, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
@@ -1167,9 +1112,7 @@ $(document).on('click', '.btn-cart-product-quantity-item', function () {
     var quantity = $(this).val();
     var product_id = $(this).attr("data-product-id");
     var data = {
-        "product_id": product_id,
-        "quantity": quantity,
-        "sys_lang_id": mds_config.sys_lang_id
+        "product_id": product_id, "quantity": quantity, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
@@ -1204,8 +1147,7 @@ function approve_order_product(id, message) {
     }).then(function (approve) {
         if (approve) {
             var data = {
-                "order_product_id": id,
-                "sys_lang_id": mds_config.sys_lang_id
+                "order_product_id": id, "sys_lang_id": mds_config.sys_lang_id
             };
             data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
             $.ajax({
@@ -1230,8 +1172,7 @@ function cancel_order(id, message) {
     }).then(function (approve) {
         if (approve) {
             var data = {
-                "order_id": id,
-                "sys_lang_id": mds_config.sys_lang_id
+                "order_id": id, "sys_lang_id": mds_config.sys_lang_id
             };
             data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
             $.ajax({
@@ -1251,8 +1192,7 @@ function get_shipping_methods_by_location(state_id) {
     $('#cart_shipping_methods_container').hide();
     $('.cart-shipping-loader').show();
     var data = {
-        "state_id": state_id,
-        "sys_lang_id": mds_config.sys_lang_id
+        "state_id": state_id, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
@@ -1293,8 +1233,7 @@ $(document).on("input paste click", "#input_location", function () {
         return false;
     }
     var data = {
-        "input_value": input_value,
-        "sys_lang_id": mds_config.sys_lang_id
+        "input_value": input_value, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
@@ -1320,9 +1259,7 @@ $.fn.wrapInTag = function (opts) {
         return obj.textContent ? obj.textContent : obj.innerText;
     }
 
-    var tag = opts.tag || 'strong',
-        words = opts.words || [],
-        regex = RegExp(words.join('|'), 'gi'),
+    var tag = opts.tag || 'strong', words = opts.words || [], regex = RegExp(words.join('|'), 'gi'),
         replacement = '<' + tag + '>$&</' + tag + '>';
     $(this).contents().each(function () {
         if (this.nodeType === 3) {
@@ -1360,10 +1297,7 @@ $(document).on('click', '#btn_submit_location', function () {
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
-        type: "POST",
-        url: mds_config.base_url + "set-default-location-post",
-        data: data,
-        success: function (response) {
+        type: "POST", url: mds_config.base_url + "set-default-location-post", data: data, success: function (response) {
             location.reload();
         }
     });
@@ -1601,14 +1535,11 @@ $("#input_search_vendor").keyup(function (event) {
 //set site language
 function set_site_language(lang_id) {
     var data = {
-        "lang_id": lang_id,
-        "sys_lang_id": mds_config.sys_lang_id
+        "lang_id": lang_id, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
-        method: "POST",
-        url: mds_config.base_url + "home_controller/set_site_language",
-        data: data
+        method: "POST", url: mds_config.base_url + "home_controller/set_site_language", data: data
     })
         .done(function (response) {
             location.reload();
@@ -1620,8 +1551,7 @@ function set_site_language(lang_id) {
 function load_more_promoted_products() {
     $("#load_promoted_spinner").show();
     var data = {
-        'offset': parseInt($("#promoted_products_offset").val()),
-        'sys_lang_id': mds_config.sys_lang_id
+        'offset': parseInt($("#promoted_products_offset").val()), 'sys_lang_id': mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
@@ -1726,8 +1656,7 @@ function get_states(val, map, id_suffix = "") {
         $('#get_cities_container' + id_suffix).hide();
     }
     var data = {
-        "country_id": val,
-        "sys_lang_id": mds_config.sys_lang_id
+        "country_id": val, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
@@ -1752,8 +1681,7 @@ function get_states(val, map, id_suffix = "") {
 
 function get_cities(val, map) {
     var data = {
-        "state_id": val,
-        "sys_lang_id": mds_config.sys_lang_id
+        "state_id": val, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
@@ -1804,15 +1732,11 @@ $(document).on('click', '.btn-add-remove-wishlist', function () {
         }
     }
     var data = {
-        "product_id": product_id,
-        "sys_lang_id": mds_config.sys_lang_id
+        "product_id": product_id, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
-        type: "POST",
-        url: mds_config.base_url + "add-remove-wishlist-post",
-        data: data,
-        success: function (response) {
+        type: "POST", url: mds_config.base_url + "add-remove-wishlist-post", data: data, success: function (response) {
         }
     });
 });
@@ -1822,9 +1746,7 @@ $(document).on('click', '.btn-item-add-to-cart', function () {
     var button_id = $(this).attr("data-id");
     document.getElementById("btn_add_cart_" + button_id).innerHTML = '<div class="spinner-border spinner-border-add-cart-list"></div>';
     var data = {
-        "product_id": product_id,
-        "is_ajax": true,
-        "sys_lang_id": mds_config.sys_lang_id
+        "product_id": product_id, "is_ajax": true, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
@@ -1836,10 +1758,7 @@ $(document).on('click', '.btn-item-add-to-cart', function () {
             if (obj.result == 1) {
                 setTimeout(function () {
                     $('#btn_add_cart_' + button_id).css('background-color', 'rgb(40, 167, 69, .7)');
-                    document.getElementById("btn_add_cart_" + button_id).innerHTML =
-                        '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">\n' +
-                        '<path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>\n' +
-                        '</svg>';
+                    document.getElementById("btn_add_cart_" + button_id).innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">\n' + '<path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>\n' + '</svg>';
                     $('.span_cart_product_count').html(obj.product_count);
                     $('.span_cart_product_count').removeClass('visibility-hidden');
                     $('.span_cart_product_count').addClass('visibility-visible');
@@ -1943,10 +1862,7 @@ $("#form_add_cart").submit(function (event) {
         serializedData.push({name: "is_ajax", value: 1});
         serializedData.push({name: "sys_lang_id", value: mds_config.sys_lang_id});
         $.ajax({
-            url: mds_config.base_url + "add-to-cart",
-            type: "post",
-            data: serializedData,
-            success: function (response) {
+            url: mds_config.base_url + "add-to-cart", type: "post", data: serializedData, success: function (response) {
                 var obj = JSON.parse(response);
                 if (obj.result == 1) {
                     setTimeout(function () {
@@ -2051,30 +1967,20 @@ $(document).on("input keyup paste change keypress", ".price-input", function () 
     }
     if (mds_config.thousands_separator == '.') {
         var $this = $(this);
-        if ((event.which != 46 || $this.val().indexOf('.') != -1) &&
-            ((event.which < 48 || event.which > 57) &&
-                (event.which != 0 && event.which != 8))) {
+        if ((event.which != 46 || $this.val().indexOf('.') != -1) && ((event.which < 48 || event.which > 57) && (event.which != 0 && event.which != 8))) {
             event.preventDefault();
         }
         var text = $(this).val();
-        if ((text.indexOf('.') != -1) &&
-            (text.substring(text.indexOf('.')).length > 2) &&
-            (event.which != 0 && event.which != 8) &&
-            ($(this)[0].selectionStart >= text.length - 2)) {
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
     } else {
         var $this = $(this);
-        if ((event.which != 44 || $this.val().indexOf(',') != -1) &&
-            ((event.which < 48 || event.which > 57) &&
-                (event.which != 0 && event.which != 8))) {
+        if ((event.which != 44 || $this.val().indexOf(',') != -1) && ((event.which < 48 || event.which > 57) && (event.which != 0 && event.which != 8))) {
             event.preventDefault();
         }
         var text = $(this).val();
-        if ((text.indexOf(',') != -1) &&
-            (text.substring(text.indexOf(',')).length > 2) &&
-            (event.which != 0 && event.which != 8) &&
-            ($(this)[0].selectionStart >= text.length - 2)) {
+        if ((text.indexOf(',') != -1) && (text.substring(text.indexOf(',')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
     }
@@ -2095,8 +2001,7 @@ function delete_quote_request(id, message) {
     }).then(function (willDelete) {
         if (willDelete) {
             var data = {
-                "id": id,
-                "sys_lang_id": mds_config.sys_lang_id
+                "id": id, "sys_lang_id": mds_config.sys_lang_id
             };
             data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
             $.ajax({
@@ -2115,9 +2020,7 @@ function get_product_shipping_cost(val, product_id) {
     $("#product_shipping_cost_container").empty();
     $(".product-shipping-loader").show();
     var data = {
-        "state_id": val,
-        "product_id": product_id,
-        "sys_lang_id": mds_config.sys_lang_id
+        "state_id": val, "product_id": product_id, "sys_lang_id": mds_config.sys_lang_id
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
@@ -2145,8 +2048,7 @@ function delete_shipping_address(id, message) {
     }).then(function (willDelete) {
         if (willDelete) {
             var data = {
-                "id": id,
-                "sys_lang_id": mds_config.sys_lang_id
+                "id": id, "sys_lang_id": mds_config.sys_lang_id
             };
             data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
             $.ajax({
@@ -2164,8 +2066,7 @@ function delete_shipping_address(id, message) {
 //delete attachment
 function delete_support_attachment(id) {
     var data = {
-        'id': id,
-        'ticket_type': 'client'
+        'id': id, 'ticket_type': 'client'
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
@@ -2188,10 +2089,7 @@ function close_support_ticket(id) {
     };
     data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
     $.ajax({
-        type: "POST",
-        url: mds_config.base_url + "close-ticket-post",
-        data: data,
-        success: function (response) {
+        type: "POST", url: mds_config.base_url + "close-ticket-post", data: data, success: function (response) {
             location.reload();
         }
     });
@@ -2271,3 +2169,5 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
+
+//wishlist button clicked
