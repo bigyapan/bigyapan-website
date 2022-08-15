@@ -87,8 +87,8 @@
 </div>
 */ ?>
 <div class="product-card product-item" >
-    <div style="cursor:pointer" class="product-media row-custom <?php echo (!empty($product->image_second)) ? ' product-multiple-image' : ''; ?>">
-        <div onclick="location.href='<?php echo generate_product_url($product); ?>';" class="product-img img-product-container">
+    <div onclick="location.href='<?php echo generate_product_url($product); ?>';" style="cursor:pointer" class="product-media row-custom <?php echo (!empty($product->image_second)) ? ' product-multiple-image' : ''; ?>">
+        <div class="product-img img-product-container">
             </a><?php if (!empty($is_slider)): ?>
                     <img src="<?php echo base_url() . IMG_BG_PRODUCT_SMALL; ?>"
                          data-lazy="<?php echo get_product_item_image($product); ?>"
