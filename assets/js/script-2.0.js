@@ -1712,6 +1712,7 @@ $(document).on('change', '#zip_code_input', function () {
     update_product_map();
 });
 
+
 $(document).on('click', '.btn-add-remove-wishlist', function () {
     var product_id = $(this).attr("data-product-id");
     var data_type = $(this).attr("data-type");
