@@ -138,7 +138,7 @@
                     <div class="row m-l-5">
                         <h6 class="breadcrumb-product-item m-t-15 text-truncate">
                             <i
-                                    class="fa fa-tag breadcrumb-product-item" style="margin-right:5px;"></i>
+                                    class="fi fi-sr-tags breadcrumb-product-item" style="margin-right:5px;"></i>
 
                             <?php echo category_name($parent_categories[0]); ?></h6>
                     </div>
@@ -150,7 +150,7 @@
                 <a href="<?php echo generate_product_url($product); ?>"><?= get_product_title($product); ?></a>
             </h5>
             <div class="product-meta text-truncate">
-            <span><i class="fa fa-shopping-bag"></i><a href="<?php echo generate_profile_url($product->user_slug); ?>">
+            <span><i class="fi fi-ss-store-alt"></i><a href="<?php echo generate_profile_url($product->user_slug); ?>">
                 <?php echo get_shop_name_product($product); ?>
             </a></span>
             </div>

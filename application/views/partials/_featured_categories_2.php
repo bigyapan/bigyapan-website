@@ -40,8 +40,8 @@
         }
 
         .carousel-cell-2 {
-            width: 25%;
-            height:135px;
+            width: 16%;
+            height:100px;
             padding-bottom:0;
             border-radius: 5px;
             display: inline-flex;
@@ -50,7 +50,7 @@
             margin-right: 10px;
             align-items: start;
             justify-content: center;
-            text-align: center;
+            text-align: left;
         }
 
         .carousel-cell-2 > img {
