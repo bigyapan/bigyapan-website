@@ -364,7 +364,7 @@ class Settings_model extends CI_Model
             delete_file_from_server($this->general_settings->watermark_image_small);
             //upload new files
             $data['watermark_image_large'] = $file_path;
-            $data['watermark_image_mid'] = $this->upload_model->resize_watermark($file_path, 300, 300);
+            $data['watermark_image_mid'] = $this->upload_model->resize_watermark($file_path, 100, 100);
             $data['watermark_image_small'] = $this->upload_model->resize_watermark($file_path, 100, 100);
         }
 
