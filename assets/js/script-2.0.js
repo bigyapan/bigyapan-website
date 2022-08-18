@@ -232,12 +232,12 @@ $(document).on('click', '#navbar_mobile_back_button a', function () {
 function mobile_menu() {
     var categories = $('.mega-menu li a[data-parent-id="' + obj_mobile_nav.id + '"]');
     if (categories.length > 0) {
-        if (obj_mobile_nav.back_button == 1) {
+        /*if (obj_mobile_nav.back_button == 1) {
             $("#navbar_mobile_links").hide();
         } else {
             $("#navbar_mobile_links").show();
             $("#navbar_mobile_back_button").empty();
-        }
+        }*/
         $("#navbar_mobile_categories").empty();
         $("#navbar_mobile_back_button").empty();
         if (obj_mobile_nav.back_button == 1) {

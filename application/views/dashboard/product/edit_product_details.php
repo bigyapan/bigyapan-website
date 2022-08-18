@@ -24,7 +24,8 @@
                 <div class="row">
                     <div class="col-md-12 wizard-add-product">
                         <ul class="wizard-progress">
-                            <li class="active" id="step_general"><strong><?= trans("general_information"); ?></strong></li>
+                            <li class="active" id="step_general"><strong><?= trans("general_information"); ?></strong>
+                            </li>
                             <li class="active" id="step_dedails"><strong><?= trans("details"); ?></strong></li>
                         </ul>
                     </div>
@@ -36,7 +37,9 @@
 
 <?php if ($show_shipping_options_warning): ?>
     <div class="alert alert-danger alert-large">
-        <i class="fa fa-warning"></i>&nbsp;&nbsp;<?= trans("vendor_no_shipping_option_warning"); ?>&nbsp;<a href="<?= generate_dash_url("shipping_settings"); ?>" target="_blank" class="link-blue"><?= trans("shipping_settings"); ?></a>
+        <i class="fa fa-warning"></i>&nbsp;&nbsp;<?= trans("vendor_no_shipping_option_warning"); ?>&nbsp;<a
+                href="<?= generate_dash_url("shipping_settings"); ?>" target="_blank"
+                class="link-blue"><?= trans("shipping_settings"); ?></a>
     </div>
 <?php endif; ?>
 
@@ -74,14 +77,20 @@
                                 <div class="row">
                                     <div class="col-12 col-sm-6 col-custom-field">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" name="multiple_sale" value="1" id="multiple_sale_1" class="custom-control-input" <?= $product->multiple_sale == 1 ? 'checked' : ''; ?> required>
-                                            <label for="multiple_sale_1" class="custom-control-label"><?= trans('multiple_sale_option_1'); ?></label>
+                                            <input type="radio" name="multiple_sale" value="1" id="multiple_sale_1"
+                                                   class="custom-control-input" <?= $product->multiple_sale == 1 ? 'checked' : ''; ?>
+                                                   required>
+                                            <label for="multiple_sale_1"
+                                                   class="custom-control-label"><?= trans('multiple_sale_option_1'); ?></label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6 col-custom-field listing_ordinary_listing">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" name="multiple_sale" value="0" id="multiple_sale_2" class="custom-control-input" <?= $product->multiple_sale != 1 ? 'checked' : ''; ?> required>
-                                            <label for="multiple_sale_2" class="custom-control-label"><?php echo trans('multiple_sale_option_2'); ?></label>
+                                            <input type="radio" name="multiple_sale" value="0" id="multiple_sale_2"
+                                                   class="custom-control-input" <?= $product->multiple_sale != 1 ? 'checked' : ''; ?>
+                                                   required>
+                                            <label for="multiple_sale_2"
+                                                   class="custom-control-label"><?php echo trans('multiple_sale_option_2'); ?></label>
                                         </div>
                                     </div>
                                 </div>
@@ -95,7 +104,9 @@
                                 </h4>
                             </div>
                             <div class="form-box-body">
-                                <input type="text" name="files_included" class="form-control form-input" value="<?php echo html_escape($product->files_included); ?>" placeholder="<?php echo trans("files_included"); ?>" required maxlength="250">
+                                <input type="text" name="files_included" class="form-control form-input"
+                                       value="<?php echo html_escape($product->files_included); ?>"
+                                       placeholder="<?php echo trans("files_included"); ?>" required maxlength="250">
                             </div>
                         </div>
                     <?php endif; ?>
@@ -131,7 +142,9 @@
                                         </div>
                                         <div class="form-box-body">
                                             <div class="form-group">
-                                                <input type="number" name="stock" class="form-control form-input" min="0" max="999999999" value="<?php echo $product->stock; ?>" placeholder="<?php echo trans("stock"); ?>" required>
+                                                <input type="number" name="stock" class="form-control form-input"
+                                                       min="0" max="999999999" value="<?php echo $product->stock; ?>"
+                                                       placeholder="<?php echo trans("stock"); ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -142,14 +155,20 @@
                                     <div class="col-sm-12 col-lg-6">
                                         <div class="form-box-head">
                                             <h4 class="title">
-                                                <?php echo trans('sku'); ?>&nbsp;<small style="width: auto;display: inline-block;margin-bottom: 0;margin-top:0;">(<?php echo trans("product_code"); ?>)</small>
+                                                <?php echo trans('sku'); ?>&nbsp;<small
+                                                        style="width: auto;display: inline-block;margin-bottom: 0;margin-top:0;">(<?php echo trans("product_code"); ?>
+                                                    )</small>
                                             </h4>
                                         </div>
                                         <div class="form-box-body">
                                             <div class="form-group">
                                                 <div class="position-relative">
-                                                    <input type="text" name="sku" id="input_sku" class="form-control form-input" value="<?= $product->sku; ?>" placeholder="<?php echo trans("sku"); ?>&nbsp;(<?php echo trans("optional"); ?>)" maxlength="90">
-                                                    <button type="button" class="btn btn-default btn-generate-sku" onclick="$('#input_sku').val(generateUniqueString());"><?= trans("generate"); ?></button>
+                                                    <input type="text" name="sku" id="input_sku"
+                                                           class="form-control form-input" value="<?= $product->sku; ?>"
+                                                           placeholder="<?php echo trans("sku"); ?>&nbsp;(<?php echo trans("optional"); ?>)"
+                                                           maxlength="90">
+                                                    <button type="button" class="btn btn-default btn-generate-sku"
+                                                            onclick="$('#input_sku').val(generateUniqueString());"><?= trans("generate"); ?></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -161,8 +180,17 @@
                         </div>
                     </div>
                 </div>
+                <?php $parent_categories = $this->category_model->get_parent_categories_tree($this->category_model->get_category_back_end($product->category_id)) ?>
+                <?php if (!empty($parent_categories)): ?>
+                    <?php $parent_category = category_name($parent_categories[0]) ?>
+                    <?php if ($parent_category !== html_escape("Jobs") && $parent_category !== html_escape("Lost & Found")): ?>
+                        <?php $this->load->view("dashboard/product/_edit_price"); ?>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <?php $this->load->view("dashboard/product/_edit_price"); ?>
+                <?php endif; ?>
 
-                <?php $this->load->view("dashboard/product/_edit_price"); ?>
+
 
                 <?php if (($product->product_type == 'physical' && $this->product_settings->physical_demo_url == 1) || ($product->product_type == 'digital' && $this->product_settings->digital_demo_url == 1)): ?>
                     <div class="form-box">
@@ -173,7 +201,9 @@
                             </h4>
                         </div>
                         <div class="form-box-body">
-                            <input type="text" name="demo_url" class="form-control form-input" value="<?= html_escape($product->demo_url); ?>" placeholder="<?= trans("demo_url"); ?>" maxlength="990">
+                            <input type="text" name="demo_url" class="form-control form-input"
+                                   value="<?= html_escape($product->demo_url); ?>"
+                                   placeholder="<?= trans("demo_url"); ?>" maxlength="990">
                         </div>
                     </div>
                 <?php endif; ?>
@@ -222,7 +252,9 @@
                             </h4>
                         </div>
                         <div class="form-box-body">
-                            <input type="text" name="external_link" class="form-control form-input" value="<?php echo html_escape($product->external_link); ?>" placeholder="<?php echo trans("external_link"); ?>" maxlength="990">
+                            <input type="text" name="external_link" class="form-control form-input"
+                                   value="<?php echo html_escape($product->external_link); ?>"
+                                   placeholder="<?php echo trans("external_link"); ?>" maxlength="990">
                         </div>
                     </div>
                 <?php endif; ?>
@@ -242,10 +274,12 @@
                                     <?php $this->load->view("dashboard/product/variation/_response_variations", ["product_variations" => $product_variations]); ?>
                                 </div>
                                 <div class="col-sm-12">
-                                    <button type="button" class="btn btn-md btn-info btn-variation" data-toggle="modal" data-target="#addVariationModal">
+                                    <button type="button" class="btn btn-md btn-info btn-variation" data-toggle="modal"
+                                            data-target="#addVariationModal">
                                         <?php echo trans("add_variation"); ?>
                                     </button>
-                                    <button type="button" class="btn btn-md btn-secondary btn-variation" data-toggle="modal" data-target="#variationModalSelect">
+                                    <button type="button" class="btn btn-md btn-secondary btn-variation"
+                                            data-toggle="modal" data-target="#variationModalSelect">
                                         <?php echo trans("select_existing_variation"); ?>
                                     </button>
                                 </div>
@@ -298,14 +332,18 @@
         <div class="form-group">
             <div class="custom-control custom-checkbox custom-control-validate-input">
                 <?php if ($product->is_draft == 1): ?>
-                    <input type="checkbox" class="custom-control-input" name="terms_conditions" id="terms_conditions" value="1" required>
+                    <input type="checkbox" class="custom-control-input" name="terms_conditions" id="terms_conditions"
+                           value="1" required>
                 <?php else: ?>
-                    <input type="checkbox" class="custom-control-input" name="terms_conditions" id="terms_conditions" value="1" checked>
+                    <input type="checkbox" class="custom-control-input" name="terms_conditions" id="terms_conditions"
+                           value="1" checked>
                 <?php endif; ?>
-                <label for="terms_conditions" class="custom-control-label"><?php echo trans("terms_conditions_exp"); ?>&nbsp;
+                <label for="terms_conditions" class="custom-control-label"><?php echo trans("terms_conditions_exp"); ?>
+                    &nbsp;
                     <?php $page_terms = get_page_by_default_name("terms_conditions", $this->selected_lang->id);
                     if (!empty($page_terms)): ?>
-                        <a href="<?= generate_url($page_terms->page_default_name); ?>" class="link-terms" target="_blank"><strong><?= html_escape($page_terms->title); ?></strong></a>
+                        <a href="<?= generate_url($page_terms->page_default_name); ?>" class="link-terms"
+                           target="_blank"><strong><?= html_escape($page_terms->title); ?></strong></a>
                     <?php endif; ?>
                 </label>
             </div>
@@ -313,12 +351,16 @@
     </div>
     <div class="col-sm-12">
         <div class="form-group m-t-15">
-            <a href="<?php echo generate_dash_url("edit_product") . "/" . $product->id; ?>" class="btn btn-lg btn-dark pull-left"><?php echo trans("back"); ?></a>
+            <a href="<?php echo generate_dash_url("edit_product") . "/" . $product->id; ?>"
+               class="btn btn-lg btn-dark pull-left"><?php echo trans("back"); ?></a>
             <?php if ($product->is_draft == 1): ?>
-                <button type="submit" name="submit" value="submit" class="btn btn-lg btn-success btn-form-product-details pull-right"><?php echo trans("submit"); ?></button>
-                <button type="submit" name="submit" value="save_as_draft" class="btn btn-lg btn-secondary btn-form-product-details m-r-10 pull-right"><?php echo trans("save_as_draft"); ?></button>
+                <button type="submit" name="submit" value="submit"
+                        class="btn btn-lg btn-success btn-form-product-details pull-right"><?php echo trans("submit"); ?></button>
+                <button type="submit" name="submit" value="save_as_draft"
+                        class="btn btn-lg btn-secondary btn-form-product-details m-r-10 pull-right"><?php echo trans("save_as_draft"); ?></button>
             <?php else: ?>
-                <button type="submit" name="submit" value="save_changes" class="btn btn-lg btn-success btn-form-product-details pull-right"><?php echo trans("save_changes"); ?></button>
+                <button type="submit" name="submit" value="save_changes"
+                        class="btn btn-lg btn-success btn-form-product-details pull-right"><?php echo trans("save_changes"); ?></button>
             <?php endif; ?>
         </div>
     </div>

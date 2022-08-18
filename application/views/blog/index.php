@@ -5,13 +5,13 @@
         <div class="row">
 
             <div class="col-12">
-                <div class="row">
-                    <div class="col-12">
-                        <!--Include banner-->
-                        <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "blog_1", "class" => "m-b-30"]); ?>
-                    </div>
-                </div>
                 <div class="blog-content">
+                    <div class="row">
+                        <div class="col-12">
+                            <!--Include banner-->
+                            <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "blog_1", "class" => "m-b-10 m-t-10"]); ?>
+                        </div>
+                    </div>
                     <nav class="nav-breadcrumb" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="<?php echo lang_base_url(); ?>"><?php echo trans("home"); ?></a></li>

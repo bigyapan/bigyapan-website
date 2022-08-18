@@ -149,7 +149,7 @@
     font-weight: bold;" class="product-title text-truncate">
                 <a href="<?php echo generate_product_url($product); ?>"><?= get_product_title($product); ?></a>
             </h5>
-            <div class="product-meta">
+            <div class="product-meta text-truncate">
             <span><i class="fa fa-shopping-bag"></i><a href="<?php echo generate_profile_url($product->user_slug); ?>">
                 <?php echo get_shop_name_product($product); ?>
             </a></span>

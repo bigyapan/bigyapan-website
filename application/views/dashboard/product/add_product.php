@@ -42,8 +42,10 @@
                             <?php if ($this->general_settings->physical_products_system == 1): ?>
                                 <div class="col-12 col-sm-6 col-custom-field">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" name="product_type" value="physical" id="product_type_1" class="custom-control-input" required>
-                                        <label for="product_type_1" class="custom-control-label"><?php echo trans('physical'); ?></label>
+                                        <input type="radio" name="product_type" value="physical" id="product_type_1"
+                                               class="custom-control-input" required>
+                                        <label for="product_type_1"
+                                               class="custom-control-label"><?php echo trans('physical'); ?></label>
                                         <p class="form-element-exp"><?php echo trans('physical_exp'); ?></p>
                                     </div>
                                 </div>
@@ -51,8 +53,10 @@
                             <?php if ($this->general_settings->digital_products_system == 1): ?>
                                 <div class="col-12 col-sm-6 col-custom-field">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" name="product_type" value="digital" id="product_type_2" class="custom-control-input" required>
-                                        <label for="product_type_2" class="custom-control-label"><?php echo trans('digital'); ?></label>
+                                        <input type="radio" name="product_type" value="digital" id="product_type_2"
+                                               class="custom-control-input" required>
+                                        <label for="product_type_2"
+                                               class="custom-control-label"><?php echo trans('digital'); ?></label>
                                         <p class="form-element-exp"><?php echo trans('digital_exp'); ?></p>
                                     </div>
                                 </div>
@@ -68,8 +72,10 @@
                             <?php if ($this->general_settings->marketplace_system == 1): ?>
                                 <div class="col-12 col-sm-6 col-custom-field listing_sell_on_site">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" name="listing_type" value="sell_on_site" id="listing_type_1" class="custom-control-input" required>
-                                        <label for="listing_type_1" class="custom-control-label"><?php echo trans('add_product_for_sale'); ?></label>
+                                        <input type="radio" name="listing_type" value="sell_on_site" id="listing_type_1"
+                                               class="custom-control-input" required>
+                                        <label for="listing_type_1"
+                                               class="custom-control-label"><?php echo trans('add_product_for_sale'); ?></label>
                                         <p class="form-element-exp"><?php echo trans('add_product_for_sale_exp'); ?></p>
                                     </div>
                                 </div>
@@ -77,8 +83,10 @@
                             <?php if ($this->general_settings->classified_ads_system == 1 && $this->general_settings->physical_products_system == 1): ?>
                                 <div class="col-12 col-sm-6 col-custom-field listing_ordinary_listing">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" name="listing_type" value="ordinary_listing" id="listing_type_2" class="custom-control-input" required>
-                                        <label for="listing_type_2" class="custom-control-label"><?php echo trans('add_product_services_listing'); ?></label>
+                                        <input type="radio" name="listing_type" value="ordinary_listing"
+                                               id="listing_type_2" class="custom-control-input" required>
+                                        <label for="listing_type_2"
+                                               class="custom-control-label"><?php echo trans('add_product_services_listing'); ?></label>
                                         <p class="form-element-exp"><?php echo trans('add_product_services_listing_exp'); ?></p>
                                     </div>
                                 </div>
@@ -86,8 +94,10 @@
                             <?php if ($this->general_settings->bidding_system == 1): ?>
                                 <div class="col-12 col-sm-6 col-custom-field listing_bidding">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" name="listing_type" value="bidding" id="listing_type_3" class="custom-control-input" required>
-                                        <label for="listing_type_3" class="custom-control-label"><?php echo trans('add_product_get_price_requests'); ?></label>
+                                        <input type="radio" name="listing_type" value="bidding" id="listing_type_3"
+                                               class="custom-control-input" required>
+                                        <label for="listing_type_3"
+                                               class="custom-control-label"><?php echo trans('add_product_get_price_requests'); ?></label>
                                         <p class="form-element-exp"><?php echo trans('add_product_get_price_requests_exp'); ?></p>
                                     </div>
                                 </div>
@@ -95,8 +105,10 @@
                             <?php if ($this->general_settings->digital_products_system == 1 && $this->general_settings->selling_license_keys_system == 1): ?>
                                 <div class="col-12 col-sm-6 col-custom-field listing_license_keys">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" name="listing_type" value="license_key" id="listing_type_4" class="custom-control-input" required>
-                                        <label for="listing_type_4" class="custom-control-label"><?php echo trans('add_product_sell_license_keys'); ?></label>
+                                        <input type="radio" name="listing_type" value="license_key" id="listing_type_4"
+                                               class="custom-control-input" required>
+                                        <label for="listing_type_4"
+                                               class="custom-control-label"><?php echo trans('add_product_sell_license_keys'); ?></label>
                                         <p class="form-element-exp"><?php echo trans('add_product_sell_license_keys_exp'); ?></p>
                                     </div>
                                 </div>
@@ -104,12 +116,14 @@
                         </div>
                     </div>
                 <?php else: ?>
-                    <input type="hidden" name="listing_type" value="<?php echo $active_product_system_array['active_system_value']; ?>">
+                    <input type="hidden" name="listing_type"
+                           value="<?php echo $active_product_system_array['active_system_value']; ?>">
                 <?php endif; ?>
 
                 <div class="form-group form-group-category">
                     <label class="control-label"><?php echo trans("category"); ?></label>
-                    <select id="categories" name="category_id[]" class="form-control custom-select m-0" onchange="get_subcategories(this.value, 0);" required>
+                    <select id="categories" name="category_id[]" class="form-control custom-select m-0"
+                            onchange="get_subcategories(this.value, 0);" required>
                         <option value=""><?php echo trans('select_category'); ?></option>
                         <?php if (!empty($this->parent_categories)):
                             foreach ($this->parent_categories as $item): ?>
@@ -137,29 +151,46 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#collapse_<?= $language->id; ?>"><?= trans("details"); ?><?= item_count($this->languages) > 1 ? ':&nbsp;' . $language->name : ''; ?>&nbsp;<?= $this->selected_lang->id != $language->id ? "(" . trans("optional") . ")" : ''; ?><i class="fa fa-caret-down pull-right"></i></a>
+                                <a data-toggle="collapse"
+                                   href="#collapse_<?= $language->id; ?>"><?= trans("details"); ?><?= item_count($this->languages) > 1 ? ':&nbsp;' . $language->name : ''; ?>
+                                    &nbsp;<?= $this->selected_lang->id != $language->id ? "(" . trans("optional") . ")" : ''; ?>
+                                    <i class="fa fa-caret-down pull-right"></i></a>
                             </h4>
                         </div>
-                        <div id="collapse_<?= $language->id; ?>" class="panel-collapse collapse <?= $this->selected_lang->id == $language->id ? 'in' : ''; ?>">
+                        <div id="collapse_<?= $language->id; ?>"
+                             class="panel-collapse collapse <?= $this->selected_lang->id == $language->id ? 'in' : ''; ?>">
                             <div class="panel-body">
                                 <div class="form-group">
                                     <label class="control-label"><?php echo trans("title"); ?></label>
-                                    <input type="text" name="title_<?= $language->id; ?>" class="form-control form-input" placeholder="<?php echo trans("title"); ?>" <?= $this->selected_lang->id == $language->id ? 'required' : ''; ?> maxlength="490">
+                                    <input type="text" name="title_<?= $language->id; ?>"
+                                           class="form-control form-input"
+                                           placeholder="<?php echo trans("title"); ?>" <?= $this->selected_lang->id == $language->id ? 'required' : ''; ?>
+                                           maxlength="490">
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label"><?php echo trans("description"); ?></label>
                                     <!--<div class="row">
                                         <div class="col-sm-12 m-b-5">
-                                            <button type="button" id="btn_add_image_editor" class="btn btn-sm btn-info" data-editor-id="editor_<?/*= $language->id; */?>" data-toggle="modal" data-target="#fileManagerModal"><i class="icon-image"></i>&nbsp;&nbsp;<?php /*echo trans("add_image"); */?></button>
+                                            <button type="button" id="btn_add_image_editor" class="btn btn-sm btn-info" data-editor-id="editor_<? /*= $language->id; */
+                                    ?>" data-toggle="modal" data-target="#fileManagerModal"><i class="icon-image"></i>&nbsp;&nbsp;<?php /*echo trans("add_image"); */
+                                    ?></button>
                                         </div>
                                     </div>-->
-                                    <textarea name="description_<?= $language->id; ?>" id="editor_<?= $language->id; ?>" class="tinyMCEsmall text-editor"></textarea>
+                                    <textarea name="description_<?= $language->id; ?>" id="editor_<?= $language->id; ?>"
+                                              class="tinyMCEsmall text-editor"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label"><?= trans("seo"); ?></label>
-                                    <input type="text" name="seo_title_<?= $language->id; ?>" class="form-control form-input m-b-5" placeholder="<?php echo trans("title"); ?>" maxlength="490">
-                                    <input type="text" name="seo_description_<?= $language->id; ?>" class="form-control form-input m-b-5" placeholder="<?php echo trans("description"); ?>" maxlength="490">
-                                    <input type="text" name="seo_keywords_<?= $language->id; ?>" class="form-control form-input m-b-5" placeholder="<?php echo trans("keywords"); ?> (E.g. book, new, pencil)" maxlength="490">
+                                    <input type="text" name="seo_title_<?= $language->id; ?>"
+                                           class="form-control form-input m-b-5"
+                                           placeholder="<?php echo trans("title"); ?>" maxlength="490">
+                                    <input type="text" name="seo_description_<?= $language->id; ?>"
+                                           class="form-control form-input m-b-5"
+                                           placeholder="<?php echo trans("description"); ?>" maxlength="490">
+                                    <input type="text" name="seo_keywords_<?= $language->id; ?>"
+                                           class="form-control form-input m-b-5"
+                                           placeholder="<?php echo trans("keywords"); ?> (E.g. book, new, pencil)"
+                                           maxlength="490">
                                 </div>
                             </div>
                         </div>
@@ -170,12 +201,14 @@
     </div>
 
     <div class="col-sm-12">
-        <button type="submit" class="btn btn-lg btn-success pull-right"><?php echo trans("save_and_continue"); ?></button>
+        <button type="submit"
+                class="btn btn-lg btn-success pull-right"><?php echo trans("save_and_continue"); ?></button>
     </div>
 </div>
 <?php echo form_close(); ?>
 
-<div class="modal fade" id="fileManagerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="fileManagerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
     <div class="modal-dialog modal-lg modal-file-manager" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -205,7 +238,8 @@
                                     <input type="file" name="file" size="40" multiple="multiple">
                                 </a>
                                 <ul class="dm-uploaded-files" id="files-file-manager"></ul>
-                                <button type="button" id="btn_reset_upload_image" class="btn btn-reset-upload"><?php echo trans("reset"); ?></button>
+                                <button type="button" id="btn_reset_upload_image"
+                                        class="btn btn-reset-upload"><?php echo trans("reset"); ?></button>
                             </div>
                         </div>
                     </div>
@@ -214,9 +248,11 @@
                             <div id="ckimage_file_upload_response">
                                 <?php foreach ($file_manager_images as $image): ?>
                                     <div class="col-file-manager" id="ckimg_col_id_<?php echo $image->id; ?>">
-                                        <div class="file-box" data-file-id="<?php echo $image->id; ?>" data-file-path="<?php echo get_file_manager_image($image); ?>">
+                                        <div class="file-box" data-file-id="<?php echo $image->id; ?>"
+                                             data-file-path="<?php echo get_file_manager_image($image); ?>">
                                             <div class="image-container">
-                                                <img src="<?php echo get_file_manager_image($image); ?>" alt="" class="img-responsive">
+                                                <img src="<?php echo get_file_manager_image($image); ?>" alt=""
+                                                     class="img-responsive">
                                             </div>
                                         </div>
                                     </div>
@@ -230,9 +266,13 @@
             </div>
             <div class="modal-footer">
                 <div class="file-manager-footer">
-                    <button type="button" id="btn_ckimg_delete" class="btn btn-sm btn-danger color-white pull-left btn-file-delete m-r-3"><i class="icon-trash"></i>&nbsp;&nbsp;<?php echo trans('delete'); ?></button>
-                    <button type="button" id="btn_ckimg_select" class="btn btn-sm btn-info color-white btn-file-select"><i class="icon-check"></i>&nbsp;&nbsp;<?php echo trans('select_image'); ?></button>
-                    <button type="button" class="btn btn-sm btn-secondary color-white" data-dismiss="modal"><?php echo trans('close'); ?></button>
+                    <button type="button" id="btn_ckimg_delete"
+                            class="btn btn-sm btn-danger color-white pull-left btn-file-delete m-r-3"><i
+                                class="icon-trash"></i>&nbsp;&nbsp;<?php echo trans('delete'); ?></button>
+                    <button type="button" id="btn_ckimg_select" class="btn btn-sm btn-info color-white btn-file-select">
+                        <i class="icon-check"></i>&nbsp;&nbsp;<?php echo trans('select_image'); ?></button>
+                    <button type="button" class="btn btn-sm btn-secondary color-white"
+                            data-dismiss="modal"><?php echo trans('close'); ?></button>
                 </div>
             </div>
         </div>
@@ -278,11 +318,13 @@
 
 <script type="text/html" id="files-template-file-manager">
     <li class="media">
-        <img class="preview-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="">
+        <img class="preview-img"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="">
         <div class="media-body">
             <div class="progress">
                 <div class="dm-progress-waiting"><?php echo trans("waiting"); ?></div>
-                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                     aria-valuemax="100"></div>
             </div>
         </div>
     </li>
