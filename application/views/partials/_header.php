@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/new-styles.min.css">
     <meta property="og:locale" content="en-US"/>
+    <meta name="facebook-domain-verification" content="3jbtauvaluphefndj68tt37fzt2duz" />
     <meta property="og:site_name" content="<?= xss_clean($this->general_settings->application_name); ?>"/>
     <?php if (isset($show_og_tags)): ?>
         <meta property="og:type" content="<?= !empty($og_type) ? $og_type : 'website'; ?>"/>
