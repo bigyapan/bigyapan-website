@@ -1038,16 +1038,16 @@ img {
 
 .nav-top .nav-top-left {
     padding-right: 5px;
-    -ms-flex: 0 0 65.666667%;
-    flex: 0 0 65.666667%;
-    max-width: 65.666667%;
+    -ms-flex: 0 0 80%;
+    flex: 0 0 80%;
+    max-width: 80%;
 }
 
 .nav-top .nav-top-right {
     padding-left: 0 !important;
-    -ms-flex: 0 0 34.333333%;
-    flex: 0 0 34.333333%;
-    max-width: 34.333333%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
 }
 
 .nav-top .nav-top-left .logo {
