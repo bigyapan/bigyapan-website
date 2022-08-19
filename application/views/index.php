@@ -21,7 +21,7 @@
             <div class="col-12">
                 <div class="row-custom row-bn">
                     <!--Include banner-->
-                    <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "index_1", "class" => ""]); ?>
+                    <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "index_1", "class" => "m-b-10"]); ?>
                 </div>
             </div>
             <div class="col-12">
@@ -78,7 +78,7 @@
             <div class="col-12">
                 <div class="row-custom row-bn">
                     <!--Include banner-->
-                    <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "index_2", "class" => ""]); ?>
+                    <?php $this->load->view("partials/_ad_spaces", ["ad_space" => "index_2", "class" => "m-b-10"]); ?>
                 </div>
             </div>
             <?php if ($this->general_settings->index_blog_slider == 1 && !empty($blog_slider_posts)): ?>
