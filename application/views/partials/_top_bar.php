@@ -29,7 +29,7 @@
                     </ul>
                 <?php endif; ?>
             </div>
-            <div class="col-6 col-right">
+            <div class="col-6 col-right custom-top-bar-right">
                 <ul class="navbar-nav">
                     <?php if ($this->general_settings->location_search_header == 1 && item_count($this->countries) > 0): ?>
                         <li class="nav-item">

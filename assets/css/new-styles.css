@@ -2101,6 +2101,11 @@ textarea.form-control {
     display: flex;
     align-items: center;
 }
+.custom-top-bar-right {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
 .custom-top-bar-item-shop a {
     color:white !important;
 }
