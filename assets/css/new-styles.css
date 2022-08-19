@@ -31,6 +31,7 @@
     --primary-bshadow: 0px 15px 35px 0px rgba(0, 0, 0, 0.1);
     --primary-tshadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
 }
+
 /*
 * {
     margin: 0px;
@@ -785,24 +786,27 @@ textarea.form-control {
 }*/
 
 
-
 .breadcrumb-product {
     align-items: center;
     background: none;
     padding: 0px;
     margin: 0px;
 }
+
 .breadcrumb-product li {
     text-transform: capitalize;
 }
+
 .breadcrumb-product li a {
     color: var(--chalk);
     text-shadow: var(--primary-tshadow);
 }
+
 .breadcrumb-product li a:hover {
     color: var(--primary-light);
     text-decoration: underline;
 }
+
 .breadcrumb-product .active {
     color: var(--primary-light);
     text-shadow: var(--primary-tshadow);
@@ -839,11 +843,13 @@ textarea.form-control {
     position: relative;
     display: inline-block;
 }
+
 .cross-vertical-badge:hover span {
     visibility: visible;
     opacity: 1;
     left: 35px;
 }
+
 .cross-vertical-badge i {
     font-size: 16px;
     padding: 8px 8px 12px;
@@ -854,6 +860,7 @@ textarea.form-control {
     border-bottom-right-radius: 3px;
     clip-path: polygon(0 0, 53% 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
 }
+
 .cross-vertical-badge span {
     font-size: 15px;
     padding: 3px 10px;
@@ -876,6 +883,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .cross-vertical-badge span::before {
     position: absolute;
     content: "";
@@ -898,6 +906,7 @@ textarea.form-control {
     background: var(--primary);
     clip-path: polygon(100% 0%, 90% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
 }
+
 .cross-inline-badge span {
     margin-right: 8px;
     letter-spacing: 0.5px;
@@ -911,9 +920,11 @@ textarea.form-control {
 .page-item {
     margin: 0px 3px;
 }
+
 .page-item:first-child .page-link, .page-item:last-child .page-link {
     border-radius: 50%;
 }
+
 .page-item .active {
     color: var(--white);
     background: var(--primary);
@@ -931,10 +942,12 @@ textarea.form-control {
     color: var(--gray);
     background: var(--white);
 }
+
 .page-link:hover {
     color: var(--white);
     background: var(--primary);
 }
+
 .page-link:focus {
     box-shadow: none;
 }
@@ -946,6 +959,7 @@ textarea.form-control {
         line-height: 35px;
     }
 }
+
 .slider-arrow:hover .dandik,
 .slider-arrow:hover .bamdik {
     visibility: visible;
@@ -958,6 +972,7 @@ textarea.form-control {
     left: 50%;
     transform: translateX(-50%);
 }
+
 .slider-dots ul li {
     width: 25px;
     height: 5px;
@@ -968,9 +983,11 @@ textarea.form-control {
     cursor: pointer;
     box-shadow: 0px 15px 35px 0px rgba(0, 0, 0, 0.1);
 }
+
 .slider-dots ul li button {
     display: none;
 }
+
 .slider-dots ul li.slick-active {
     background: var(--primary);
 }
@@ -1000,6 +1017,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .dandik:hover,
 .bamdik:hover {
     color: var(--white);
@@ -1019,24 +1037,30 @@ textarea.form-control {
     margin-bottom: 25px;
     text-align: center;
 }
+
 .star-rating input {
     display: none;
 }
+
 .star-rating input:checked ~ label::after {
     opacity: 1;
 }
+
 .star-rating label {
     display: inline-block;
     position: relative;
     cursor: pointer;
     margin: 0px 8px;
 }
+
 .star-rating label:hover::after {
     opacity: 1;
 }
+
 .star-rating label:hover:hover ~ label::after {
     opacity: 1;
 }
+
 .star-rating label::before {
     content: "\f005";
     font-family: "Font Awesome 5 Free";
@@ -1045,6 +1069,7 @@ textarea.form-control {
     display: block;
     color: #bbbbbb;
 }
+
 .star-rating label::after {
     content: "\f005";
     font-family: "Font Awesome 5 Free";
@@ -1063,6 +1088,7 @@ textarea.form-control {
         margin: 0px 3px;
     }
 }
+
 /*========================================
             COMPONENT STYLE END
 =========================================*/
@@ -1088,9 +1114,11 @@ textarea.form-control {
     align-items: center;
     justify-content: space-between;
 }
+
 .dropdown-header h5 {
     text-transform: capitalize;
 }
+
 .dropdown-header a {
     font-size: 13px;
     font-weight: 500;
@@ -1103,6 +1131,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .dropdown-header a:hover {
     text-decoration: underline;
 }
@@ -1115,18 +1144,22 @@ textarea.form-control {
     border-bottom: 2px solid var(--primary);
     background: #dffbff;
 }
+
 .suggest-card img {
     height: 50px;
     margin-bottom: 18px;
 }
+
 .suggest-card h6 {
     font-weight: 500;
     margin-bottom: 5px;
     text-transform: capitalize;
 }
+
 .suggest-card h6:hover {
     color: var(--primary);
 }
+
 .suggest-card p {
     font-size: 14px;
     font-weight: 500;
@@ -1134,7 +1167,7 @@ textarea.form-control {
 }
 
 .product-card {
-    cursor:pointer;
+    cursor: pointer;
     border-radius: 8px;
     margin-bottom: 30px;
     background: var(--chalk);
@@ -1146,17 +1179,21 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .product-card:hover {
     background: var(--white);
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.1);
 }
+
 .product-card:hover .product-media::before {
     visibility: visible;
     opacity: 1;
 }
+
 .product-card:hover .product-img img {
     transform: scale(1.08);
 }
+
 .product-card:hover .product-action {
     visibility: visible;
     opacity: 1;
@@ -1165,6 +1202,7 @@ textarea.form-control {
 .product-media {
     position: relative;
 }
+
 .product-media::before {
     position: absolute;
     content: "";
@@ -1186,6 +1224,7 @@ textarea.form-control {
 .product-img {
     overflow: hidden;
 }
+
 .product-img img {
     width: 100%;
     transition: all linear 0.5s;
@@ -1223,24 +1262,30 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .product-action li i {
     margin-right: 5px;
     margin-bottom: 1px;
     font-size: 14px;
 }
+
 .product-action li span {
     font-size: 14px;
     color: var(--chalk);
 }
+
 .product-action .view i {
     color: var(--view);
 }
+
 .product-action .click i {
     color: var(--click);
 }
+
 .product-action .wishlist i {
     color: var(--wishlist);
 }
+
 .product-action .rating i {
     color: var(--rating);
 }
@@ -1254,22 +1299,27 @@ textarea.form-control {
     padding: 10px 0px 8px;
     border-bottom: 1px solid var(--border);
 }
+
 .product-category li i {
     font-size: 13px;
     color: #999999;
     margin-right: 8px;
 }
+
 .product-category .breadcrumb-product-item {
     font-size: 13px;
     color: var(--gray);
     white-space: nowrap;
 }
+
 .product-category .breadcrumb-product-item::before {
     color: var(--gray);
 }
+
 .product-category .breadcrumb-product-item a {
     color: var(--gray);
 }
+
 .product-category .breadcrumb-product-item a:hover {
     color: var(--primary);
 }
@@ -1277,6 +1327,7 @@ textarea.form-control {
 .product-title {
     margin-bottom: 5px;
 }
+
 .product-title a {
     color: var(--heading);
     transition: all linear 0.3s;
@@ -1285,6 +1336,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .product-title a:hover {
     color: #F47B20;
 }
@@ -1292,10 +1344,12 @@ textarea.form-control {
 .product-meta {
     margin-bottom: 12px;
 }
+
 .product-meta span {
     font-size: 13px;
     margin-right: 15px;
 }
+
 .product-meta i {
     margin-right: 5px;
     color: #999999;
@@ -1310,10 +1364,11 @@ textarea.form-control {
 }
 
 .product-price {
-    margin-bottom:0;
+    margin-bottom: 0;
     font-weight: 700;
     font-family: sans-serif;
 }
+
 .product-price span {
     font-weight: 700;
     margin-right: 3px;
@@ -1336,10 +1391,12 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .product-btn a:hover,
 .product-btn .button-card:hover {
     color: var(--primary);
 }
+
 .product-btn .fas.fa-heart {
     color: var(--primary);
 }
@@ -1348,13 +1405,16 @@ textarea.form-control {
     display: flex;
     align-items: center;
 }
+
 .product-card.standard .product-media {
     margin: 0px 12px;
 }
+
 .product-card.standard .product-img img {
     width: 250px;
     height: auto;
 }
+
 .product-card.standard .product-content {
     width: 100%;
 }
@@ -1362,6 +1422,7 @@ textarea.form-control {
 .ad-standard .product-card.standard .product-media {
     margin: 15px 15px;
 }
+
 .ad-standard .product-card.standard .product-img img {
     width: 280px;
 }
@@ -1372,31 +1433,37 @@ textarea.form-control {
         margin: 0px auto 30px;
     }
 }
+
 @media (max-width: 575px) {
     .product-card.standard,
     .ad-standard .product-card.standard {
         flex-direction: column;
     }
+
     .product-card.standard .product-media,
     .ad-standard .product-card.standard .product-media {
         margin: 0px;
     }
+
     .product-card.standard .product-img img,
     .ad-standard .product-card.standard .product-img img {
         width: 100%;
         height: auto;
     }
 }
+
 @media (min-width: 576px) and (max-width: 767px) {
     .product-card.standard .product-img img,
     .ad-standard .product-card.standard .product-img img {
         width: 225px;
     }
 }
+
 .feature-card {
     position: relative;
     overflow: hidden;
 }
+
 .feature-card::before {
     position: absolute;
     content: "";
@@ -1411,6 +1478,7 @@ textarea.form-control {
 .feature-img {
     display: block;
 }
+
 .feature-img img {
     width: 100%;
     border-radius: 8px;
@@ -1427,6 +1495,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .feature-badge:hover {
     left: 0px;
 }
@@ -1436,6 +1505,7 @@ textarea.form-control {
     top: 20px;
     right: 20px;
 }
+
 .feature-wish i {
     width: 38px;
     height: 38px;
@@ -1464,6 +1534,7 @@ textarea.form-control {
 .feature-category {
     margin-bottom: 15px;
 }
+
 .feature-category .flat-badge {
     margin-right: 12px;
 }
@@ -1472,6 +1543,7 @@ textarea.form-control {
     font-weight: 500;
     margin-bottom: 15px;
 }
+
 .feature-title a {
     color: var(--chalk);
     transition: all linear 0.3s;
@@ -1480,6 +1552,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .feature-title a:hover {
     color: var(--primary-light);
 }
@@ -1491,6 +1564,7 @@ textarea.form-control {
     color: var(--primary-light);
     margin-right: 30px;
 }
+
 .feature-price small {
     font-size: 15px;
     font-weight: 400;
@@ -1505,6 +1579,7 @@ textarea.form-control {
     letter-spacing: 0.3px;
     white-space: nowrap;
 }
+
 .feature-time i {
     margin-right: 5px;
 }
@@ -1515,6 +1590,7 @@ textarea.form-control {
     border-radius: 8px;
     border: 2px solid var(--white);
 }
+
 .feature-thumb img {
     width: 100%;
     border-radius: 8px;
@@ -1528,10 +1604,12 @@ textarea.form-control {
 .ad-feature-slider {
     margin-bottom: 30px;
 }
+
 .ad-feature-slider .feature-card {
     margin: 0px 10px;
     opacity: 0.5;
 }
+
 .ad-feature-slider .slick-center {
     opacity: 1;
 }
@@ -1541,6 +1619,7 @@ textarea.form-control {
         margin: 0px;
     }
 }
+
 @media (max-width: 575px) {
     .feature-content {
         position: inherit;
@@ -1549,26 +1628,32 @@ textarea.form-control {
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
     }
+
     .feature-img img {
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
     }
+
     .feature-wish {
         top: 15px;
         right: 15px;
     }
+
     .feature-title {
         font-size: 18px;
         line-height: 26px;
     }
+
     .feature-meta {
         display: flex;
         flex-direction: column;
     }
+
     .feature-price {
         margin: 0px 0px 5px;
     }
 }
+
 .city-card {
     overflow: hidden;
     position: relative;
@@ -1578,12 +1663,15 @@ textarea.form-control {
     height: 230px;
     width: 100%;
 }
+
 .city-card:hover .city-content {
     bottom: 25px;
 }
+
 .city-card:hover .city-content p {
     opacity: 1;
 }
+
 .city-card::before {
     position: absolute;
     content: "";
@@ -1612,11 +1700,13 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .city-content h4 {
     font-weight: 500;
     color: var(--white);
     text-transform: capitalize;
 }
+
 .city-content p {
     opacity: 0;
     color: var(--white);
@@ -1633,6 +1723,7 @@ textarea.form-control {
         margin: 0px auto 22px;
     }
 }
+
 .category-card {
     overflow: hidden;
     border-radius: 8px;
@@ -1645,6 +1736,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .category-card:hover {
     background: var(--white);
     box-shadow: 0px 8px 25px 0px rgba(0, 0, 0, 0.1);
@@ -1653,6 +1745,7 @@ textarea.form-control {
 .category-head {
     position: relative;
 }
+
 .category-head img {
     width: 100%;
     height: auto;
@@ -1670,6 +1763,7 @@ textarea.form-control {
     flex-direction: column;
     background: linear-gradient(rgba(0, 69, 187, 0.5), rgba(8, 2, 41, 0.5));
 }
+
 .category-content h4 {
     text-transform: capitalize;
     color: var(--chalk);
@@ -1677,6 +1771,7 @@ textarea.form-control {
     font-weight: 500;
     opacity: 1;
 }
+
 .category-content p {
     font-size: 14px;
     line-height: 14px;
@@ -1686,12 +1781,15 @@ textarea.form-control {
 .category-list {
     padding: 12px 20px;
 }
+
 .category-list li {
     border-bottom: 1px solid var(--border);
 }
+
 .category-list li:last-child {
     border-bottom: none;
 }
+
 .category-list li a {
     padding: 12px 0px;
     display: flex;
@@ -1699,14 +1797,17 @@ textarea.form-control {
     justify-content: center;
     justify-content: space-between;
 }
+
 .category-list li a:hover h6,
 .category-list li a:hover p {
     color: var(--primary);
 }
+
 .category-list li a h6 {
     font-size: 15px;
     text-transform: capitalize;
 }
+
 .category-list li a p {
     font-size: 14px;
     line-height: 14px;
@@ -1719,6 +1820,7 @@ textarea.form-control {
         margin: 0px auto 30px;
     }
 }
+
 .price-card {
     padding: 55px 50px 40px;
     background: var(--white);
@@ -1732,6 +1834,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .price-card:hover {
     border-color: var(--primary);
 }
@@ -1741,6 +1844,7 @@ textarea.form-control {
     margin-bottom: 20px;
     border-bottom: 1px solid var(--border);
 }
+
 .price-head i {
     font-size: 50px;
     line-height: 50px;
@@ -1750,6 +1854,7 @@ textarea.form-control {
     right: 15px;
     color: var(--primary);
 }
+
 .price-head h3 {
     font-size: 40px;
     font-family: sans-serif;
@@ -1757,6 +1862,7 @@ textarea.form-control {
     margin-bottom: 20px;
     letter-spacing: -0.5px;
 }
+
 .price-head h4 {
     text-transform: uppercase;
 }
@@ -1764,18 +1870,21 @@ textarea.form-control {
 .price-list {
     margin-bottom: 42px;
 }
+
 .price-list li {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     margin: 20px 0px;
 }
+
 .price-list li i {
     color: var(--primary);
     margin-right: 12px;
     font-size: 14px;
     margin-top: 6px;
 }
+
 .price-list li p {
     color: var(--gray);
 }
@@ -1793,28 +1902,33 @@ textarea.form-control {
         margin-bottom: 30px;
     }
 }
+
 @media (max-width: 575px) {
     .price-card {
         padding: 55px 30px 40px;
     }
 }
+
 @media (min-width: 350px) and (max-width: 575px) {
     .price-card {
         width: 320px;
         margin: 0px auto 30px;
     }
 }
+
 @media (min-width: 576px) and (max-width: 767px) {
     .price-card {
         width: 380px;
         margin: 0px auto 30px;
     }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
     .price-card {
         padding: 65px 35px 50px;
     }
 }
+
 .blog-card {
     background: var(--chalk);
     border-radius: 8px;
@@ -1827,10 +1941,12 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .blog-card:hover {
     background: var(--white);
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.1);
 }
+
 .blog-card:hover .blog-img img {
     transform: scale(1.08) rotate(1deg);
 }
@@ -1842,6 +1958,7 @@ textarea.form-control {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+
 .blog-img img {
     width: 100%;
     border-top-left-radius: 8px;
@@ -1863,6 +1980,7 @@ textarea.form-control {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+
 .blog-overlay span {
     color: var(--white);
     padding: 2px 8px;
@@ -1888,6 +2006,7 @@ textarea.form-control {
 .security {
     background: #e69721;
 }
+
 /*
 .blog-content {
     margin-top: -30px;
@@ -1976,10 +2095,36 @@ textarea.form-control {
     -o-transition: all linear 0.3s;
 }*/
 
+.custom-top-bar-item {
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+}
+.custom-top-bar-item-shop a {
+    color:white !important;
+}
+
+.custom-top-bar-item-shop a i {
+    color:white !important;
+}
+
+.btn-top-bar-item {
+    color: #fff !important;
+    background-color: #F5811F !important;
+    border-color: #F5811F !important;
+}
+
+.btn-top-bar-item:hover, .btn-top-bar-item:focus, .btn-top-bar-item:active {
+    color: #fff !important;
+    opacity:.9;
+}
+
 .best-card {
     display: flex;
     margin: 0px 15px 50px 0px;
 }
+
 .best-card:hover .best-icon i {
     color: var(--white);
     background: var(--primary);
@@ -2011,26 +2156,32 @@ textarea.form-control {
     text-align: center;
     margin-bottom: 50px;
 }
+
 .team-card img {
     width: 100%;
     margin-bottom: 25px;
     border-radius: 8px;
 }
+
 .team-card h5 {
     font-weight: 600;
     text-transform: capitalize;
 }
+
 .team-card h5 a {
     color: var(--heading);
 }
+
 .team-card p {
     font-size: 15px;
     font-weight: 500;
 }
+
 .team-card ul li {
     display: inline-block;
     margin: 0px 5px;
 }
+
 .team-card ul li a i {
     width: 40px;
     height: 40px;
@@ -2047,6 +2198,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .team-card ul li a i:hover {
     color: var(--white);
     background: var(--primary);
@@ -2059,6 +2211,7 @@ textarea.form-control {
         margin: 0px auto 50px;
     }
 }
+
 .counter-card {
     display: flex;
     align-items: center;
@@ -2073,9 +2226,11 @@ textarea.form-control {
 .counter-content {
     text-align: left;
 }
+
 .counter-content h2 {
     font-family: sans-serif;
 }
+
 .counter-content p {
     font-size: 18px;
     font-weight: 500;
@@ -2087,6 +2242,7 @@ textarea.form-control {
         margin-bottom: 60px;
     }
 }
+
 .account-card {
     margin-bottom: 30px;
     padding: 0px 30px 30px;
@@ -2104,6 +2260,7 @@ textarea.form-control {
     justify-content: space-between;
     border-bottom: 1px solid var(--border);
 }
+
 .account-title::before {
     position: absolute;
     content: "";
@@ -2113,9 +2270,11 @@ textarea.form-control {
     height: 2px;
     background: var(--primary);
 }
+
 .account-title h3 {
     font-size: 20px;
 }
+
 .account-title button,
 .account-title a {
     border: none;
@@ -2135,6 +2294,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .account-title button:hover,
 .account-title a:hover {
     color: var(--white);
@@ -2151,19 +2311,23 @@ textarea.form-control {
     margin-bottom: 8px;
     border-bottom: 1px solid var(--border);
 }
+
 .account-card-list li:last-child {
     padding-bottom: 0px;
     margin-bottom: 0px;
     border-bottom: none;
 }
+
 .account-card-list li:hover h6 {
     color: var(--white);
     background: var(--primary);
 }
+
 .account-card-list li h5 {
     font-size: 16px;
     font-weight: 500;
 }
+
 .account-card-list li h6 {
     width: 30px;
     height: 30px;
@@ -2177,15 +2341,19 @@ textarea.form-control {
 .account-card-link li {
     margin-bottom: 8px;
 }
+
 .account-card-link li:last-child {
     margin-bottom: 0px;
 }
+
 .account-card-link li a {
     color: var(--gray);
 }
+
 .account-card-link li a:hover {
     color: var(--primary);
 }
+
 .account-card-link li a i {
     margin-right: 5px;
 }
@@ -2193,10 +2361,12 @@ textarea.form-control {
 .account-card-text {
     margin-left: 20px;
 }
+
 .account-card-text li {
     list-style-type: disc;
     margin-bottom: 20px;
 }
+
 .account-card-text li:last-child {
     margin-bottom: 0px;
 }
@@ -2204,9 +2374,11 @@ textarea.form-control {
 .account-card-form .form-group {
     margin-bottom: 20px;
 }
+
 .account-card-form .form-group:last-child {
     margin-bottom: 0px;
 }
+
 .account-card-form .form-group .btn {
     width: 100%;
     padding: 10px 30px;
@@ -2217,6 +2389,7 @@ textarea.form-control {
         padding: 0px 20px 20px;
     }
 }
+
 .common-card {
     width: 100%;
     padding: 30px 30px;
@@ -2236,6 +2409,7 @@ textarea.form-control {
     justify-content: space-between;
     border-bottom: 1px solid var(--border);
 }
+
 .card-header::before {
     position: absolute;
     content: "";
@@ -2270,6 +2444,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .card-btn:hover {
     color: var(--white);
     background: var(--primary);
@@ -2281,6 +2456,7 @@ textarea.form-control {
         padding: 30px 25px;
     }
 }
+
 .message-list {
     height: 400px;
     overflow-y: scroll;
@@ -2294,6 +2470,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .message-item:hover {
     background: var(--chalk);
 }
@@ -2312,6 +2489,7 @@ textarea.form-control {
     border: 2px solid var(--primary);
     position: relative;
 }
+
 .message-img::before {
     position: absolute;
     content: "";
@@ -2323,6 +2501,7 @@ textarea.form-control {
     background: #aaaaaa;
     border: 2px solid var(--white);
 }
+
 .message-img img {
     width: 50px;
     height: 50px;
@@ -2338,6 +2517,7 @@ textarea.form-control {
     margin-bottom: 5px;
     text-transform: capitalize;
 }
+
 .message-text h6 span {
     font-size: 400;
     font-size: 12px;
@@ -2347,6 +2527,7 @@ textarea.form-control {
     white-space: nowrap;
     position: relative;
 }
+
 .message-text h6 span::before {
     position: absolute;
     content: "";
@@ -2358,11 +2539,13 @@ textarea.form-control {
     background: var(--gray);
     transform: translate(-50%, -50%);
 }
+
 .message-text p {
     font-size: 14px;
     line-height: 20px;
     color: var(--text);
 }
+
 .message-text p span {
     font-weight: 500;
     margin-right: 3px;
@@ -2386,6 +2569,7 @@ textarea.form-control {
     border-radius: 8px;
     background: #e6f1f9;
 }
+
 .message-item.unread .message-text p {
     font-weight: 500;
     color: var(--heading);
@@ -2405,6 +2589,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .notify-item:hover {
     background: var(--chalk);
 }
@@ -2425,6 +2610,7 @@ textarea.form-control {
     margin-right: 12px;
     border: 2px solid var(--primary);
 }
+
 .notify-img img {
     width: 50px;
     height: 50px;
@@ -2437,6 +2623,7 @@ textarea.form-control {
     line-height: 20px;
     color: var(--text);
 }
+
 .notify-text span {
     font-weight: 500;
     text-transform: capitalize;
@@ -2459,6 +2646,7 @@ textarea.form-control {
     border-radius: 8px;
     margin-bottom: 25px;
 }
+
 .review-item:last-child {
     margin-bottom: 0px;
 }
@@ -2487,6 +2675,7 @@ textarea.form-control {
     border-radius: 50%;
     border: 2px solid var(--primary);
 }
+
 .review-avatar img {
     width: 60px;
     border-radius: 50%;
@@ -2499,29 +2688,36 @@ textarea.form-control {
     color: var(--primary);
     text-transform: capitalize;
 }
+
 .review-meta h6 a {
     color: var(--heading);
 }
+
 .review-meta h6 a:hover {
     color: var(--primary);
 }
+
 .review-meta h6 span {
     font-size: 14px;
     font-weight: 400;
     color: var(--text);
     white-space: nowrap;
 }
+
 .review-meta ul li {
     display: inline-block;
     margin-right: 3px;
 }
+
 .review-meta ul li i {
     font-size: 14px;
     color: #bbbbbb;
 }
+
 .review-meta ul li .active {
     color: #ffcc23;
 }
+
 .review-meta ul li h5 {
     font-size: 16px;
     font-weight: 600;
@@ -2546,6 +2742,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .review-dots-btn i:hover {
     color: var(--white);
     background: var(--primary);
@@ -2562,15 +2759,18 @@ textarea.form-control {
     box-shadow: var(--primary-bshadow);
     display: none;
 }
+
 .review-widget-list li a {
     font-size: 13px;
     color: var(--gray);
     padding-left: 8px;
     display: block;
 }
+
 .review-widget-list li a i {
     margin-right: 5px;
 }
+
 .review-widget-list li a:hover {
     background: var(--chalk);
 }
@@ -2585,6 +2785,7 @@ textarea.form-control {
     justify-content: flex-start;
     margin-top: 30px;
 }
+
 .review-reply input {
     height: 35px;
     border-bottom: none;
@@ -2592,10 +2793,12 @@ textarea.form-control {
     background: var(--white);
     border: 1px solid #dddddd;
 }
+
 .review-reply input:focus {
     background: var(--white);
     border-color: var(--primary);
 }
+
 .review-reply button {
     border: none;
     height: 35px;
@@ -2607,6 +2810,7 @@ textarea.form-control {
     color: var(--white);
     background: var(--primary);
 }
+
 .review-reply button i {
     margin-right: 5px;
 }
@@ -2627,27 +2831,33 @@ textarea.form-control {
     .review-item {
         padding: 20px 20px;
     }
+
     .review-author {
         padding-top: 15px;
         margin: 15px 0px 0px 30px;
     }
+
     .review-profile {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .review-avatar {
         margin: 0px 0px 15px;
     }
+
     .review-desc {
         font-size: 15px;
     }
 }
+
 @media (min-width: 576px) and (max-width: 767px) {
     .review-form-grid {
         grid-gap: 0px;
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
 /*========================================
             ELEMENT STYLE END
 =========================================*/
@@ -2657,6 +2867,7 @@ textarea.form-control {
 .header-part {
     background: var(--white);
 }
+
 .header-part .container {
     padding: 18px 25px;
 }
@@ -2675,9 +2886,11 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .header-fixed .header-widget span {
     color: var(--chalk);
 }
+
 .header-fixed .header-widget sup {
     border-color: var(--dark);
 }
@@ -2704,11 +2917,13 @@ textarea.form-control {
     align-items: center;
     justify-content: center;
 }
+
 .header-widget img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
+
 .header-widget i {
     width: 40px;
     height: 40px;
@@ -2724,11 +2939,13 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .header-widget i:hover {
     color: var(--white);
     background: var(--primary);
     text-shadow: var(--primary-tshadow);
 }
+
 .header-widget span {
     font-weight: 500;
     margin-left: 8px;
@@ -2741,9 +2958,11 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .header-widget span:hover {
     color: var(--primary);
 }
+
 .header-widget sup {
     position: absolute;
     top: -8px;
@@ -2768,6 +2987,7 @@ textarea.form-control {
 .header-logo {
     margin: 0px 45px;
 }
+
 .header-logo img {
     width: auto;
     height: 40px;
@@ -2794,6 +3014,7 @@ textarea.form-control {
     align-items: center;
     justify-content: flex-end;
 }
+
 .header-right .header-item {
     margin-right: 20px;
 }
@@ -2816,11 +3037,13 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .header-search input {
     width: 100%;
     height: 45px;
     background: transparent;
 }
+
 .header-search button i {
     width: 45px;
     height: 45px;
@@ -2833,6 +3056,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .header-search button i:hover {
     color: var(--primary);
 }
@@ -2861,6 +3085,7 @@ textarea.form-control {
     background: var(--white);
     box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.08);
 }
+
 .option-grid input {
     width: 100%;
     height: 40px;
@@ -2868,6 +3093,7 @@ textarea.form-control {
     border-radius: 6px;
     background: var(--chalk);
 }
+
 .option-grid button {
     grid-area: 3/1/4/3;
     font-size: 14px;
@@ -2882,6 +3108,7 @@ textarea.form-control {
     align-items: center;
     justify-content: center;
 }
+
 .option-grid button i {
     margin-right: 6px;
 }
@@ -2891,36 +3118,45 @@ textarea.form-control {
         max-width: 100%;
     }
 }
+
 @media (max-width: 1199px) {
     .header-part .container {
         padding: 15px;
     }
+
     .header-content {
         width: 100%;
         flex-direction: column;
         justify-content: center;
     }
+
     .header-logo {
         margin: 0px;
     }
+
     .header-user {
         display: none;
     }
+
     .search-btn {
         display: block;
     }
+
     .header-left {
         width: 100%;
         justify-content: space-between;
     }
+
     .header-right {
         display: none;
     }
+
     .header-form {
         margin-top: 15px;
         display: none;
     }
 }
+
 .navbar-item {
     border-bottom: 1px solid var(--border);
 }
@@ -2941,10 +3177,12 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .navbar-link:hover {
     color: var(--primary);
     background: var(--chalk);
 }
+
 .navbar-link i {
     font-size: 10px;
 }
@@ -2980,6 +3218,7 @@ textarea.form-control {
     visibility: visible;
     opacity: 1;
 }
+
 .sidebar-part.active .sidebar-body {
     left: 0px;
 }
@@ -3003,6 +3242,7 @@ textarea.form-control {
     outline: none;
     background: none;
 }
+
 .sidebar-cross i {
     font-size: 16px;
     width: 40px;
@@ -3014,6 +3254,7 @@ textarea.form-control {
     text-shadow: var(--primary-tshadow);
     box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.1);
 }
+
 .sidebar-cross i:hover {
     color: var(--white);
     background: var(--primary);
@@ -3034,6 +3275,7 @@ textarea.form-control {
     border: 3px solid var(--primary);
     margin-bottom: 10px;
 }
+
 .sidebar-avatar img {
     width: 120px;
     border-radius: 50%;
@@ -3053,10 +3295,12 @@ textarea.form-control {
 .sidebar-menu {
     margin-bottom: 30px;
 }
+
 .sidebar-menu .nav-tabs li .nav-link {
     font-size: 12px;
     padding: 8px 0px;
 }
+
 .sidebar-menu .tab-pane {
     padding: 0px;
 }
@@ -3065,13 +3309,16 @@ textarea.form-control {
     padding-bottom: 120px;
     text-align: center;
 }
+
 .sidebar-footer p {
     font-size: 14px;
     color: var(--heading);
 }
+
 .sidebar-footer p a {
     color: var(--primary);
 }
+
 .sidebar-footer p a:hover {
     text-decoration: underline;
 }
@@ -3081,16 +3328,19 @@ textarea.form-control {
         padding-bottom: 160px;
     }
 }
+
 @media (max-width: 575px) {
     .sidebar-part.active {
         visibility: visible;
         opacity: 1;
     }
+
     .sidebar-part.active .sidebar-body {
         left: 0px;
         width: 100%;
     }
 }
+
 .mobile-nav {
     position: fixed;
     bottom: 0px;
@@ -3119,27 +3369,33 @@ textarea.form-control {
     border-radius: 8px;
     position: relative;
 }
+
 .mobile-widget:hover {
     background: var(--chalk);
 }
+
 .mobile-widget:hover i {
     color: var(--primary);
 }
+
 .mobile-widget:hover span {
     color: var(--primary);
 }
+
 .mobile-widget i {
     font-size: 15px;
     margin-bottom: 5px;
     color: var(--text);
     text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
 }
+
 .mobile-widget span {
     font-size: 10px;
     line-height: 12px;
     color: var(--text);
     text-transform: uppercase;
 }
+
 .mobile-widget sup {
     position: absolute;
     top: -5px;
@@ -3158,6 +3414,7 @@ textarea.form-control {
 .plus-btn {
     margin-top: -35px;
 }
+
 .plus-btn i {
     width: 60px;
     height: 60px;
@@ -3170,9 +3427,11 @@ textarea.form-control {
     background: var(--primary);
     border: 8px solid var(--white);
 }
+
 .plus-btn:hover {
     background: transparent;
 }
+
 .plus-btn:hover i {
     color: var(--white);
 }
@@ -3182,6 +3441,7 @@ textarea.form-control {
         display: block;
     }
 }
+
 .header-filter {
     display: flex;
     align-items: center;
@@ -3218,6 +3478,7 @@ textarea.form-control {
     text-transform: capitalize;
     cursor: pointer;
 }
+
 .filter-select:focus {
     border-color: #ced4da;
     box-shadow: none;
@@ -3228,6 +3489,7 @@ textarea.form-control {
     align-items: center;
     justify-content: flex-end;
 }
+
 .filter-action a i {
     width: 40px;
     height: 40px;
@@ -3238,13 +3500,16 @@ textarea.form-control {
     color: var(--text);
     background: var(--white);
 }
+
 .filter-action a i:hover {
     color: var(--primary);
 }
+
 .filter-action .active i {
     color: var(--white);
     background: var(--primary);
 }
+
 .filter-action .active i:hover {
     color: var(--white);
 }
@@ -3254,13 +3519,16 @@ textarea.form-control {
     .filter-action {
         display: none;
     }
+
     .filter-show {
         width: 80px;
     }
+
     .filter-short {
         width: 130px;
     }
 }
+
 .product-widget {
     padding: 20px 15px 15px;
     border-radius: 6px;
@@ -3284,6 +3552,7 @@ textarea.form-control {
     grid-row-gap: 10px;
     margin: 15px 0px;
 }
+
 .product-widget-group input {
     width: 100%;
     height: 40px;
@@ -3314,10 +3583,12 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .product-widget-btn:hover {
     color: var(--white);
     background: var(--primary);
 }
+
 .product-widget-btn i {
     margin-top: -2px;
     margin-right: 6px;
@@ -3337,6 +3608,7 @@ textarea.form-control {
 .product-widget-checkbox {
     line-height: 0px;
 }
+
 .product-widget-checkbox input {
     width: 15px;
     height: 15px;
@@ -3351,9 +3623,11 @@ textarea.form-control {
     align-items: center;
     justify-content: space-between;
 }
+
 .product-widget-label:hover .product-widget-number {
     color: var(--primary);
 }
+
 .product-widget-label:hover .product-widget-text {
     color: var(--primary);
 }
@@ -3413,9 +3687,11 @@ textarea.form-control {
     text-align: left;
     position: relative;
 }
+
 .product-widget-link:hover {
     color: var(--primary);
 }
+
 .product-widget-link::before {
     position: absolute;
     content: "\f054";
@@ -3431,6 +3707,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .product-widget-link i {
     font-size: 12px;
     margin-right: 5px;
@@ -3439,6 +3716,7 @@ textarea.form-control {
 .product-widget-link.active {
     color: var(--primary);
 }
+
 .product-widget-link.active::before {
     transform: translateY(-50%) rotate(90deg);
 }
@@ -3450,6 +3728,7 @@ textarea.form-control {
     background: var(--white);
     display: none;
 }
+
 .product-widget-dropdown li a {
     width: 100%;
     font-size: 14px;
@@ -3466,6 +3745,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .product-widget-dropdown li a:hover {
     color: var(--primary);
     background: var(--chalk);
@@ -3489,15 +3769,18 @@ textarea.form-control {
         margin-bottom: 30px;
         flex-direction: column;
     }
+
     .page-info {
         margin-bottom: 15px;
     }
 }
+
 @media (min-width: 576px) and (max-width: 991px) {
     .footer-pagection {
         margin-bottom: 30px;
     }
 }
+
 .blog-sidebar {
     padding: 25px 15px;
     margin-bottom: 30px;
@@ -3511,6 +3794,7 @@ textarea.form-control {
     padding-bottom: 15px;
     border-bottom: 1px solid var(--border);
 }
+
 .blog-sidebar-title h5 {
     font-weight: 700;
     text-transform: uppercase;
@@ -3519,6 +3803,7 @@ textarea.form-control {
 .blog-src {
     position: relative;
 }
+
 .blog-src input {
     width: 100%;
     height: 52px;
@@ -3526,6 +3811,7 @@ textarea.form-control {
     padding: 0px 60px 0px 20px;
     border: 2px solid var(--primary);
 }
+
 .blog-src button {
     border: none;
     outline: none;
@@ -3534,6 +3820,7 @@ textarea.form-control {
     top: 6px;
     right: 6px;
 }
+
 .blog-src button i {
     width: 40px;
     height: 40px;
@@ -3554,6 +3841,7 @@ textarea.form-control {
     margin-bottom: 25px;
     border-bottom: 1px solid var(--border);
 }
+
 .blog-suggest li:last-child {
     padding-bottom: 0px;
     margin-bottom: 0px;
@@ -3563,6 +3851,7 @@ textarea.form-control {
 .suggest-img {
     margin-right: 15px;
 }
+
 .suggest-img a img {
     width: 100px;
     border-radius: 8px;
@@ -3571,10 +3860,12 @@ textarea.form-control {
 .suggest-title {
     margin-bottom: 20px;
 }
+
 .suggest-title h4 {
     font-size: 18px;
     line-height: 26px;
 }
+
 .suggest-title h4 a {
     color: var(--heading);
     transition: all linear 0.3s;
@@ -3583,6 +3874,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .suggest-title h4 a:hover {
     color: var(--primary);
 }
@@ -3605,12 +3897,14 @@ textarea.form-control {
     justify-content: center;
     justify-content: flex-start;
 }
+
 .suggest-date i,
 .suggest-comment i {
     font-size: 16px;
     margin-right: 8px;
     margin-top: -1px;
 }
+
 .suggest-date p,
 .suggest-comment p {
     font-size: 15px;
@@ -3621,6 +3915,7 @@ textarea.form-control {
 .blog-cate {
     display: block;
 }
+
 .blog-cate li {
     display: flex;
     align-items: center;
@@ -3630,16 +3925,20 @@ textarea.form-control {
     margin-bottom: 12px;
     padding-bottom: 12px;
 }
+
 .blog-cate li:hover h5 a {
     color: var(--primary);
 }
+
 .blog-cate li:hover p {
     color: var(--white);
     background: var(--primary);
 }
+
 .blog-cate li h5 {
     font-weight: 500;
 }
+
 .blog-cate li h5 a {
     color: var(--gray);
     transition: all linear 0.3s;
@@ -3648,9 +3947,11 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .blog-cate li h5 a:hover {
     text-decoration: underline;
 }
+
 .blog-cate li p {
     font-size: 14px;
     font-weight: 500;
@@ -3668,6 +3969,7 @@ textarea.form-control {
     display: inline-block;
     margin: 0px 8px 12px 0px;
 }
+
 .blog-tag li a {
     color: var(--gray);
     font-size: 14px;
@@ -3676,6 +3978,7 @@ textarea.form-control {
     text-transform: capitalize;
     border: 1px solid var(--border);
 }
+
 .blog-tag li a:hover {
     color: var(--white);
     background: var(--primary);
@@ -3685,6 +3988,7 @@ textarea.form-control {
     display: inline-block;
     margin-right: 12px;
 }
+
 .blog-icon li a i {
     width: 37px;
     height: 37px;
@@ -3696,6 +4000,7 @@ textarea.form-control {
     background: var(--white);
     text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
 }
+
 .blog-icon li a i:hover {
     color: var(--white);
     background: var(--primary);
@@ -3706,25 +4011,31 @@ textarea.form-control {
         align-items: flex-start;
         flex-direction: column;
     }
+
     .suggest-date {
         margin-bottom: 12px;
     }
+
     .blog-icon li {
         margin: 6px;
     }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
     .suggest-meta {
         align-items: flex-start;
         flex-direction: column;
     }
+
     .suggest-date {
         margin-bottom: 12px;
     }
+
     .blog-icon li {
         margin: 6px;
     }
 }
+
 .newsletter {
     margin-bottom: 70px;
 }
@@ -3738,6 +4049,7 @@ textarea.form-control {
     position: relative;
     margin-top: 23px;
 }
+
 .news-form input {
     width: 100%;
     height: 60px;
@@ -3748,6 +4060,7 @@ textarea.form-control {
     background: var(--white);
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.15);
 }
+
 .news-form .btn {
     position: absolute;
     top: 5px;
@@ -3760,27 +4073,34 @@ textarea.form-control {
     .newsletter {
         margin-bottom: 60px;
     }
+
     .news-content {
         margin: 0px 0px 30px;
     }
+
     .news-form {
         margin: 0px;
     }
 }
+
 @media (max-width: 575px) {
     .news-form input {
         padding: 0px 75px 0px 20px;
     }
+
     .news-form .btn {
         padding: 10px 20px;
     }
+
     .news-form .btn i {
         margin-right: 0px;
     }
+
     .news-form .btn span {
         display: none;
     }
 }
+
 .footer-part {
     background: #080229;
     padding: 100px 0px 0px;
@@ -3794,6 +4114,7 @@ textarea.form-control {
     border-bottom: 1px solid #333333;
     position: relative;
 }
+
 .footer-content h3::before {
     position: absolute;
     content: "";
@@ -3810,13 +4131,16 @@ textarea.form-control {
     justify-content: flex-start;
     margin-bottom: 21px;
 }
+
 .footer-address li:last-child {
     margin-bottom: 0px;
 }
+
 .footer-address li i {
     font-size: 20px;
     margin: 6px 20px 0px 0px;
 }
+
 .footer-address li p span {
     display: block;
     line-height: 30px;
@@ -3825,9 +4149,11 @@ textarea.form-control {
 .footer-widget li {
     margin-bottom: 20px;
 }
+
 .footer-widget li:last-child {
     margin-bottom: 0px;
 }
+
 .footer-widget li a {
     color: var(--gray);
     transition: all linear 0.3s;
@@ -3836,6 +4162,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .footer-widget li a:hover {
     color: var(--chalk);
     text-decoration: underline;
@@ -3844,6 +4171,7 @@ textarea.form-control {
 .footer-info a {
     margin-bottom: 30px;
 }
+
 .footer-info a img {
     width: auto;
     height: 50px;
@@ -3852,9 +4180,11 @@ textarea.form-control {
 .footer-count li {
     margin-bottom: 30px;
 }
+
 .footer-count li:last-child {
     margin-bottom: 0px;
 }
+
 .footer-count li h5 {
     margin-bottom: 3px;
     letter-spacing: 0.3px;
@@ -3903,10 +4233,12 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .footer-option button:hover {
     color: var(--chalk);
     border: 1px solid var(--chalk);
 }
+
 .footer-option button i {
     margin-right: 8px;
 }
@@ -3922,9 +4254,11 @@ textarea.form-control {
     justify-content: center;
     justify-content: space-between;
 }
+
 .footer-end-content p a {
     color: var(--primary);
 }
+
 .footer-end-content p a:hover {
     text-decoration: underline;
 }
@@ -3933,6 +4267,7 @@ textarea.form-control {
     display: inline-block;
     margin: 5px;
 }
+
 .footer-social li a i {
     width: 40px;
     height: 40px;
@@ -3947,6 +4282,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .footer-social li a i:hover {
     color: var(--white);
     background: var(--primary);
@@ -3956,38 +4292,47 @@ textarea.form-control {
     .footer-content {
         margin-bottom: 30px;
     }
+
     .footer-end-content {
         padding: 25px 0px;
         flex-direction: column;
         text-align: center;
     }
+
     .footer-end-content p {
         margin-bottom: 10px;
     }
 }
+
 @media (max-width: 575px) {
     .footer-part {
         padding: 60px 0px 60px;
     }
+
     .footer-content,
     .footer-info {
         margin-left: 30px;
     }
+
     .footer-card-content {
         flex-direction: column;
     }
+
     .footer-payment,
     .footer-option {
         margin-bottom: 30px;
     }
 }
+
 @media (min-width: 576px) and (max-width: 767px) {
     .footer-part {
         padding: 80px 0px 60px;
     }
+
     .footer-card-content {
         margin-top: 20px;
     }
+
     .footer-payment a,
     .footer-payment button,
     .footer-option a,
@@ -3997,18 +4342,22 @@ textarea.form-control {
         margin: 5px;
     }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
     .footer-part {
         padding: 90px 0px 60px;
     }
+
     .footer-card-content {
         margin-top: 20px;
     }
+
     .footer-payment,
     .footer-option,
     .footer-app {
         text-align: center;
     }
+
     .footer-payment a,
     .footer-payment button,
     .footer-option a,
@@ -4018,11 +4367,13 @@ textarea.form-control {
         margin: 5px;
     }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
     .footer-part {
         padding-bottom: 60px;
     }
 }
+
 .single-banner {
     background: url(../../images/bg/01.jpg);
     background-repeat: no-repeat;
@@ -4032,6 +4383,7 @@ textarea.form-control {
     position: relative;
     z-index: 1;
 }
+
 .single-banner::before {
     position: absolute;
     content: "";
@@ -4046,11 +4398,13 @@ textarea.form-control {
 .single-content {
     text-align: center;
 }
+
 .single-content h2 {
     color: var(--white);
     text-transform: uppercase;
     margin-bottom: 13px;
 }
+
 .single-content .breadcrumb {
     justify-content: center;
 }
@@ -4060,6 +4414,7 @@ textarea.form-control {
         padding: 70px 0px;
     }
 }
+
 .dashboard-banner {
     padding: 100px 0px 200px;
 }
@@ -4092,10 +4447,12 @@ textarea.form-control {
 .dash-avatar {
     margin-right: 30px;
 }
+
 .dash-avatar a {
     border-radius: 50%;
     border: 3px solid var(--primary);
 }
+
 .dash-avatar a img {
     width: 140px;
     border-radius: 50%;
@@ -4106,6 +4463,7 @@ textarea.form-control {
     color: var(--heading);
     text-transform: capitalize;
 }
+
 .dash-intro h5 {
     font-size: 14px;
     line-height: 22px;
@@ -4120,15 +4478,18 @@ textarea.form-control {
     justify-content: flex-start;
     margin-bottom: 3px;
 }
+
 .dash-meta li:last-child {
     margin-bottom: 0px;
 }
+
 .dash-meta li i {
     font-size: 14px;
     margin-top: 5px;
     margin-right: 10px;
     color: var(--primary);
 }
+
 .dash-meta li span {
     font-size: 14px;
     line-height: 22px;
@@ -4147,6 +4508,7 @@ textarea.form-control {
     position: relative;
     z-index: 1;
 }
+
 .dash-focus::before {
     position: absolute;
     content: "";
@@ -4159,13 +4521,16 @@ textarea.form-control {
     opacity: 0.8;
     z-index: -1;
 }
+
 .dash-focus:last-child {
     margin-right: 0px;
 }
+
 .dash-focus h2 {
     color: var(--white);
     font-family: sans-serif;
 }
+
 .dash-focus p {
     color: var(--white);
     text-transform: capitalize;
@@ -4196,12 +4561,14 @@ textarea.form-control {
     justify-content: flex-start;
     justify-content: space-between;
 }
+
 .dash-header-alert button {
     border: none;
     outline: none;
     background: none;
     margin-left: 100px;
 }
+
 .dash-header-alert button i {
     width: 40px;
     height: 40px;
@@ -4217,6 +4584,7 @@ textarea.form-control {
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
 }
+
 .dash-header-alert button i:hover {
     color: var(--white);
     background: var(--primary);
@@ -4225,15 +4593,18 @@ textarea.form-control {
 .dash-menu-list {
     margin-top: 30px;
 }
+
 .dash-menu-list ul {
     display: flex;
     align-items: center;
     justify-content: center;
     justify-content: space-between;
 }
+
 .dash-menu-list ul li {
     width: 100%;
 }
+
 .dash-menu-list ul li a {
     width: 100%;
     font-size: 14px;
@@ -4245,6 +4616,7 @@ textarea.form-control {
     background: var(--white);
     border-bottom: 2px solid var(--white);
 }
+
 .dash-menu-list ul li .active {
     color: var(--primary);
     text-shadow: var(--primary-tshadow);
@@ -4255,69 +4627,87 @@ textarea.form-control {
     .dash-menu-list {
         overflow-x: scroll;
     }
+
     .dash-menu-list ul {
         width: 900px;
     }
 }
+
 @media (max-width: 575px) {
     .single-banner {
         padding: 60px 0px 160px;
     }
+
     .dash-header-card {
         padding: 20px 20px 0px 20px;
     }
+
     .dash-header-left {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .dash-avatar {
         margin-right: 0px;
         margin-bottom: 5px;
     }
+
     .dash-intro h5 {
         margin-bottom: 12px;
     }
+
     .dash-meta {
         margin-bottom: 25px;
     }
+
     .dash-header-right {
         flex-direction: column;
     }
+
     .dash-focus {
         margin-bottom: 20px;
         margin-right: 0px;
     }
+
     .dash-focus:last-child {
         margin-bottom: 0px;
     }
+
     .dash-header-alert button {
         margin-left: 0px;
     }
 }
+
 @media (min-width: 576px) and (max-width: 767px) {
     .dash-header-right {
         margin-top: 30px;
     }
+
     .dash-focus h2 {
         font-size: 32px;
     }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
     .single-banner {
         padding: 80px 0px 180px;
     }
+
     .dash-header-right {
         margin-top: 30px;
     }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
     .dash-avatar {
         margin-right: 25px;
     }
+
     .dash-avatar a img {
         width: 120px;
     }
 }
+
 /*========================================
             LAYOUT STYLE END
 =========================================*/

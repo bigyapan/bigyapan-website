@@ -12,7 +12,17 @@
                                     if (!empty($menu_link->page_default_name)):
                                         $item_link = generate_url($menu_link->page_default_name);
                                     endif; ?>
+                               <?php if ($menu_link->page_default_name == "contact"): ?>
+                                    <li class="custom-top-bar-item nav-item"><a href="<?= $item_link; ?>" class="nav-link"><i class="fi fi-ss-phone-call"></i><?php echo html_escape($menu_link->title); ?></a></li>
+
+                                <?php elseif($menu_link->page_default_name == "shops"): ?>
+                                    <li class="custom-top-bar-item custom-top-bar-item-shop nav-item btn btn-top-bar-item"><a href="<?= $item_link; ?>" class="nav-link"><i class="fi fi-ss-store-alt"></i><?php echo html_escape($menu_link->title); ?></a></li>
+
+                                <?php else: ?>
                                     <li class="nav-item"><a href="<?= $item_link; ?>" class="nav-link"><?php echo html_escape($menu_link->title); ?></a></li>
+
+                                <?php endif; ?>
+
                                 <?php endif;
                             endforeach;
                         endif; ?>
