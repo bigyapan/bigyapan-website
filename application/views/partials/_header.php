@@ -44,8 +44,8 @@
         <meta name="twitter:image" content="<?= $og_image; ?>"/>
     <?php else: ?>
         <meta property="og:image" content="<?= get_logo($this->general_settings); ?>"/>
-        <meta property="og:image:width" content="1200"/>
-        <meta property="og:image:height" content="630"/>
+        <meta property="og:image:width" content="160"/>
+        <meta property="og:image:height" content="60"/>
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="<?= xss_clean($title); ?> - <?= xss_clean($this->settings->site_title); ?>"/>
         <meta property="og:description" content="<?= xss_clean($description); ?>"/>
