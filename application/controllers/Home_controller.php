@@ -609,10 +609,21 @@ class Home_controller extends Home_Core_Controller
 
         } else {
             if ($this->membership_model->add_shop_opening_requests($data)) {
-                //send email
+                //Deactivate these line to disable automatic approval of shop opening request
+                if ($this->membership_model->approve_shop_opening_request_automatic()) {
+                    //send email
+                    $this->membership_model->send_shop_opening_email();
+                    $this->session->set_flashdata('success', trans("msg_start_selling"));
+                    redirect($this->agent->referrer());
+                }
+
+                /*
+                //Activate these line to stop automatic approval of shop opening request
                 $this->membership_model->send_shop_opening_email();
                 $this->session->set_flashdata('success', trans("msg_start_selling"));
                 redirect($this->agent->referrer());
+                */
+
             } else {
                 $this->session->set_flashdata('error', trans("msg_error"));
                 redirect($this->agent->referrer());

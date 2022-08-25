@@ -52,33 +52,35 @@
                                                     <h4 class="title title-start-selling-box"><?php echo trans('tell_us_about_shop'); ?></h4>
                                                 </div>
                                                 <div class="form-box-body">
-
-                                                    <div class="form-group">
+                                                    <div class="form-group display-none">
                                                         <label class="control-label"><?php echo trans("shop_name"); ?></label>
                                                         <input type="text" name="shop_name" class="form-control form-input" value="<?php echo $this->auth_user->username; ?>" placeholder="<?php echo trans("shop_name"); ?>" maxlength="<?php echo $this->username_maxlength; ?>" required>
                                                     </div>
 
                                                     <div class="form-group">
+                                                        <label class="control-label"><?php echo trans('location'); ?><span style="color:red">*</span></label>
+                                                        <?php $this->load->view("partials/_location", ['countries' => $this->countries, 'country_id' => $this->auth_user->country_id, 'state_id' => $this->auth_user->state_id, 'city_id' => $this->auth_user->city_id, 'map' => false]); ?>
+                                                    </div>
+
+
+
+                                                    <div class="form-group">
                                                         <div class="row">
-                                                            <div class="col-12 col-sm-4 m-b-15">
+                                                            <div class="col-12 col-sm-4 m-b-15 display-none">
                                                                 <label class="control-label"><?php echo trans("first_name"); ?></label>
                                                                 <input type="text" name="first_name" class="form-control form-input" value="<?php echo html_escape($this->auth_user->first_name); ?>" placeholder="<?php echo trans("first_name"); ?>" required>
                                                             </div>
-                                                            <div class="col-12 col-sm-4 m-b-15">
+                                                            <div class="col-12 col-sm-4 m-b-15 display-none">
                                                                 <label class="control-label"><?php echo trans("last_name"); ?></label>
                                                                 <input type="text" name="last_name" class="form-control form-input" value="<?php echo html_escape($this->auth_user->last_name); ?>" placeholder="<?php echo trans("last_name"); ?>" required>
                                                             </div>
                                                             <div class="col-12 col-sm-4 m-b-15">
-                                                                <label class="control-label"><?php echo trans("phone_number"); ?></label>
+                                                                <label class="control-label"><?php echo trans("phone_number"); ?><span style="color:red">*</span></label>
                                                                 <input type="text" name="phone_number" class="form-control form-input" value="<?php echo html_escape($this->auth_user->phone_number); ?>" placeholder="<?php echo trans("phone_number"); ?>" required>
                                                             </div>
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-group">
-                                                        <label class="control-label"><?php echo trans('location'); ?></label>
-                                                        <?php $this->load->view("partials/_location", ['countries' => $this->countries, 'country_id' => $this->auth_user->country_id, 'state_id' => $this->auth_user->state_id, 'city_id' => $this->auth_user->city_id, 'map' => false]); ?>
-                                                    </div>
                                                     <?php if ($this->general_settings->request_documents_vendors == 1): ?>
                                                         <div class="form-group">
                                                             <label class="control-label">
@@ -96,7 +98,7 @@
                                                             </div>
                                                         </div>
                                                     <?php endif; ?>
-                                                    <div class="form-group">
+                                                    <div class="form-group display-none">
                                                         <label class="control-label"><?php echo trans("shop_description"); ?></label>
                                                         <textarea name="about_me" class="form-control form-textarea" placeholder="<?php echo trans("shop_description"); ?>"><?= $this->auth_user->about_me; ?></textarea>
                                                     </div>

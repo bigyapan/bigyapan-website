@@ -547,6 +547,64 @@ class Membership_model extends CI_Model
         return $this->db->update('users', $data);
     }
 
+
+    public function approve_shop_opening_request_automatic()
+    {
+        $user_id = $this->auth_user->id;
+        if ($this->approve_shop_opening_request_automatic_accept($user_id)) {
+            $email_content = trans("your_shop_opening_request_approved");
+            $email_button_text = trans("start_selling");
+            //send email
+            $user = get_user($user_id);
+            if (!empty($user) && $this->general_settings->send_email_shop_opening_request == 1) {
+                $email_data = array(
+                    'email_type' => 'email_general',
+                    'to' => $user->email,
+                    'subject' => trans("shop_opening_request"),
+                    'email_content' => $email_content,
+                    'email_link' => base_url(),
+                    'email_button_text' => $email_button_text
+                );
+                $this->session->set_userdata('mds_send_email_data', json_encode($email_data));
+            }
+            return true;
+        } else {
+            $this->session->set_flashdata('error', trans("msg_error"));
+            return false;
+        }
+    }
+
+    //approve shop opening request
+    public function approve_shop_opening_request_automatic_accept($user_id)
+    {
+        $user_id = clean_number($user_id);
+        //approve request
+        $data_shop = array(
+            'role_id' => 2,
+            'has_active_shop' => 1,
+            'is_active_shop_request' => 0,
+        );
+        //update user plan
+        $user_plan = $this->get_user_plan_by_user_id($user_id);
+        if (!empty($user_plan)) {
+            $data = array(
+                'payment_status' => 'payment_received',
+                'plan_status' => 1,
+                'plan_start_date' => date('Y-m-d H:i:s')
+            );
+            if ($user_plan->is_unlimited_time == 1) {
+                $data['plan_end_date'] = "";
+            } else {
+                $data['plan_end_date'] = strtotime($data['plan_start_date'] . "+ " . $user_plan->number_of_days . " days");
+                $data['plan_end_date'] = date('Y-m-d H:i:s', $data['plan_end_date']);
+            }
+            $this->db->where('id', $user_plan->id);
+            $this->db->update('users_membership_plans', $data);
+        }
+        $this->db->where('id', $user_id);
+        return $this->db->update('users', $data_shop);
+    }
+
     //approve shop opening request
     public function approve_shop_opening_request($user_id)
     {
@@ -633,7 +691,7 @@ class Membership_model extends CI_Model
         if (!empty($permissions) && in_array(2, $permissions)) {
             $data['is_vendor'] = 1;
         }
-        if(empty($permissions)){
+        if (empty($permissions)) {
             $data['is_member'] = 1;
         }
         return $this->db->insert('roles_permissions', $data);
@@ -683,7 +741,7 @@ class Membership_model extends CI_Model
                     $data['is_vendor'] = 1;
                     $data['is_member'] = 0;
                 }
-                if(empty($permissions)){
+                if (empty($permissions)) {
                     $data['is_member'] = 1;
                 }
             }
