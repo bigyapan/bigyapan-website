@@ -613,6 +613,7 @@ class Home_controller extends Home_Core_Controller
                 if ($this->membership_model->approve_shop_opening_request_automatic()) {
                     //send email
                     $this->membership_model->send_shop_opening_email();
+//                    $this->membership_model->send_shop_opening_sms();
                     $this->session->set_flashdata('success', "Your shop request has been accepted successfully. You can start uploading your products and start selling.");
                     redirect('dashboard/add-product');
                 }

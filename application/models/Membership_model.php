@@ -87,6 +87,32 @@ class Membership_model extends CI_Model
         }
     }
 
+    //send shop opening sms
+    public function send_shop_opening_sms()
+    {
+        $api_key = '56303188508732';
+        $campaign_id = '6884';
+        $route_id = '135';
+        $type = 'unicode';
+        $contacts =  $this->auth_user->phone_number;
+        $from = 'FSN_Alert';
+        $sms_text = urlencode('नमस्ते तपाइँकाे '.$this->auth_user->shop_name.' पसल bigyapan.com मा दर्ता भएकाे छ। अब तपाइँले सजिलै https://bigyapan.com मा गइ नि:शुल्क विज्ञापन गर्न सक्नुहुनेछ।');
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, "https://samayasms.com.np/smsapi/index.php");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "key=" . $api_key . "&campaign=".$campaign_id."&routeid=".$route_id."&type=".$type."&contacts=" . $contacts . "&senderid=" . $from . "&msg=" . $sms_text);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+
+
+//        $api_url = "https://samayasms.com.np/smsapi/index.php?key=" . $api_key . "&campaign=".$campaign_id."&routeid=".$route_id."&type=".$type."&contacts=" . $contacts . "&senderid=" . $from . "&msg=" . $sms_text;
+//
+//        //Submit to server
+//        $response = file_get_contents($api_url);
+    }
+
     //get membership transaction
     public function get_membership_transaction($id)
     {
