@@ -43,7 +43,6 @@
         <meta name="twitter:description" content="<?= xss_clean($og_description); ?>"/>
         <meta name="twitter:image" content="<?= $og_image; ?>"/>
     <?php else: ?>
-<!--        <meta property="og:image" content="--><?//= get_logo($this->general_settings); ?><!--"/>-->
         <meta property="og:image" content="<?=base_url('assets/img/og_image.jpg');?>"/>
         <meta property="og:image:width" content="160"/>
         <meta property="og:image:height" content="60"/>
