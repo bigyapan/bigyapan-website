@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
     'dsn'	=> '',
-    'hostname' => 'localhost',
+    'hostname' => '202.51.74.104',
     'username' => 'bigyapan_bigyapan',
     'password' => '!@big8963',
     'database' => 'bigyapan_classifieds',
