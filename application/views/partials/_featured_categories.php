@@ -17,12 +17,12 @@
     <div class="main-carousel"
          data-flickity='{"cellAlign":"left","groupCells": 1,"draggable": ">1","contain": true,"pageDots": false }'>
         <?php foreach ($featured_categories as $category): ?>
-        <?php if ($category->featured_order == 1): ?>
+        <?php /*if ($category->featured_order == 1): */?>
             <a class="carousel-cell" href="<?php echo generate_category_url($category); ?>">
                 <img class="carousel-image" src="<?php echo get_category_image_url($category); ?>">
                 <span><?php echo category_name($category); ?></span>
             </a>
-        <?php endif; ?>
+        <?php /*endif; */?>
         <?php endforeach; ?>
     </div>
     <style>
