@@ -476,7 +476,7 @@ $config['csrf_exclude_uris'] = array('iyzico-payment-post', 'stripe-payment-post
 | by the output class.  Do not 'echo' any values with compression enabled.
 |
 */
-$config['compress_output'] = FALSE;
+$config['compress_output'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------

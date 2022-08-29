@@ -40,7 +40,7 @@
         }
 
         .carousel-cell {
-            width: 16%;
+            width: 180px;
             height:100px;
             padding-bottom:0;
             border-radius: 5px;
@@ -101,8 +101,8 @@
         @media screen and ( max-width: 768px ) {
             /* half-width cells for larger devices */
             .carousel-cell {
-                height:110px;
-                width: 50%;
+                height:100px;
+                width: 180px;
                 padding-bottom:0;
             }
 
@@ -116,7 +116,7 @@
             }
 
             .carousel-cell span {
-                margin: -105px 0 0 0;
+                margin: -95px 0 0 0;
                 font-weight: bold;
                 color: #212121;
                 padding: 0 10px 0 10px;
