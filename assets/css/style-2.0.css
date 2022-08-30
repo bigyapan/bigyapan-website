@@ -8908,7 +8908,7 @@ img {
     display: none;
     position: fixed;
     bottom: 20px;
-    left: 15px;
+    left: 130px;
     color: #fff !important;
     z-index: 999999;
 }
@@ -8922,6 +8922,12 @@ img {
     background-color: #222;
     border-radius: 0.1875rem;
     z-index: 999999
+}
+
+.floating-sell-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
 }
 
 .error-404 {

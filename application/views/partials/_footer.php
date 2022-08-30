@@ -8,7 +8,8 @@
                         <div class="col-12 col-md-3 footer-widget">
                             <div class="row-custom">
                                 <div class="footer-logo">
-                                    <a href="<?php echo lang_base_url(); ?>"><img src="<?php echo get_logo($this->general_settings); ?>" alt="logo"></a>
+                                    <a href="<?php echo lang_base_url(); ?>"><img
+                                                src="<?php echo get_logo($this->general_settings); ?>" alt="logo"></a>
                                 </div>
                             </div>
                             <div class="row-custom">
@@ -24,7 +25,8 @@
                                 </div>
                                 <div class="row-custom">
                                     <ul>
-                                        <li><a href="<?php echo lang_base_url(); ?>"><?php echo trans("home"); ?></a></li>
+                                        <li><a href="<?php echo lang_base_url(); ?>"><?php echo trans("home"); ?></a>
+                                        </li>
                                         <?php if (!empty($this->menu_links)):
                                             foreach ($this->menu_links as $menu_link):
                                                 if ($menu_link->location == 'quick_links'):
@@ -32,11 +34,15 @@
                                                     if (!empty($menu_link->page_default_name)):
                                                         $item_link = generate_url($menu_link->page_default_name);
                                                     endif; ?>
-                                                    <li><a href="<?= $item_link; ?>"><?php echo html_escape($menu_link->title); ?></a></li>
+                                                    <li>
+                                                        <a href="<?= $item_link; ?>"><?php echo html_escape($menu_link->title); ?></a>
+                                                    </li>
                                                 <?php endif;
                                             endforeach;
                                         endif; ?>
-                                        <li><a href="<?= generate_url('help_center'); ?>"><?= trans("help_center"); ?></a></li>
+                                        <li>
+                                            <a href="<?= generate_url('help_center'); ?>"><?= trans("help_center"); ?></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -55,7 +61,9 @@
                                                     if (!empty($menu_link->page_default_name)):
                                                         $item_link = generate_url($menu_link->page_default_name);
                                                     endif; ?>
-                                                    <li><a href="<?= $item_link; ?>"><?php echo html_escape($menu_link->title); ?></a></li>
+                                                    <li>
+                                                        <a href="<?= $item_link; ?>"><?php echo html_escape($menu_link->title); ?></a>
+                                                    </li>
                                                 <?php endif;
                                             endforeach;
                                         endif; ?>
@@ -88,8 +96,12 @@
                                                 <h4 class="footer-title"><?= trans("newsletter"); ?></h4>
                                                 <form id="form_newsletter_footer" class="form-newsletter">
                                                     <div class="newsletter">
-                                                        <input type="email" name="email" class="newsletter-input" maxlength="199" placeholder="<?php echo trans("enter_email"); ?>" required>
-                                                        <button type="submit" name="submit" value="form" class="newsletter-button"><?php echo trans("subscribe"); ?></button>
+                                                        <input type="email" name="email" class="newsletter-input"
+                                                               maxlength="199"
+                                                               placeholder="<?php echo trans("enter_email"); ?>"
+                                                               required>
+                                                        <button type="submit" name="submit" value="form"
+                                                                class="newsletter-button"><?php echo trans("subscribe"); ?></button>
                                                     </div>
                                                     <input type="text" name="url">
                                                     <div id="form_newsletter_response"></div>
@@ -113,11 +125,11 @@
                         <?php echo html_escape($this->settings->copyright); ?>
                     </div>
                     <!--<div class="footer-payment-icons">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php /*echo base_url(); */?>assets/img/payment/visa.svg" alt="visa" class="lazyload">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php /*echo base_url(); */?>assets/img/payment/mastercard.svg" alt="mastercard" class="lazyload">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php /*echo base_url(); */?>assets/img/payment/maestro.svg" alt="maestro" class="lazyload">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php /*echo base_url(); */?>assets/img/payment/amex.svg" alt="amex" class="lazyload">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php /*echo base_url(); */?>assets/img/payment/discover.svg" alt="discover" class="lazyload">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php /*echo base_url(); */ ?>assets/img/payment/visa.svg" alt="visa" class="lazyload">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php /*echo base_url(); */ ?>assets/img/payment/mastercard.svg" alt="mastercard" class="lazyload">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php /*echo base_url(); */ ?>assets/img/payment/maestro.svg" alt="maestro" class="lazyload">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php /*echo base_url(); */ ?>assets/img/payment/amex.svg" alt="amex" class="lazyload">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php /*echo base_url(); */ ?>assets/img/payment/discover.svg" alt="discover" class="lazyload">
                     </div>-->
                 </div>
             </div>
@@ -127,10 +139,13 @@
 <?php if (!isset($_COOKIE["modesy_cookies_warning"]) && $this->settings->cookies_warning): ?>
     <div class="cookies-warning">
         <div class="text" style="margin:10px 0 0 0"><?php echo $this->settings->cookies_warning_text; ?></div>
-        <a href="javascript:void(0)" onclick="hide_cookies_warning();" class="icon-cl" style="margin:0 10px 0 0"> <i class="icon-close"></i></a>
-    <div style="display:flex;justify-content: right;margin:-30px 20px 10px 0;">
-        <button class="btn btn-md btn-custom btn-sell-now m-r-0" href="javascript:void(0)" onclick="hide_cookies_warning();">Accept Cookies</button>
-    </div>
+        <a href="javascript:void(0)" onclick="hide_cookies_warning();" class="icon-cl" style="margin:0 10px 0 0"> <i
+                    class="icon-close"></i></a>
+        <div style="display:flex;justify-content: right;margin:-30px 20px 10px 0;">
+            <button class="btn btn-md btn-custom btn-sell-now m-r-0" href="javascript:void(0)"
+                    onclick="hide_cookies_warning();">Accept Cookies
+            </button>
+        </div>
     </div>
 
 <?php endif; ?>
@@ -149,22 +164,25 @@
 
 <!-- Your SDK code -->
 <script>
-    window.fbAsyncInit = function() {
+    window.fbAsyncInit = function () {
         FB.init({
-            xfbml            : true,
-            version          : 'v14.0'
+            xfbml: true,
+            version: 'v14.0'
         });
     };
 
-    (function(d, s, id) {
+    (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
+        js = d.createElement(s);
+        js.id = id;
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
 <a href="javascript:void(0)" class="scrollup"><i class="icon-arrow-up"></i></a>
+<a href="<?= generate_dash_url("add_product"); ?>"
+   class="btn btn-md btn-custom floating-sell-btn"><i class="fa-solid fa-circle-plus"></i> <?= trans("sell_now"); ?></a>
 <script src="<?= base_url(); ?>assets/js/jquery-3.5.1.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url(); ?>assets/js/plugins-2.0.js"></script>
@@ -176,7 +194,10 @@
                 data[mds_config.csfr_token_name] = $.cookie(mds_config.csfr_cookie_name);
                 data["sys_lang_id"] = mds_config.sys_lang_id;
                 $.ajax({
-                    type: "POST", url: "<?= base_url(); ?>mds-send-email-post", data: data, success: function (response) {
+                    type: "POST",
+                    url: "<?= base_url(); ?>mds-send-email-post",
+                    data: data,
+                    success: function (response) {
                     }
                 });
             }
@@ -186,11 +207,31 @@ $this->session->unset_userdata('mds_send_email_data'); ?>
 <?php if (check_cron_time() == true): ?>
     <script>$.ajax({type: "POST", url: "<?= base_url(); ?>mds-run-internal-cron"});</script>
 <?php endif; ?>
-<script>$('<input>').attr({type: 'hidden', name: 'sys_lang_id', value: '<?= $this->selected_lang->id; ?>'}).appendTo('form[method="post"]');</script>
+<script>$('<input>').attr({
+        type: 'hidden',
+        name: 'sys_lang_id',
+        value: '<?= $this->selected_lang->id; ?>'
+    }).appendTo('form[method="post"]');</script>
 <script>
     <?php if (!empty($index_categories)):foreach ($index_categories as $category):?>
     if ($('#category_products_slider_<?= $category->id; ?>').length != 0) {
-        $('#category_products_slider_<?= $category->id; ?>').slick({autoplay: false, autoplaySpeed: 4900, infinite: true, speed: 200, swipeToSlide: true, rtl: mds_config.rtl, cssEase: 'linear', prevArrow: $('#category-products-slider-nav-<?= $category->id; ?> .prev'), nextArrow: $('#category-products-slider-nav-<?= $category->id; ?> .next'), slidesToShow: 5, slidesToScroll: 1, responsive: [{breakpoint: 992, settings: {slidesToShow: 4, slidesToScroll: 1}}, {breakpoint: 768, settings: {slidesToShow: 3, slidesToScroll: 1}}, {breakpoint: 576, settings: {slidesToShow: 2, slidesToScroll: 1}}]});
+        $('#category_products_slider_<?= $category->id; ?>').slick({
+            autoplay: false,
+            autoplaySpeed: 4900,
+            infinite: true,
+            speed: 200,
+            swipeToSlide: true,
+            rtl: mds_config.rtl,
+            cssEase: 'linear',
+            prevArrow: $('#category-products-slider-nav-<?= $category->id; ?> .prev'),
+            nextArrow: $('#category-products-slider-nav-<?= $category->id; ?> .next'),
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            responsive: [{breakpoint: 992, settings: {slidesToShow: 4, slidesToScroll: 1}}, {
+                breakpoint: 768,
+                settings: {slidesToShow: 3, slidesToScroll: 1}
+            }, {breakpoint: 576, settings: {slidesToShow: 2, slidesToScroll: 1}}]
+        });
     }
     <?php endforeach;
     endif; ?>
