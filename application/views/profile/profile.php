@@ -37,6 +37,36 @@
                                             <button id="btn_search_vendor" class="btn btn-default btn-search" data-current-url="<?= current_url(); ?>" data-query-string="<?= generate_filter_url($query_string_array, 'rmv_psrc', ''); ?>"><i class="icon-search"></i></button>
                                         </div>
                                     </div>
+                                    <?php if (!empty($categories) && !empty($categories[0])):
+                                        $category_id = 0; ?>
+                                        <div class="filter-item">
+                                            <h4 class="title"><?= trans("category"); ?></h4>
+                                            <?php if (!empty($category)):
+                                                $category_id = $category->id;
+                                                $url = generate_profile_url($user->slug) . generate_filter_url($query_string_array, 'rmv_p_cat', '');
+                                                if (!empty($parent_category)) {
+                                                    $url = generate_profile_url($user->slug) . generate_filter_url($query_string_array, 'p_cat', $parent_category->id);
+                                                } ?>
+                                                <a href="<?= $url . '#products'; ?>" class="filter-list-categories-parent">
+                                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-short" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                                                    </svg>
+                                                    <span><?= category_name($category); ?></span>
+                                                </a>
+                                            <?php endif; ?>
+                                            <div class="filter-list-container">
+                                                <ul class="filter-list filter-custom-scrollbar<?= !empty($category) ? ' filter-list-subcategories' : ' filter-list-categories'; ?>">
+                                                    <?php foreach ($categories as $item):
+                                                        if ($category_id != $item->id):?>
+                                                            <li>
+                                                                <a href="<?= generate_profile_url($user->slug) . generate_filter_url($query_string_array, 'p_cat', $item->id) . '#products'; ?>" <?= !empty($category) && $category->id == $item->id ? 'class="active"' : ''; ?>><?= category_name($item); ?></a>
+                                                            </li>
+                                                        <?php endif;
+                                                    endforeach; ?>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
 
                                     <?php if ($this->general_settings->marketplace_system == 1 || $this->general_settings->bidding_system == 1 || $this->product_settings->classified_price == 1):
                                         $filter_p_min = clean_number(input_get("p_min"));
