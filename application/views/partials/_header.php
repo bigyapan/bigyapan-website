@@ -12,12 +12,6 @@
     <link rel="shortcut icon" type="image/png" href="<?= get_favicon($this->general_settings); ?>"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/new-styles.min.css">
-    <link rel='stylesheet' href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
     <meta property="og:locale" content="en-US"/>
     <meta name="facebook-domain-verification" content="3jbtauvaluphefndj68tt37fzt2duz" />
     <meta property="og:site_name" content="<?= xss_clean($this->general_settings->application_name); ?>"/>
@@ -83,6 +77,7 @@
     <?php endif; ?>
     <?= $this->general_settings->custom_css_codes; ?>
     <?= $this->general_settings->google_adsense_code; ?>
+    <script src="https://kit.fontawesome.com/15f82657df.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header id="header">
@@ -203,11 +198,11 @@
                         <div class="mobile-search">
                             <?php if ($this->auth_check): ?>
                                 <a href="<?php echo base_url(); ?>logout" class="login-icon">
-                                    <i style="font-size:24px;" class="fi fi-bs-sign-out-alt"></i>
+                                    <i style="font-size:24px;" class="fa-solid fa-right-from-bracket"></i>
                                 </a>
                             <?php else: ?>
                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#loginModal"
-                                   class="login-icon nav-link close-menu-click"><i class="fi fi-bs-sign-in-alt"
+                                   class="login-icon nav-link close-menu-click"><i class="fa-solid fa-right-to-bracket"
                                                                                    style="font-size:24px;"></i></a>
                             <?php endif; ?>
                         </div>

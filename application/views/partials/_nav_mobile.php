@@ -121,7 +121,7 @@
                                                     href="javascript:void(0)" data-toggle="modal"
                                                     data-target="#loginModal"
                                                     class="nav-link close-menu-click"><i
-                                            class="fi fi-bs-sign-in-alt"
+                                            class="fa-solid fa-right-to-bracket"
                                             style="font-size:24px;"></i><?php echo trans("login"); ?></a>
                             </li>
 
