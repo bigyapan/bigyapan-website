@@ -181,8 +181,22 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 <a href="javascript:void(0)" class="scrollup"><i class="icon-arrow-up"></i></a>
-<a href="<?= generate_dash_url("add_product"); ?>"
-   class="btn btn-md btn-custom floating-sell-btn"><i class="fa-solid fa-circle-plus"></i> <?= trans("sell_now"); ?></a>
+<?php if ($this->auth_check): ?>
+    <?php if (is_multi_vendor_active()): ?>
+       <a
+                    href="<?php echo generate_dash_url("add_product"); ?>"
+                    class="btn btn-md btn-custom floating-sell-btn"><i class="fa-solid fa-circle-plus"></i> <?= trans("sell_now"); ?></a>
+
+    <?php endif; ?>
+<?php else: ?>
+    <?php if (is_multi_vendor_active()): ?>
+        <a href="javascript:void(0)"
+                                      class="btn btn-md btn-custom floating-sell-btn"
+                                      data-toggle="modal"
+                                      data-target="#loginModal"><i class="fa-solid fa-circle-plus"></i> <?= trans("sell_now"); ?></a>
+
+    <?php endif; ?>
+<?php endif; ?>
 <script src="<?= base_url(); ?>assets/js/jquery-3.5.1.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url(); ?>assets/js/plugins-2.0.js"></script>
