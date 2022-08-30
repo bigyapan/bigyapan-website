@@ -12,14 +12,26 @@
                                     if (!empty($menu_link->page_default_name)):
                                         $item_link = generate_url($menu_link->page_default_name);
                                     endif; ?>
-                               <?php if ($menu_link->page_default_name == "contact"): ?>
-                                    <li class="custom-top-bar-item nav-item"><a href="<?= $item_link; ?>" class="nav-link"><i class="fa-solid fa-square-phone"></i><?php echo html_escape($menu_link->title); ?></a></li>
+                                    <?php if ($menu_link->page_default_name == "contact"): ?>
+                                    <li class="custom-top-bar-item nav-item"><a href="<?= $item_link; ?>"
+                                                                                class="nav-link"><i
+                                                    class="fa-solid fa-square-phone"></i><?php echo html_escape($menu_link->title); ?>
+                                        </a></li>
 
-                                <?php elseif($menu_link->page_default_name == "shops"): ?>
-                                    <li class="custom-top-bar-item custom-top-bar-item-shop nav-item btn btn-top-bar-item"><a href="<?= $item_link; ?>" class="nav-link"><i class="fas fa-store"></i><?php echo html_escape($menu_link->title); ?></a></li>
-
+                                <?php elseif ($menu_link->page_default_name == "shops"): ?>
+                                    <li class="custom-top-bar-item custom-top-bar-item-shop nav-item btn btn-top-bar-item">
+                                        <a href="<?= $item_link; ?>" class="nav-link"><i
+                                                    class="fas fa-store"></i><?php echo html_escape($menu_link->title); ?>
+                                        </a></li>
+                                <?php elseif ($menu_link->page_default_name == "bigyapan-mela"): ?>
+                                    <li class="custom-top-bar-item custom-top-bar-item-shop nav-item btn btn-top-bar-item">
+                                        <a href="<?= $item_link; ?>" class="nav-link"><i
+                                                    class="fa-solid fa-gifts"></i><?php echo html_escape($menu_link->title); ?>
+                                        </a></li>
                                 <?php else: ?>
-                                    <li class="nav-item"><a href="<?= $item_link; ?>" class="nav-link"><?php echo html_escape($menu_link->title); ?></a></li>
+                                    <li class="nav-item"><a href="<?= $item_link; ?>"
+                                                            class="nav-link"><?php echo html_escape($menu_link->title); ?></a>
+                                    </li>
 
                                 <?php endif; ?>
 
@@ -33,8 +45,10 @@
                 <ul class="navbar-nav">
                     <?php if ($this->general_settings->location_search_header == 1 && item_count($this->countries) > 0): ?>
                         <li class="nav-item">
-                            <a href="javascript:void(0)" data-toggle="modal" data-target="#locationModal" class="nav-link btn-modal-location">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="#888888" class="mds-svg-icon">
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#locationModal"
+                               class="nav-link btn-modal-location">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16"
+                                     fill="#888888" class="mds-svg-icon">
                                     <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
                                 </svg>
                                 <?= !empty($this->default_location_input) ? $this->default_location_input : trans("location"); ?>
@@ -44,14 +58,18 @@
                     <?php if ($this->payment_settings->currency_converter == 1 && !empty($this->currencies)): ?>
                         <li class="nav-item dropdown top-menu-dropdown">
                             <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                                <?= $this->selected_currency->code; ?>&nbsp;(<?= $this->selected_currency->symbol; ?>)&nbsp;<i class="icon-arrow-down"></i>
+                                <?= $this->selected_currency->code; ?>&nbsp;(<?= $this->selected_currency->symbol; ?>)&nbsp;<i
+                                        class="icon-arrow-down"></i>
                             </a>
                             <?php echo form_open('set-selected-currency-post'); ?>
                             <ul class="dropdown-menu">
                                 <?php foreach ($this->currencies as $currency):
                                     if ($currency->status == 1):?>
                                         <li>
-                                            <button type="submit" name="currency" value="<?= $currency->code; ?>"><?= $currency->code; ?>&nbsp;(<?= $currency->symbol; ?>)</button>
+                                            <button type="submit" name="currency"
+                                                    value="<?= $currency->code; ?>"><?= $currency->code; ?>
+                                                &nbsp;(<?= $currency->symbol; ?>)
+                                            </button>
                                         </li>
                                     <?php endif;
                                 endforeach; ?>
@@ -62,14 +80,18 @@
                     <?php if ($this->general_settings->multilingual_system == 1 && count($this->languages) > 1): ?>
                         <li class="nav-item dropdown top-menu-dropdown">
                             <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                                <img src="<?php echo base_url($this->selected_lang->flag_path); ?>" class="flag"><?php echo html_escape($this->selected_lang->name); ?>&nbsp;<i class="icon-arrow-down"></i>
+                                <img src="<?php echo base_url($this->selected_lang->flag_path); ?>"
+                                     class="flag"><?php echo html_escape($this->selected_lang->name); ?>&nbsp;<i
+                                        class="icon-arrow-down"></i>
                             </a>
                             <?php echo form_open('set-selected-currency-post'); ?>
                             <ul class="dropdown-menu dropdown-menu-lang">
                                 <?php foreach ($this->languages as $language): ?>
                                     <li>
-                                        <a href="<?php echo convert_url_by_language($language); ?>" class="dropdown-item <?php echo ($language->id == $this->selected_lang->id) ? 'selected' : ''; ?>">
-                                            <img src="<?php echo base_url($language->flag_path); ?>" class="flag"><?php echo $language->name; ?>
+                                        <a href="<?php echo convert_url_by_language($language); ?>"
+                                           class="dropdown-item <?php echo ($language->id == $this->selected_lang->id) ? 'selected' : ''; ?>">
+                                            <img src="<?php echo base_url($language->flag_path); ?>"
+                                                 class="flag"><?php echo $language->name; ?>
                                         </a>
                                     </li>
                                 <?php endforeach; ?>
@@ -79,8 +101,10 @@
                     <?php endif; ?>
                     <?php if ($this->auth_check): ?>
                         <li class="nav-item dropdown profile-dropdown p-r-0">
-                            <a class="nav-link dropdown-toggle a-profile" data-toggle="dropdown" href="javascript:void(0)" aria-expanded="false">
-                                <img src="<?php echo get_user_avatar($this->auth_user); ?>" alt="<?php echo get_shop_name($this->auth_user); ?>">
+                            <a class="nav-link dropdown-toggle a-profile" data-toggle="dropdown"
+                               href="javascript:void(0)" aria-expanded="false">
+                                <img src="<?php echo get_user_avatar($this->auth_user); ?>"
+                                     alt="<?php echo get_shop_name($this->auth_user); ?>">
                                 <?php echo character_limiter(get_shop_name($this->auth_user), 15, '..'); ?>
                                 <i class="icon-arrow-down"></i>
                                 <?php if ($unread_message_count > 0): ?>
@@ -135,7 +159,8 @@
                                     <?php endif; ?>
                                     <li>
                                         <a href="<?php echo generate_url("refund_requests"); ?>">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="mds-svg-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 fill="currentColor" viewBox="0 0 16 16" class="mds-svg-icon">
                                                 <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z"/>
                                             </svg>
                                             <?php echo trans("refund"); ?>
@@ -167,9 +192,11 @@
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
-                            <a href="javascript:void(0)" data-toggle="modal" data-target="#loginModal" class="nav-link"><?php echo trans("login"); ?></a>
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#loginModal"
+                               class="nav-link"><?php echo trans("login"); ?></a>
                             <span class="auth-sep">/</span>
-                            <a href="<?php echo generate_url("register"); ?>" class="nav-link"><?php echo trans("register"); ?></a>
+                            <a href="<?php echo generate_url("register"); ?>"
+                               class="nav-link"><?php echo trans("register"); ?></a>
                         </li>
                     <?php endif; ?>
                 </ul>
