@@ -23,7 +23,7 @@
                                         <a href="<?= $item_link; ?>" class="nav-link"><i
                                                     class="fas fa-store"></i><?php echo html_escape($menu_link->title); ?>
                                         </a></li>
-                                <?php elseif ($menu_link->page_default_name == "bigyapan-mela"): ?>
+                                <?php elseif ($menu_link->slug == "bigyapan-mela"): ?>
                                     <li class="custom-top-bar-item nav-item">
                                         <a href="<?= $item_link; ?>" class="nav-link"><i
                                                     class="fa-solid fa-gifts"></i><?php echo html_escape($menu_link->title); ?>
