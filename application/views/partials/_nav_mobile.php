@@ -7,10 +7,10 @@
                     <?php if (is_multi_vendor_active()):
                         if ($this->auth_check): ?>
                             <a href="<?= generate_dash_url("add_product"); ?>"
-                               class="btn btn-md btn-custom btn-block"><?= trans("sell_now"); ?></a>
+                               class="btn btn-md btn-custom btn-block"><i class="fa-solid fa-circle-plus"></i> <?= trans("sell_now"); ?></a>
                         <?php else: ?>
                             <a href="javascript:void(0)" class="btn btn-md btn-custom btn-block close-menu-click"
-                               data-toggle="modal" data-target="#loginModal"><?php echo trans("sell_now"); ?></a>
+                               data-toggle="modal" data-target="#loginModal"><i class="fa-solid fa-circle-plus"></i> <?php echo trans("sell_now"); ?></a>
                         <?php endif;
                     endif; ?>
                 </div>

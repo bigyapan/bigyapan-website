@@ -163,7 +163,7 @@
                                         <?php if (is_multi_vendor_active()): ?>
                                             <li class="nav-item m-r-0"><a
                                                         href="<?php echo generate_dash_url("add_product"); ?>"
-                                                        class="btn btn-md btn-custom btn-sell-now m-r-0"><?= trans("sell_now"); ?></a>
+                                                        class="btn btn-md btn-custom btn-sell-now m-r-0"><i class="fa-solid fa-circle-plus"></i> <?= trans("sell_now"); ?></a>
                                             </li>
                                         <?php endif; ?>
                                     <?php else: ?>
@@ -171,7 +171,7 @@
                                             <li class="nav-item m-r-0"><a href="javascript:void(0)"
                                                                           class="btn btn-md btn-custom btn-sell-now m-r-0"
                                                                           data-toggle="modal"
-                                                                          data-target="#loginModal"><?= trans("sell_now"); ?></a>
+                                                                          data-target="#loginModal"><i class="fa-solid fa-circle-plus"></i> <?= trans("sell_now"); ?></a>
                                             </li>
                                         <?php endif; ?>
                                     <?php endif; ?>
