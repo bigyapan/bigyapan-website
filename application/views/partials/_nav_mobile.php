@@ -20,19 +20,7 @@
                     <div id="navbar_mobile_back_button"></div>
                     <ul class="navbar-nav" style="padding-bottom:0;" >
                         <?php if ($this->auth_check): ?>
-                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;"
-                                class=" nav-item">
-                                <a class="nav-link" href="<?php echo generate_url("messages"); ?>">
-                                    <?php if ($unread_message_count > 0): ?>
-                                        <i class="icon-mail"></i>
-                                        <?php echo trans("messages"); ?>&nbsp;
-                                        <span class="span-message-count message-notification message-notification-mobile"><?= $unread_message_count; ?></span>
-                                    <?php else: ?>
-                                        <i class="icon-mail"></i>
-                                        <?php echo trans("messages"); ?>&nbsp;
-                                    <?php endif; ?>
-                                </a>
-                            </li>
+
                             <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;"
                                 class="dropdown profile-dropdown nav-item">
                                 <a href="#" class="dropdown-toggle image-profile-drop nav-link" data-toggle="dropdown"
@@ -113,6 +101,19 @@
                                         </a>
                                     </li>
                                 </ul>
+                            </li>
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;"
+                                class=" nav-item">
+                                <a class="nav-link" href="<?php echo generate_url("messages"); ?>">
+                                    <?php if ($unread_message_count > 0): ?>
+                                        <i class="icon-mail"></i>
+                                        <?php echo trans("messages"); ?>&nbsp;
+                                        <span class="span-message-count message-notification message-notification-mobile"><?= $unread_message_count; ?></span>
+                                    <?php else: ?>
+                                        <i class="icon-mail"></i>
+                                        <?php echo trans("messages"); ?>&nbsp;
+                                    <?php endif; ?>
+                                </a>
                             </li>
                         <?php else: ?>
                             <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;"
