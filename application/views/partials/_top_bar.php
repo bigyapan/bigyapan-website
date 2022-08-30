@@ -102,10 +102,13 @@
                     <?php if ($this->auth_check): ?>
                         <li class="nav-item p-r-0">
                             <a class="nav-link" href="<?php echo generate_url("messages"); ?>">
-                                <i class="icon-mail"></i>
-                                <?php echo trans("messages"); ?>&nbsp;
                                 <?php if ($unread_message_count > 0): ?>
-                                    <span class="span-message-count">(<?= $unread_message_count; ?>)</span>
+                                    <i class="icon-mail" style="margin-right:15px;"></i>
+                                    <span class="span-message-count message-notification"><?= $unread_message_count; ?></span>
+                                    <?php echo trans("messages"); ?>&nbsp;
+                                <?php else: ?>
+                                    <i class="icon-mail"></i>
+                                    <?php echo trans("messages"); ?>&nbsp;
                                 <?php endif; ?>
                             </a>
                         </li>
@@ -116,80 +119,80 @@
                                      alt="<?php echo get_shop_name($this->auth_user); ?>">
                                 <?php echo character_limiter(get_shop_name($this->auth_user), 15, '..'); ?>
                                 <i class="icon-arrow-down"></i>
-                                <?php /*if ($unread_message_count > 0): */?><!--
-                                    <span class="message-notification"><?/*= $unread_message_count; */?></span>
-                                --><?php /*endif; */?>
+                                <?php /*if ($unread_message_count > 0): */ ?><!--
+                                    <span class="message-notification"><? /*= $unread_message_count; */ ?></span>
+                                --><?php /*endif; */ ?>
                             </a>
-                        <ul class="dropdown-menu">
-                            <?php if (has_permission('admin_panel')): ?>
-                                <li>
-                                    <a href="<?php echo admin_url(); ?>">
-                                        <i class="icon-admin"></i>
-                                        <?php echo trans("admin_panel"); ?>
-                                    </a>
-                                </li>
-                            <?php endif; ?>
-                            <?php if (is_vendor()): ?>
-                                <li>
-                                    <a href="<?= dashboard_url(); ?>">
-                                        <i class="icon-dashboard"></i>
-                                        <?php echo trans("dashboard"); ?>
-                                    </a>
-                                </li>
-                            <?php endif; ?>
-                            <li>
-                                <a href="<?php echo generate_profile_url($this->auth_user->slug); ?>">
-                                    <i class="icon-user"></i>
-                                    <?php echo trans("profile"); ?>
-                                </a>
-                            </li>
-                            <?php if ($this->is_sale_active): ?>
-                                <li>
-                                    <a href="<?php echo generate_url("orders"); ?>">
-                                        <i class="icon-shopping-basket"></i>
-                                        <?php echo trans("orders"); ?>
-                                    </a>
-                                </li>
-                                <?php if (is_bidding_system_active()): ?>
+                            <ul class="dropdown-menu">
+                                <?php if (has_permission('admin_panel')): ?>
                                     <li>
-                                        <a href="<?php echo generate_url("quote_requests"); ?>">
-                                            <i class="icon-price-tag-o"></i>
-                                            <?php echo trans("quote_requests"); ?>
+                                        <a href="<?php echo admin_url(); ?>">
+                                            <i class="icon-admin"></i>
+                                            <?php echo trans("admin_panel"); ?>
                                         </a>
                                     </li>
                                 <?php endif; ?>
-                                <?php if ($this->general_settings->digital_products_system == 1): ?>
+                                <?php if (is_vendor()): ?>
                                     <li>
-                                        <a href="<?php echo generate_url("downloads"); ?>">
-                                            <i class="icon-download"></i>
-                                            <?php echo trans("downloads"); ?>
+                                        <a href="<?= dashboard_url(); ?>">
+                                            <i class="icon-dashboard"></i>
+                                            <?php echo trans("dashboard"); ?>
                                         </a>
                                     </li>
                                 <?php endif; ?>
                                 <li>
-                                    <a href="<?php echo generate_url("refund_requests"); ?>">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                             fill="currentColor" viewBox="0 0 16 16" class="mds-svg-icon">
-                                            <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z"/>
-                                        </svg>
-                                        <?php echo trans("refund"); ?>
+                                    <a href="<?php echo generate_profile_url($this->auth_user->slug); ?>">
+                                        <i class="icon-user"></i>
+                                        <?php echo trans("profile"); ?>
                                     </a>
                                 </li>
-                            <?php endif; ?>
+                                <?php if ($this->is_sale_active): ?>
+                                    <li>
+                                        <a href="<?php echo generate_url("orders"); ?>">
+                                            <i class="icon-shopping-basket"></i>
+                                            <?php echo trans("orders"); ?>
+                                        </a>
+                                    </li>
+                                    <?php if (is_bidding_system_active()): ?>
+                                        <li>
+                                            <a href="<?php echo generate_url("quote_requests"); ?>">
+                                                <i class="icon-price-tag-o"></i>
+                                                <?php echo trans("quote_requests"); ?>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                    <?php if ($this->general_settings->digital_products_system == 1): ?>
+                                        <li>
+                                            <a href="<?php echo generate_url("downloads"); ?>">
+                                                <i class="icon-download"></i>
+                                                <?php echo trans("downloads"); ?>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                    <li>
+                                        <a href="<?php echo generate_url("refund_requests"); ?>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 fill="currentColor" viewBox="0 0 16 16" class="mds-svg-icon">
+                                                <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z"/>
+                                            </svg>
+                                            <?php echo trans("refund"); ?>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
 
-                            <li>
-                                <a href="<?php echo generate_url("settings", "update_profile"); ?>">
-                                    <i class="icon-settings"></i>
-                                    <?php echo trans("settings"); ?>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url(); ?>logout" class="logout">
-                                    <i class="icon-logout"></i>
-                                    <?php echo trans("logout"); ?>
-                                </a>
-                            </li>
-                        </ul>
+                                <li>
+                                    <a href="<?php echo generate_url("settings", "update_profile"); ?>">
+                                        <i class="icon-settings"></i>
+                                        <?php echo trans("settings"); ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url(); ?>logout" class="logout">
+                                        <i class="icon-logout"></i>
+                                        <?php echo trans("logout"); ?>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
