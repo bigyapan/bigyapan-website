@@ -21,6 +21,16 @@
                     <ul class="navbar-nav" style="padding-bottom:0;" >
                         <?php if ($this->auth_check): ?>
                             <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;"
+                                class=" nav-item">
+                                <a class="nav-link" href="<?php echo generate_url("messages"); ?>">
+                                    <i class="icon-mail"></i>
+                                    <?php echo trans("messages"); ?>&nbsp;
+                                    <?php if ($unread_message_count > 0): ?>
+                                        <span class="span-message-count">(<?= $unread_message_count; ?>)</span>
+                                    <?php endif; ?>
+                                </a>
+                            </li>
+                            <li style="background-color: #f6f6f6;border-radius: 5px;padding: 0 10px 0 10px; margin-bottom:6px;"
                                 class="dropdown profile-dropdown nav-item">
                                 <a href="#" class="dropdown-toggle image-profile-drop nav-link" data-toggle="dropdown"
                                    aria-expanded="false">
@@ -87,15 +97,6 @@
                                             </a>
                                         </li>
                                     <?php endif; ?>
-                                    <li>
-                                        <a href="<?php echo generate_url("messages"); ?>">
-                                            <i class="icon-mail"></i>
-                                            <?php echo trans("messages"); ?>&nbsp;
-                                            <?php if ($unread_message_count > 0): ?>
-                                                <span class="span-message-count">(<?= $unread_message_count; ?>)</span>
-                                            <?php endif; ?>
-                                        </a>
-                                    </li>
                                     <li>
                                         <a href="<?php echo generate_url("settings", "update_profile"); ?>">
                                             <i class="icon-settings"></i>
