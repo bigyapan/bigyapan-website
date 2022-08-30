@@ -125,9 +125,9 @@
             <ul class="product-action" style="list-style: none;">
                 <li class="view"><i class="fa fa-eye"></i><span><?php echo $product->pageviews; ?></span></li>
                 <li class="rating"><i class="fa fa-star"></i><span><?php echo $product->rating; ?>/5</span></li>
-                <!--<li class="rating"><i class="fa fa-clock-o"></i>
-                    <span><?php /*echo time_ago($product->created_at); */?></span>
-                </li>-->
+                <li class="rating"><i class="fa fa-clock-o"></i>
+                    <span><?php echo time_ago($product->created_at); ?></span>
+                </li>
             </ul>
         </div>
         <div class="product-content">
