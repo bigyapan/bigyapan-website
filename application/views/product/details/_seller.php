@@ -21,9 +21,11 @@
 			</p>
 			<?php if (!empty($user->phone_number) && $user->show_phone == 1): ?>
 				<p>
-                <span class="info"><i class="icon-phone"></i>
-                    <a href="javascript:void(0)" id="show_phone_number"><?php echo trans("show"); ?></a>
-                    <a href="tel:<?php echo html_escape($user->phone_number); ?>" id="phone_number" class="display-none"><?php echo html_escape($user->phone_number); ?></a>
+                <span class="info">
+                    <!--<i class="icon-phone"></i>
+                    <a href="javascript:void(0)" id="show_phone_number"><?php /*echo trans("show"); */?></a>
+                    <a href="tel:<?php /*echo html_escape($user->phone_number); */?>" id="phone_number" class="display-none"><?php /*echo html_escape($user->phone_number); */?></a>-->
+                    <i class="icon-phone"></i><a href="tel:<?php echo html_escape($user->phone_number); ?>" id="phone_number"><?php echo html_escape($user->phone_number); ?></a>
                 </span>
 				</p>
 			<?php elseif (!empty($user->email) && $user->show_email == 1): ?>

@@ -29,8 +29,9 @@
                                                 <?php if (is_admin() || $this->general_settings->hide_vendor_contact_information != 1):
                                                     if (!empty($user->phone_number) && $user->show_phone == 1): ?>
                                                         <p class="info">
-                                                            <i class="icon-phone"></i><a href="javascript:void(0)" id="show_phone_number"><?php echo trans("show"); ?></a>
-                                                            <a href="tel:<?php echo html_escape($user->phone_number); ?>" id="phone_number" class="display-none"><?php echo html_escape($user->phone_number); ?></a>
+                                                            <!--<i class="icon-phone"></i><a href="javascript:void(0)" id="show_phone_number"><?php /*echo trans("show"); */?></a>
+                                                            <a href="tel:<?php /*echo html_escape($user->phone_number); */?>" id="phone_number" class="display-none"><?php /*echo html_escape($user->phone_number); */?></a>-->
+                                                            <i class="icon-phone"></i><a href="tel:<?php echo html_escape($user->phone_number); ?>" id="phone_number"><?php echo html_escape($user->phone_number); ?></a>
                                                         </p>
                                                     <?php endif; ?>
                                                     <?php if (!empty($user->email) && $user->show_email == 1): ?>
