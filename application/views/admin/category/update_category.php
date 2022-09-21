@@ -33,6 +33,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="control-label">Description Footer</label>
+                    <textarea class="form-control tinyMCE" name="description_bottom"><?php echo $category->description_bottom ?></textarea>
+                </div>
+
+                <div class="form-group">
                     <label class="control-label"><?php echo trans('title'); ?> (<?php echo trans('meta_tag'); ?>)</label>
                     <input type="text" class="form-control" name="title_meta_tag"
                            placeholder="<?php echo trans('title'); ?> (<?php echo trans('meta_tag'); ?>)" value="<?php echo html_escape($category->title_meta_tag); ?>">

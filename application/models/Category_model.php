@@ -370,6 +370,7 @@ class Category_model extends CI_Model
             'slug' => $this->input->post('slug', true),
             'title_meta_tag' => $this->input->post('title_meta_tag', true),
             'description' => $this->input->post('description', true),
+            'description_bottom' => $this->input->post('description_bottom', false),
             'keywords' => $this->input->post('keywords', true),
             'category_order' => $this->input->post('category_order', true),
             'featured_order' => 1,

@@ -301,7 +301,16 @@
                 </div>
 
 
+
             </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <?php echo $category->description_bottom ?>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
