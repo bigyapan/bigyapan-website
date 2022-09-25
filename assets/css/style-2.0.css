@@ -890,6 +890,11 @@ img {
     top: -1px;
 }
 
+.product-contact {
+    font-size: 15px;
+    font-weight: bold;
+}
+
 .message-notification {
     position: absolute;
     left: 15px;
@@ -1366,8 +1371,9 @@ img {
 
 
 .nav-main .navbar ul .nav-item-arrow:hover {
-    color:orange;
+    color: orange;
 }
+
 .nav-main .navbar ul .nav-item .nav-link {
     color: #222;
     font-weight: 500;
@@ -1471,6 +1477,7 @@ img {
 .mega-menu .nav-item {
     position: inherit;
 }
+
 .mega-menu .nav-item-arrow {
     position: inherit;
 }
@@ -1763,7 +1770,7 @@ img {
 
 /*mobile menu*/
 .overlay-bg {
-    touch-action:none;
+    touch-action: none;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -1785,7 +1792,7 @@ img {
 }
 
 .nav-mobile-header {
-    touch-action:none;
+    touch-action: none;
     width: 100%;
     position: fixed;
     top: 0;
@@ -8924,10 +8931,10 @@ img {
     z-index: 999999
 }
 
-.floating-sell-btn{
-    position:fixed;
-    bottom:20px;
-    right:20px;
+.floating-sell-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
 
 .error-404 {

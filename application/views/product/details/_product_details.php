@@ -7,12 +7,14 @@
                         <div class="row-custom m-t-10">
                             <?php echo form_open('download-free-digital-file-post'); ?>
                             <input type="hidden" name="product_id" value="<?php echo $product->id; ?>">
-                            <button class="btn btn-instant-download"><i class="icon-download-solid"></i><?php echo trans("download") ?></button>
+                            <button class="btn btn-instant-download"><i
+                                        class="icon-download-solid"></i><?php echo trans("download") ?></button>
                             <?php echo form_close(); ?>
                         </div>
                     <?php else: ?>
                         <div class="row-custom m-t-10">
-                            <button class="btn btn-instant-download" data-toggle="modal" data-target="#loginModal"><i class="icon-download-solid"></i><?php echo trans("download") ?></button>
+                            <button class="btn btn-instant-download" data-toggle="modal" data-target="#loginModal"><i
+                                        class="icon-download-solid"></i><?php echo trans("download") ?></button>
                         </div>
                     <?php endif; ?>
                 <?php else: ?>
@@ -20,11 +22,13 @@
                         <div class="row-custom m-t-10">
                             <?php echo form_open('download-purchased-digital-file-post'); ?>
                             <input type="hidden" name="sale_id" value="<?php echo $digital_sale->id; ?>">
-                            <button class="btn btn-instant-download"><i class="icon-download-solid"></i><?php echo trans("download") ?></button>
+                            <button class="btn btn-instant-download"><i
+                                        class="icon-download-solid"></i><?php echo trans("download") ?></button>
                             <?php echo form_close(); ?>
                         </div>
                     <?php else: ?>
-                        <label class="label-instant-download"><i class="icon-download-solid"></i><?php echo trans("instant_download"); ?></label>
+                        <label class="label-instant-download"><i
+                                    class="icon-download-solid"></i><?php echo trans("instant_download"); ?></label>
                     <?php endif;
                 endif;
             endif; ?>
@@ -35,9 +39,11 @@
             <?php elseif ($product->visibility == 0): ?>
                 <label class="badge badge-danger badge-product-status"><?php echo trans("hidden"); ?></label>
             <?php endif; ?>
+
             <div class="row-custom meta">
                 <div class="product-details-user">
-                    <?php echo trans("by"); ?>&nbsp;<a href="<?php echo generate_profile_url($product->user_slug); ?>"><?php echo character_limiter(get_shop_name_product($product), 30, '..'); ?></a>
+                    <?php echo trans("by"); ?>&nbsp;<a
+                            href="<?php echo generate_profile_url($product->user_slug); ?>"><?php echo character_limiter(get_shop_name_product($product), 30, '..'); ?></a>
                 </div>
                 <?php if ($this->general_settings->product_comments == 1): ?>
                     <span><i class="icon-comment"></i><?php echo html_escape($comment_count); ?></span>
@@ -64,13 +70,14 @@
                 endif;
                 if ($show_ask == true):?>
                     <?php if ($this->auth_check): ?>
-                        <button class="btn btn-contact-seller" data-toggle="modal" data-target="#messageModal"><i class="icon-envelope"></i> <?php echo trans("ask_question") ?></button>
+                        <button class="btn btn-contact-seller" data-toggle="modal" data-target="#messageModal"><i
+                                    class="icon-envelope"></i> <?php echo trans("ask_question") ?></button>
                     <?php else: ?>
-                        <button class="btn btn-contact-seller" data-toggle="modal" data-target="#loginModal"><i class="icon-envelope"></i> <?php echo trans("ask_question") ?></button>
+                        <button class="btn btn-contact-seller" data-toggle="modal" data-target="#loginModal"><i
+                                    class="icon-envelope"></i> <?php echo trans("ask_question") ?></button>
                     <?php endif;
                 endif; ?>
             </div>
-
             <div class="row-custom details">
                 <?php if ($product->listing_type != 'ordinary_listing' && $product->product_type != 'digital'): ?>
                     <div class="item-details">
@@ -117,6 +124,28 @@
                     </div>
                 <?php endif; ?>
             </div>
+            <div class="row">
+                <?php if (!empty($user->phone_number) && $user->show_phone == 1): ?>
+                    <div class="col-auto">
+                        <p class="product-contact">
+                            <!--<i class="icon-phone"></i><a href="javascript:void(0)" id="show_phone_number"><?php /*echo trans("show"); */ ?></a>
+                                                            <a href="tel:<?php /*echo html_escape($user->phone_number); */ ?>" id="phone_number" class="display-none"><?php /*echo html_escape($user->phone_number); */ ?></a>-->
+                            <a href="tel:<?php echo html_escape($user->phone_number); ?>"
+                               id="phone_number"> <i
+                                        class="icon-phone"></i> <?php echo html_escape($user->phone_number); ?></a>
+                        </p>
+                    </div>
+                <?php endif; ?>
+                <?php if (!empty($user->email) && $user->show_email == 1): ?>
+                    <div class="col-auto">
+                        <p class="product-contact">
+                            <a href="mailto:<?php echo html_escape($user->email); ?>"><i
+                                        class="icon-envelope"></i> <?php echo html_escape($user->email); ?></a>
+                        </p>
+                    </div>
+                <?php endif; ?>
+            </div>
+
         </div>
     </div>
 <?php if ($product->listing_type == 'sell_on_site' || $product->listing_type == 'license_key'):
@@ -171,9 +200,13 @@ endif; ?>
             <?php endif; ?>
             <div class="button-container button-container-wishlist">
                 <?php if ($this->product_model->is_product_in_wishlist($product->id) == 1): ?>
-                    <a href="javascript:void(0)" class="btn-wishlist btn-add-remove-wishlist" data-product-id="<?php echo $product->id; ?>" data-type="details"><i class="icon-heart"></i><span><?php echo trans("remove_from_wishlist"); ?></span></a>
+                    <a href="javascript:void(0)" class="btn-wishlist btn-add-remove-wishlist"
+                       data-product-id="<?php echo $product->id; ?>" data-type="details"><i
+                                class="icon-heart"></i><span><?php echo trans("remove_from_wishlist"); ?></span></a>
                 <?php else: ?>
-                    <a href="javascript:void(0)" class="btn-wishlist btn-add-remove-wishlist" data-product-id="<?php echo $product->id; ?>" data-type="details"><i class="icon-heart-o"></i><span><?php echo trans("add_to_wishlist"); ?></span></a>
+                    <a href="javascript:void(0)" class="btn-wishlist btn-add-remove-wishlist"
+                       data-product-id="<?php echo $product->id; ?>" data-type="details"><i
+                                class="icon-heart-o"></i><span><?php echo trans("add_to_wishlist"); ?></span></a>
                 <?php endif; ?>
             </div>
         </div>
@@ -181,7 +214,8 @@ endif; ?>
         <?php if (!empty($product->demo_url)): ?>
             <div class="col-12 product-add-to-cart-container">
                 <div class="button-container">
-                    <a href="<?php echo $product->demo_url; ?>" target="_blank" class="btn btn-md btn-live-preview"><i class="icon-preview"></i><?php echo trans("live_preview") ?></a>
+                    <a href="<?php echo $product->demo_url; ?>" target="_blank" class="btn btn-md btn-live-preview"><i
+                                class="icon-preview"></i><?php echo trans("live_preview") ?></a>
                 </div>
             </div>
         <?php endif; ?>
